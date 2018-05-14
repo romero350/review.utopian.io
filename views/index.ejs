@@ -109,7 +109,7 @@
 							<option value="" disabled selected>Select your option</option>
 						  <option value="5">Yes, it was reported by this contributor and acknowledged by the project owner.</option>
 						  <option value="4">Yes, it was reported by this contributor but has to yet be acknowledged by the project owner. </option>
-						  <option value="1.25">No, it was not reported, but an effort to contact the project owner has been made. (</option>
+						  <option value="1.25">No, it was not reported, but an effort to contact the project owner has been made. </option>
 						<option value="0">No, it was not reported OR there is evidence the user contacted the project owner on behalf of Utopian without permission. </option>
 						</select>
 							</div>
@@ -1156,7 +1156,9 @@
 			if (category == 'tasks')
         cat = 11;
 
-			let answers = `<REPLACE WITH FEEDBACK>\n\nLink to the Answers of the Questionnaire - \n\n[Click here](https://review.utopian.io/result/${cat}/`;
+			let answers = `REPLACE WITH FEEDBACK\n\nREPLACE WITH FEEDBACK
+
+Your contribution has been evaluated according to [Utopian rules and guidelines](https://utopian.io/rules), as well as a predefined set of questions pertaining to the category.\nTo view those questions and the relevant answers related to your post,[Click here](https://review.utopian.io/result/${cat}/`;
 			oSels = document.getElementById('form1').getElementsByTagName('select');
 
       for (i = 0; i < oSels.length; i++) {

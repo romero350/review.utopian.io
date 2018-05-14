@@ -942,6 +942,9 @@ router.get('/result/:cat/:num', function (req, res, next) {
   let category = req.params.cat;
   let ans = req.params.num;
 
+  if(cat < 0 || cat > 11)
+    res.render('error')
+
   let cat = questionnaire[category];
   let object= [];
   for (var i = 0; i < cat.length; i++) {
