@@ -69,7 +69,7 @@ let questionnaire = [
         'This contribution brings great and impactful value, and can be used for applications outside the specific project.',
         'This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.',
         'This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.',
-        'This contribution adds no value to the open source community and ecosystem or the specific project'
+        'This contribution adds nearly no value to the open source community and ecosystem or the specific project.'
       ]
     }
   ],
@@ -90,7 +90,7 @@ let questionnaire = [
         'This contribution brings great and impactful value, and can be used for applications outside the specific project.',
         'This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.',
         'This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.',
-        'This contribution adds no value to the open source community and ecosystem or the specific project'
+        'This contribution adds nearly no value to the open source community and ecosystem or the specific project.'
       ]
     },
     {
@@ -221,7 +221,7 @@ let questionnaire = [
         'This contribution brings great and impactful value, and can be used for applications outside the specific project.',
         'This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.',
         'This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.',
-        'This contribution adds no value to the open source community and ecosystem or the specific project'
+        'This contribution adds nearly no value to the open source community and ecosystem or the specific project.'
       ]
     }
   ],
@@ -242,7 +242,7 @@ let questionnaire = [
         'This contribution adds high value and holds great significance for the project and/or open source ecosystem.',
         'This contribution adds significant value to the project and/or open source ecosystem.',
         'This contribution adds some value to the project and/or open source ecosystem.',
-        'This contribution hold no value and is insignificant in impact.'
+        'This contribution holds close to no value and is insignificant in impact.'
       ]
     },
     {
@@ -252,7 +252,7 @@ let questionnaire = [
         'This contribution appears to have demanded a lot of intensive work.',
         'This contribution appears to have required an average volume of work.',
         'This contribution shows some work done.',
-        'This contribution shows no work done.'
+        'This contribution shows close to no work done.'
       ]
     },
     {
@@ -262,7 +262,7 @@ let questionnaire = [
         'High - it follows all best practices.',
         'Average - it follows most best practices.',
         'Low - it follows some best practices.',
-        `Very low - it doesn't follow any best practices.`
+        `Very low - it doesn't follow nearly any best practices.`
       ]
     },
     {
@@ -272,7 +272,7 @@ let questionnaire = [
         'High - a lot of research and specific knowledge was required.',
         'Average - some research and knowledge was required.',
         'Low - not much knowledge or skill were required.',
-        'Insignificant - no knowledge or skills were necessary.'
+        'Insignificant - only basic knowledge or skills were necessary.'
       ]
     },
     {
@@ -363,7 +363,7 @@ let questionnaire = [
         'This contribution brings great and impactful value, and can be used for applications outside the specific project.',
         'This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.',
         'This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.',
-        'This contribution adds no value to the open source community and ecosystem or the specific project'
+        'This contribution adds nearly no value to the open source community and ecosystem or the specific project.'
       ]
     }
   ],
@@ -434,7 +434,7 @@ let questionnaire = [
         'This contribution brings great and impactful value, and can be used for applications outside the specific project.',
         'This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.',
         'This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.',
-        'This contribution adds no value to the open source community and ecosystem or the specific project'
+        'This contribution adds nearly no value to the open source community and ecosystem or the specific project.'
       ]
     }
   ],
@@ -516,7 +516,7 @@ let questionnaire = [
         'This contribution brings great and impactful value, and can be used for applications outside the specific project.',
         'This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.',
         'This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.',
-        'This contribution adds no value to the open source community and ecosystem or the specific project'
+        'This contribution adds nearly no value to the open source community and ecosystem or the specific project.'
       ]
     }
   ],
@@ -608,7 +608,7 @@ let questionnaire = [
         'This contribution brings great and impactful value, and can be used for applications outside the specific project.',
         'This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.',
         'This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.',
-        'This contribution adds no value to the open source community and ecosystem or the specific project'
+        'This contribution adds nearly no value to the open source community and ecosystem or the specific project.'
       ]
     }
   ],
@@ -690,7 +690,7 @@ let questionnaire = [
         'This contribution brings great and impactful value, and can be used for applications outside the specific project.',
         'This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.',
         'This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.',
-        'This contribution adds no value to the open source community and ecosystem or the specific project'
+        'This contribution adds nearly no value to the open source community and ecosystem or the specific project.'
       ]
     }
   ],
@@ -782,7 +782,7 @@ let questionnaire = [
         'This contribution brings great and impactful value, and can be used for applications outside the specific project.',
         'This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.',
         'This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.',
-        'This contribution adds no value to the open source community and ecosystem or the specific project'
+        'This contribution adds nearly no value to the open source community and ecosystem or the specific project.'
       ]
     }
   ],
@@ -864,7 +864,7 @@ let questionnaire = [
         'This contribution brings great and impactful value, and can be used for applications outside the specific project.',
         'This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.',
         'This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.',
-        'This contribution adds no value to the open source community and ecosystem or the specific project'
+        'This contribution adds nearly no value to the open source community and ecosystem or the specific project.'
       ]
     }
   ],
@@ -886,7 +886,7 @@ let questionnaire = [
         'This contribution brings great and impactful value, and can be used for applications outside the specific project.',
         'This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.',
         'This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.',
-        'This contribution adds no value to the open source community and ecosystem or the specific project'
+        'This contribution adds nearly no value to the open source community and ecosystem or the specific project.'
       ]
     },
     {
@@ -942,10 +942,10 @@ router.get('/result/:cat/:num', function (req, res, next) {
   let category = req.params.cat;
   let ans = req.params.num;
 
-  if(cat < 0 || cat > 11)
+  if(category < 0 || category > 11)
     res.render('error')
 
-  let cat = questionnaire[category];
+  cat = questionnaire[category];
   let object= [];
   for (var i = 0; i < cat.length; i++) {
     obj = {};
