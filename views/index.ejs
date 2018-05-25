@@ -1405,14 +1405,14 @@
 
 			let answers =
 				`REPLACE WITH FEEDBACK\n\n
-Your contribution has been evaluated according to [Utopian rules and guidelines](https://utopian.io/rules), as well as a predefined set of questions pertaining to the category.\nTo view those questions and the relevant answers related to your post,[Click here](https://review.utopian.io/result/${cat}/`;
+Your contribution has been evaluated according to [Utopian policies and guidelines](https://join.utopian.io/guidelines), as well as a predefined set of questions pertaining to the category.\n\nTo view those questions and the relevant answers related to your post, [click here](https://review.utopian.io/result/${cat}/`;
 			oSels = document.getElementById('form1').getElementsByTagName('select');
 
 			for (i = 0; i < oSels.length; i++) {
 				answers = answers + oSels[i].options.selectedIndex;
 			}
 
-			answers = answers + `)\n\n---- \nNeed help? Write a ticket on https://support.utopian.io/. \nChat with us on [Discord](https://discord.gg/uTyJkNm). \n[[utopian-moderator]](https://join.utopian.io/) \n`
+			answers = answers + `).\n\n---- \nNeed help? Write a ticket on https://support.utopian.io/. \nChat with us on [Discord](https://discord.gg/uTyJkNm). \n[[utopian-moderator]](https://join.utopian.io/) \n`
 			console.log(answers);
 			let textarea = document.getElementById('textarea1')
 			textarea.value = answers
