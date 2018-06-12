@@ -929,6 +929,58 @@ let questionnaire = [
         'Yes, this task request is too similar or a direct copy of another task request submitted by this project owner in the past 30 days.'
       ]
     }
+  ],
+  [
+    {
+      question: 'How would you describe the formatting, language and overall presentation of the post?',
+      answers: [
+        'Select your option',
+        'The quality of the post is fantastic as it is well written, formal and engaging.',
+        'The post is of very good quality, well structured and easy to understand.',
+        'The post is poorly written and/or formatted, but readable.',
+        'The post is really hard to read and the content is barely understandable.'
+      ]
+    },
+    {
+      question: 'How would you rate the overall value of this contribution on the open source community?',
+      answers: [
+        'Select your option',
+        'This contribution brings great, unique and impactful value to the community as a whole.',
+        'This contribution adds significant value to the open source community, or is of critical importance to the specific project.',
+        'This contribution adds some value to the open source community or is only valuable to the specific project.',
+        'This contribution adds no value to the open source community or the specific project.'
+      ]
+    },
+    {
+      question: 'What is the overall volume of the translated text in this contribution?',
+      answers: [
+        'Select your option',
+        'More than 1000 words.',
+        '500 - 1000 words.',
+        '250 - 500 words.',
+        'Less than 250 words.'
+      ]
+    },
+    {
+      question: 'How would you rate is the overall difficulty of the translated text in this contribution?',
+      answers: [
+        'Select your option',
+        'Extremely high (for example medical/legal texts).',
+        'High (for example literature/scientific/history texts).',
+        'Average (for example simple tech manuals, school texts).',
+        'Low (for example simple words, short sentences).'
+      ]
+    },
+    {
+      question: 'How would you rate the semantic accuracy of the translated text?',
+      answers: [
+        'Select your option',
+        'Very accurate, most of the sentences are well translated.',
+        'Good - some minor imprecisions.',
+        'Average - some imprecisions and misstatements.',
+        'Poor - Inexistent, most of the sentences are badly translated.'
+      ]
+    }
   ]
 ]
 
@@ -942,7 +994,7 @@ router.get('/result/:cat/:num', function (req, res, next) {
   let category = req.params.cat;
   let ans = req.params.num;
 
-  if(category < 0 || category > 11)
+  if(category < 0 || category > 12)
     res.render('error')
 
   cat = questionnaire[category];
