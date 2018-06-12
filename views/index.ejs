@@ -220,6 +220,7 @@
 				<option value="tasks">Task Request</option>
 				<option value="tutorials">Tutorials</option>
 				<option value="video-tuts">Video Tutotials</option>
+				<option value="translations">Translations</option>
 		</select>
 		</div>
 
@@ -249,6 +250,12 @@
 				</div>
 				<div class="col midfoot" style="width: 78%">
 					<ul class="nav" style="display: flex">
+						<li class="nav-item">
+							<a class="nav-link footerlink" href="https://join.utopian.io/privacy">Privacy Policy</a> <span style="color: white; font-size: 12px">&nbsp;|&nbsp;</span>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link footerlink" href="https://join.utopian.io/tos">Terms of Service</a> <span style="color: white; font-size: 12px">&nbsp;|&nbsp;</span>
+						</li>
 						<li class="nav-item">
 							<a class="nav-link footerlink" href="https://join.utopian.io/cookies">Cookie Policy</a> <span style="color: white; font-size: 12px">&nbsp;|&nbsp;</span>
 						</li>
@@ -1344,6 +1351,64 @@
 					</select>
 					</div>
 					`
+
+					let translations = `
+					<div class="question-block">
+								<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
+								<select >
+							<option value="" disabled selected>Select your option</option>
+							<option value="10">The quality of the post is fantastic as it is well written, formal and engaging.</option>
+							<option value="7">The post is of very good quality, well structured and easy to understand.</option>
+							<option value="3">The post is poorly written and/or formatted, but readable.</option>
+							<option value="0">The post is really hard to read and the content is barely understandable.</option>
+							</select>
+							</div>
+
+							<div class="question-block">
+								<h6>How would you rate the overall value of this contribution on the open source community?</h6>
+								<select id="2">
+							<option value="" disabled selected>Select your option</option>
+							<option value="25">This contribution brings great, unique and impactful value to the community as a whole.</option>
+							<option value="17">This contribution adds significant value to the open source community, or is of critical importance to the specific project.</option>
+							<option value="8">This contribution adds some value to the open source community or is only valuable to the specific project.</option>
+							<option value="0">This contribution adds no value to the open source community or the specific project.</option>
+							</select>
+							</div>
+
+							<div class="question-block">
+								<h6>What is the total volume of the translated text in this contribution(excluding duplicate phrases and non-translatable content)?</h6>
+								<select>
+							<option value="" disabled selected>Select your option</option>
+							<option value="15">More than 1000 words.</option>
+							<option value="9">500 - 1000 words.</option>
+							<option value="4">250 - 500 words.</option>
+							<option value="0">Less than 250 words.</option>
+							</select>
+							</div>
+
+
+							<div class="question-block">
+								<h6>How would you rate is the overall difficulty of the translated text in this contribution?</h6>
+								<select>
+							<option value="" disabled selected>Select your option</option>
+							<option value="20">Extremely high (for example medical/legal texts).</option>
+							<option value="13">High (for example literature/scientific/history texts).</option>
+							<option value="6">Average (for example simple tech manuals, school texts).</option>
+							<option value="0">Low (for example simple words, short sentences).</option>
+							</select>
+							</div>
+
+							<div class="question-block">
+								<h6>How would you rate the semantic accuracy of the translated text?</h6>
+								<select>
+							<option value="" disabled selected>Select your option</option>
+							<option value="7.5">Very accurate, most of the sentences are well translated.</option>
+							<option value="5.25">Good - some minor imprecisions.</option>
+							<option value="2.25">Average - some imprecisions and misstatements.</option>
+							<option value="0">Poor - Inexistent, most of the sentences are badly translated.</option>
+							</select>
+							</div>`
+
 	</script>
 	<script type="text/javascript">
 		function calcTotal() {
@@ -1402,6 +1467,9 @@
 				cat = 10;
 			if (category == 'tasks')
 				cat = 11;
+			if (category == 'translations')
+				cat = 12;
+
 
 			let answers =
 				`REPLACE WITH FEEDBACK\n\n
@@ -1411,8 +1479,8 @@ Your contribution has been evaluated according to [Utopian policies and guidelin
 			for (i = 0; i < oSels.length; i++) {
 				answers = answers + oSels[i].options.selectedIndex;
 			}
-
-			answers = answers + `).\n\n---- \nNeed help? Write a ticket on https://support.utopian.io/. \nChat with us on [Discord](https://discord.gg/uTyJkNm). \n[[utopian-moderator]](https://join.utopian.io/) \n`
+			feedend = category == 'translations'?`).\n\n---- \nChat with us on [Discord](https://discord.gg/vMGmDSm)`:`).\n\n---- \nNeed help? Write a ticket on https://support.utopian.io/. \nChat with us on [Discord](https://discord.gg/uTyJkNm). \n[[utopian-moderator]](https://join.utopian.io/)`
+			answers = answers + feedend
 			console.log(answers);
 			let textarea = document.getElementById('textarea1')
 			textarea.value = answers
@@ -1457,6 +1525,9 @@ Your contribution has been evaluated according to [Utopian policies and guidelin
 				form = formstart + visibility + formend;
 			if (category == 'tasks')
 				form = formstart + tasks + formend;
+			if (category == 'translations')
+				form = formstart + translations + formend;
+
 
 			let formhere = document.getElementById('formhere')
 			formhere.innerHTML = `${form}`;
