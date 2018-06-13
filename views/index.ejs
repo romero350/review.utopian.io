@@ -1066,84 +1066,68 @@
 					</div>
 					`
 
-		let suggestions =
+let suggestions =
 			`<div class="question-block">
-						<h6>Is the suggested feature commonly seen in other similar projects?</h6>
+						<h6>If implemented, how much impact on the functionality and/usability of the project will this suggestion have?</h6>
 						<select >
 					<option value="" disabled selected>Select your option</option>
-					<option value="10">No, it’s unique or very rare. </option>
-					<option value="9">Yes, but it’s a feature of high importance for this kind of project.</option>
-					<option value="3">It's common, but it will have some measurable positive impact on the user experience.</option>
-					<option value="0">It’s extremely common and not majorly impactful.</option>
+					<option value="30">Major impact. </option>
+					<option value="15">Some noticeable impact.</option>
+					<option value="10">Minor improvement.</option>
+					<option value="0">Negligible added-value to the project / impossible or extremely difficult implementation is required.</option>
 					</select>
 					</div>
-
 					<div class="question-block">
-						<h6>Does this suggestion match the goals and/or roadmap of the project?</h6>
+						<h6>Is the suggested feature commonly available in other projects or submitted suggestions?</h6>
 						<select id="2">
 					<option value="" disabled selected>Select your option</option>
-					<option value="15">Yes, it’s closely related to the main goals of the project.</option>
-					<option value="10.5">It is related, but does not match the main goal and purpose of the project.</option>
-					<option value="6">It is loosely related to one of the goals of the project.</option>
-					<option value="0">It is not related to the project goals at all.</option>
+					<option value="7">No, it’s unique or very rare.</option>
+					<option value="5">Yes, but it’s a feature of high importance for this kind of project.</option>
+					<option value="2">It's common, but it will have some measurable positive impact on the user experience or product functionality.</option>
+					<option value="0">It’s extremely common and may have been left out intentionally.</option>
 					</select>
 					</div>
-
 					<div class="question-block">
-						<h6>Is the proposal realistic?</h6>
+						<h6>Does this suggestion match the goals, intended applications and/or roadmap of the project?</h6>
 						<select>
 					<option value="" disabled selected>Select your option</option>
-					<option value="10">Yes, it can definitely be achieved and is important enough to warrant the developers attention and time.</option>
-					<option value="8">Yes, it can definitely be achieved, but is not likely to get noticed by the development team immediately.</option>
-					<option value="4">It can be achieved theoretically, but no open source solutions to this problem have been suggested previously.
+					<option value="10">Yes, it’s closely related to the uses and applications of the project and may enhance it further toward project goals</option>
+					<option value="5">It is related and may add value, but has no direct relation to the main purpose and/or applications of the project.</option>
+					<option value="3">It is loosely related to one of purposes, applications or goals of the project and may add some value to it.
 					</option>
-					<option value="0">No, it’s impossible to achieve.</option>
+					<option value="0">It is not related to the project goals at all and holds no potential added-value.</option>
 					</select>
 					</div>
-
-
 					<div class="question-block">
-						<h6>What is the potential impact of the change proposed on the usability of the project?</h6>
+						<h6>Is the proposal realistic and feasible?</h6>
 						<select>
 					<option value="" disabled selected>Select your option</option>
-					<option value="15">It will have a major positive impact on the project for both the project owner and end user.</option>
-					<option value="12">It will have a significant impact on the project for end users.</option>
-					<option value="6">It will change how users utilize the project by a minor margin.</option>
-					<option value="0">It will bring little to no change.</option>
+					<option value="13">Yes, it can definitely be implemented and is important enough to warrant the developers’ attention and time.</option>
+					<option value="8">Yes, it can definitely be implemented, but is not likely to get noticed by the development team immediately.</option>
+					<option value="4">It can be implemented in theory, but no recommendations or guidelines were included in the suggestion post.</option>
+					<option value="0">No, it’s impossible or non-cost-effective to implement.</option>
 					</select>
 					</div>
-
+					
+					<div class="question-block">
+						<h6>Has the user provided any mockups (illustrations) of potential suggestion implementation appearance?</h6>
+						<select>
+					<option value="" disabled selected>Select your option</option>
+					<option value="10">Yes, and they’re of excellent quality</option>
+					<option value="9">No, but the mockups are inapplicable for this suggestion.</option>
+					<option value="3">Yes, but the quality of the mockups is poor.</option>
+					<option value="0">No, there are no mockups included even though they are needed / No potential solution was presented.</option>
+					</select>
+					</div>
+					
 					<div class="question-block">
 						<h6>Has the contributor proposed a possible solution to implement the suggestion?</h6>
 						<select>
 					<option value="" disabled selected>Select your option</option>
-					<option value="5">Yes, the possible solution is described in great detail and makes a lot of sense</option>
-					<option value="4">Yes, but the possible solution was not described in sufficient detail.</option>
-					<option value="4">No, but the implementation is self explanatory.</option>
+					<option value="10">Yes, the possible solution is described in great detail and makes a lot of sense</option>
+					<option value="5">Yes, but the possible solution was not described in sufficient detail.</option>
+					<option value="3">No, but the implementation is self explanatory or very easily executed. </option>
 					<option value="0">No, there’s no proposed solution though one is clearly necessary.</option>
-					</select>
-					</div>
-
-
-					<div class="question-block">
-						<h6>Is the suggestion original in nature, or were similar suggestions submitted to Utopian in the past?</h6>
-						<select id="6">
-					<option value="" disabled selected>Select your option</option>
-					<option value="10">The suggestion is original and obviously unique.</option>
-					<option value="8">This kind of suggestion is fairly uncommon on Utopian.</option>
-					<option value="2">This is a common suggestion for other projects.</option>
-					<option value="0">The suggestion is clearly not well thought-out and holds no actual value.</option>
-					</select>
-					</div>
-
-					<div class="question-block">
-						<h6>Has the user provided any mockups (illustrations) of potential suggestion implementation appearance?</h6>
-						<select id="7">
-					<option value="" disabled selected>Select your option</option>
-					<option value="5">Yes, and they’re of excellent quality.</option>
-					<option value="5">No, but the mockups are inapplicable for this suggestion.</option>
-					<option value="2">Yes, but the quality of the mockups is poor.</option>
-					<option value="0">No, there are no mockups included even though they are needed.</option>
 					</select>
 					</div>
 					<div class="question-block">
@@ -1156,15 +1140,14 @@
 					<option value="0">The post is really hard to read and the content is barely understandable </option>
 					</select>
 					</div>
-
 						<div class="question-block">
 						<h6>How would you rate the overall value of this contribution on the open source community and ecosystem?</h6>
 						<select id="9">
 					<option value="" disabled selected>Select your option</option>
-					<option value="20"	>This contribution brings great and impactful value, and can be used for applications outside the specific project. </option>
-					<option value="16">This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.</option>
-					<option value="8">This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.</option>
-					<option value="0">This contribution adds nearly no value to the open source community and ecosystem or the specific project. </option>
+					<option value="10">This contribution can add value and be used for applications outside the specific project.</option>
+					<option value="8">This contribution can be of value to the open source community and ecosystem, or is of critical importance to the specific project.</option>
+					<option value="5">This contribution can add little value to the open source community and ecosystem or is only valuable to the specific project.</option>
+					<option value="0">This contribution adds no noticeable value to the open source community and ecosystem or the specific project.</option>
 					</select>
 					</div>
 					`;
