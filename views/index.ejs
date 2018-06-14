@@ -168,6 +168,7 @@
 			transform: scaleX(1);
 		}
 	</style>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
 </head>
 
 <body>
@@ -296,9 +297,28 @@
 			</div>
 		</div>
 	</div>
-
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 	<script type="text/javascript">
+		window.onload = function() {
+			window.cookieconsent.initialise({
+				"palette": {
+					"popup": {
+						"background": "#4786ff",
+						"text": "#ffffff"
+					},
+					"button": {
+						"background": "transparent",
+						"text": "#fff",
+						"border": "#fff"
+					}
+				},
+				"content": {
+					"href": "https://join.utopian.io/cookies"
+				}
+			})
+		}
+
 		function myFunction() {
 			var x = document.getElementById("myTopnav");
 			if (x.className === "topnav") {
@@ -1066,7 +1086,7 @@
 					</div>
 					`
 
-let suggestions =
+		let suggestions =
 			`<div class="question-block">
 						<h6>If implemented, how much impact on the functionality and/usability of the project will this suggestion have?</h6>
 						<select >
@@ -1108,7 +1128,7 @@ let suggestions =
 					<option value="0">No, it’s impossible or non-cost-effective to implement.</option>
 					</select>
 					</div>
-					
+
 					<div class="question-block">
 						<h6>Has the user provided any mockups (illustrations) of potential suggestion implementation appearance?</h6>
 						<select>
@@ -1119,7 +1139,7 @@ let suggestions =
 					<option value="0">No, there are no mockups included even though they are needed / No potential solution was presented.</option>
 					</select>
 					</div>
-					
+
 					<div class="question-block">
 						<h6>Has the contributor proposed a possible solution to implement the suggestion?</h6>
 						<select>
@@ -1335,7 +1355,8 @@ let suggestions =
 					</div>
 					`
 
-					let translations = `
+		let translations =
+			`
 					<div class="question-block">
 								<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
 								<select >
@@ -1391,7 +1412,6 @@ let suggestions =
 							<option value="0">Poor - Inexistent, most of the sentences are badly translated.</option>
 							</select>
 							</div>`
-
 	</script>
 	<script type="text/javascript">
 		function calcTotal() {
@@ -1462,7 +1482,8 @@ Your contribution has been evaluated according to [Utopian policies and guidelin
 			for (i = 0; i < oSels.length; i++) {
 				answers = answers + oSels[i].options.selectedIndex;
 			}
-			feedend = category == 'translations'?`).\n\n---- \nChat with us on [Discord](https://discord.gg/vMGmDSm)`:`).\n\n---- \nNeed help? Write a ticket on https://support.utopian.io/. \nChat with us on [Discord](https://discord.gg/uTyJkNm). \n[[utopian-moderator]](https://join.utopian.io/)`
+			feedend = category == 'translations' ? `).\n\n---- \nChat with us on [Discord](https://discord.gg/vMGmDSm)` :
+				`).\n\n---- \nNeed help? Write a ticket on https://support.utopian.io/. \nChat with us on [Discord](https://discord.gg/uTyJkNm). \n[[utopian-moderator]](https://join.utopian.io/)`
 			answers = answers + feedend
 			console.log(answers);
 			let textarea = document.getElementById('textarea1')
