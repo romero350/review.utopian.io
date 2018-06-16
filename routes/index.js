@@ -522,43 +522,53 @@ let questionnaire = [
   ],
   [
     {
-      question: 'Is the suggested feature commonly seen in other similar projects?',
+      question: 'If implemented, how much impact on the functionality and/usability of the project will this suggestion have?',
+      answers: [
+        'Select your option',
+        'Major impact.',
+        'Some noticeable impact.',
+        `Minor improvement.`,
+        'Negligible added-value to the project / impossible or extremely difficult implementation is required.'
+      ]
+    },
+    {
+      question: 'Is the suggested feature commonly available in other projects or submitted suggestions?',
       answers: [
         'Select your option',
         'No, it’s unique or very rare.',
         'Yes, but it’s a feature of high importance for this kind of project.',
-        `It's common, but it will have some measurable positive impact on the user experience.`,
-        'It’s extremely common and not majorly impactful.'
+        `It's common, but it will have some measurable positive impact on the user experience or product functionality`,
+        `It’s extremely common and may have been left out intentionally.`
       ]
     },
     {
-      question: 'Does this suggestion match the goals and/or roadmap of the project?',
+      question: 'Does this suggestion match the goals, intended applications and/or roadmap of the project?',
       answers: [
         'Select your option',
-        'Yes, it’s closely related to the main goals of the project.',
-        'It is related, but does not match the main goal and purpose of the project.',
-        'It is loosely related to one of the goals of the project.',
-        'It is not related to the project goals at all.'
+        'Yes, it’s closely related to the uses and applications of the project and may enhance it further toward project goals',
+        'It is related and may add value, but has no direct relation to the main purpose and/or applications of the project.',
+        'It is loosely related to one of purposes, applications or goals of the project and may add some value to it.',
+        'It is not related to the project goals at all and holds no potential added-value.'
       ]
     },
     {
-      question: 'Is the proposal realistic?',
+      question: 'Is the proposal realistic and feasible?',
       answers: [
         'Select your option',
-        'Yes, it can definitely be achieved and is important enough to warrant the developers attention and time.',
-        'Yes, it can definitely be achieved, but is not likely to get noticed by the development team immediately.',
-        'It can be achieved theoretically, but no open source solutions to this problem have been suggested previously.',
-        'No, it’s impossible to achieve.'
+        'Yes, it can definitely be implemented and is important enough to warrant the developers',
+        'Yes, it can definitely be implemented, but is not likely to get noticed by the development team immediately.',
+        'It can be implemented in theory, but no recommendations or guidelines were included in the suggestion post.',
+        'No, it’s impossible or non-cost-effective to implement.'
       ]
     },
     {
-      question: 'What is the potential impact of the change proposed on the usability of the project?',
+      question: 'Has the user provided any mockups (illustrations) of potential suggestion implementation appearance?',
       answers: [
         'Select your option',
-        'It will have a major positive impact on the project for both the project owner and end user.',
-        'It will have a significant impact on the project for end users.',
-        'It will change how users utilize the project by a minor margin.',
-        'It will bring little to no change.'
+        'Yes, and they’re of excellent quality',
+        'No, but the mockups are inapplicable for this suggestion.',
+        'Yes, but the quality of the mockups is poor.',
+        'No, there are no mockups included even though they are needed / No potential solution was presented.'
       ]
     },
     {
@@ -567,28 +577,8 @@ let questionnaire = [
         'Select your option',
         'Yes, the possible solution is described in great detail and makes a lot of sense',
         'Yes, but the possible solution was not described in sufficient detail.',
-        'No, but the implementation is self explanatory.',
+        'No, but the implementation is self explanatory or very easily executed.',
         'No, there’s no proposed solution though one is clearly necessary.'
-      ]
-    },
-    {
-      question: 'Is the suggestion original in nature, or were similar suggestions submitted to Utopian in the past?',
-      answers: [
-        'Select your option',
-        'The suggestion is original and obviously unique.',
-        'This kind of suggestion is fairly uncommon on Utopian.',
-        'This is a common suggestion for other projects.',
-        'The suggestion is clearly not well thought-out and holds no actual value.'
-      ]
-    },
-    {
-      question: 'Has the user provided any mockups (illustrations) of potential suggestion implementation appearance?',
-      answers: [
-        'Select your option',
-        'Yes, and they’re of excellent quality.',
-        'No, but the mockups are inapplicable for this suggestion.',
-        'Yes, but the quality of the mockups is poor.',
-        'No, there are no mockups included even though they are needed.'
       ]
     },
     {
