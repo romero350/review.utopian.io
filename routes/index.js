@@ -56,10 +56,10 @@ let questionnaire = [
       question: 'How would you describe the formatting, language and overall presentation of the post?',
       answers: [
         'Select your option',
-        'The post is of very high quality.',
-        'The post is of decent quality, but not spectacular in any way.',
-        'The post is poorly written and/or formatted, but readable.',
-        'The post is really hard to read and the content is barely understandable'
+        'Good.',
+        'Average.',
+        'Below Average.',
+        'Low Quality.'
       ]
     },
     {
@@ -77,10 +77,10 @@ let questionnaire = [
       question: 'How would you describe the formatting, language and overall presentation of the post?',
       answers: [
         'Select your option',
-        'The post is of very high quality.',
-        'The post is of decent quality, but not spectacular in any way.',
-        'The post is poorly written and/or formatted, but readable.',
-        'The post is really hard to read and the content is barely understandable'
+        'The quality of the post is fantastic.',
+        'The post is of decent quality, but there is room for improvement.',
+        'The quality of the post is below average.',
+        'The post is hard to read and the content is sometimes hard to understand.'
       ]
     },
     {
@@ -107,10 +107,10 @@ let questionnaire = [
       question: 'What is the topic category of this blog post?',
       answers: [
         'Select your option',
-        'Project introduction',
-        'Project promotion',
+        'Project introduction or project promotion',
         'Development log / release notes',
-        'Project generic news'
+        'Project generic news',
+        'The topic is barely related to the project',
       ]
     },
     {
@@ -188,9 +188,9 @@ let questionnaire = [
       question: 'Overall, how readable or comprehensible is the content?',
       answers: [
         'Select your option',
-        'It reads well and is easy to understand',
+        'It reads well and is easy to comprehend',
         'It is understandable, but it could be improved',
-        'Some parts are hard to understand',
+        'Some parts are hard to comprehend',
         'A lot of it is hard to understand'
       ]
     },
@@ -208,10 +208,10 @@ let questionnaire = [
       question: 'How would you describe the formatting, language and overall presentation of the post?',
       answers: [
         'Select your option',
-        'The post is of very high quality.',
-        'The post is of decent quality, but not spectacular in any way.',
-        'The post is poorly written and/or formatted, but readable.',
-        'The post is really hard to read and the content is barely understandable'
+        'Good.',
+        'Average.',
+        'Below Average.',
+        'Low Quality.'
       ]
     },
     {
@@ -229,10 +229,10 @@ let questionnaire = [
       question: 'How would you describe the formatting, language and overall presentation of the post?',
       answers: [
         'Select your option',
-        'The post is of very high quality.',
-        'The post is of decent quality, but not spectacular in any way.',
-        'The post is poorly written and/or formatted, but readable.',
-        'The post is really hard to read and the content is barely understandable.'
+        'Good.',
+        'Average.',
+        'Below Average.',
+        'Low Quality..'
       ]
     },
     {
@@ -266,7 +266,7 @@ let questionnaire = [
       ]
     },
     {
-      question: 'How would you rate the knowledge and expertise necessary to fix the bug / implement the added feature(s)?',
+      question: 'How would you rate the proficiency and expertise necessary to fix the bug / implement the added feature(s)?',
       answers: [
         'Select your option',
         'High - a lot of research and specific knowledge was required.',
@@ -313,7 +313,7 @@ let questionnaire = [
         'A significant portion of the project was documented.',
         'Numerous features or one major feature were documented.',
         'A small feature was documented in detail.',
-        'The documentation was severely lacking.'
+        'The volume or detail of the documentation were insufficient.'
       ]
     },
     {
@@ -323,7 +323,7 @@ let questionnaire = [
         'Very important, the project is significantly easier to use with it.',
         'Important, but not critical to use or application of the project.',
         'It has some potential uses as reference.',
-        'It’s nearly useless.'
+        'It had no obvious applications or uses.'
       ]
     },
     {
@@ -350,10 +350,10 @@ let questionnaire = [
       question: 'How would you describe the formatting, language and overall presentation of the post?',
       answers: [
         'Select your option',
-        'The post is of very high quality.',
-        'The post is of decent quality, but not spectacular in any way.',
-        'The post is poorly written and/or formatted, but readable.',
-        'The post is really hard to read and the content is barely understandable'
+        'Good.',
+        'Average.',
+        'Below Average.',
+        'Low Quality.'
       ]
     },
     {
@@ -374,37 +374,17 @@ let questionnaire = [
         'Critical',
         'Major',
         'Minor',
-        'Trival'
+        'Negligible'
       ]
     },
     {
-      question: 'Were the steps to reproduce the bug easy to understand and follow?',
+      question: 'How would you rate the descriptiveness and clarity of the submission post?',
       answers: [
         'Select your option',
-        'Yes, the steps were clearly understandable and easy to follow.',
-        'The steps were easy to follow, but were not described with sufficient clarity..',
-        'The description of the steps severely lacked in clarity, but it is possible to reproduce.',
-        'The steps are badly explained and nearly impossible to follow.'
-      ]
-    },
-    {
-      question: 'Was the bug a technical issue or a user experience (US) issue?',
-      answers: [
-        'Select your option',
-        'It was largely technical but also had significant impact on the user experience.',
-        'It was purely technical.',
-        'It described a UX issue caused by a technical error.',
-        'It described a UX issue alone.'
-      ]
-    },
-    {
-      question: 'How common and easy to discover was the bug reported?',
-      answers: [
-        'Select your option',
-        'The bug was a very common occurrence and impacted the end user experience significantly, or it was a major security threat',
-        'The bug was relatively common, but avoidable.',
-        'The bug was very rare but impactful.',
-        'The bug was nearly impossible to encounter without actively looking for it.'
+        'The title provided sufficient information, and the steps to bug reproduction were clearly described.',
+        'The title was not sufficiently informative, but the steps to bug reproduction were clear.',
+        'The title provided sufficient information, but the description of the steps to bug reproduction severely lacked in clarity.',
+        'Both the title and content of the submission post were lacking in information, and the steps to bug reproduction were badly explained and, at times, impossible to follow.'
       ]
     },
     {
@@ -418,13 +398,23 @@ let questionnaire = [
       ]
     },
     {
+      question: 'Has the contributor looked for the possible cause of the issue and/or submitted his own ideas for implementing a fix to this problem?',
+      answers: [
+        'Select your option',
+        'The contributor pinpointed the issue and proposed a possible solution.',
+        'The contributor pinpointed the cause but hasn’t proposed a fix, or the fix proposed was obviously not suitable.',
+        'The contributor made efforts to pinpoint the cause, but without success.',
+        'The contributor made no efforts to pinpoint the cause, or applied incorrect methods in searching for it.'
+      ]
+    },
+    {
       question: 'How would you describe the formatting, language and overall presentation of the post?',
       answers: [
         'Select your option',
-        'The post is of very high quality.',
-        'The post is of decent quality, but not spectacular in any way.',
-        'The post is poorly written and/or formatted, but readable.',
-        'The post is really hard to read and the content is barely understandable'
+        'Good',
+        'Average',
+        'Below Average',
+        'Low Quality'
       ]
     },
     {
@@ -440,13 +430,13 @@ let questionnaire = [
   ],
   [
     {
-      question: 'How many distinctive designs were provided? E.g., if the project owner requires 3 designs, then it is counted as a single distinctive design.',
+      question: 'Did the designer include a selection of distinctive designs or variations for the project owner to choose from?',
       answers: [
         'Select your option',
         'More than 3 distinctive, relatively complex designs were provided.',
         'Between 2 and 3; the designs were complex and took a fair amount of work.',
         'Only one distinctive design was provided or the provided designs are too similar.',
-        'Fewer than the project owner requested and/or the work invested was absolutely minimal.'
+        'The number of design variations provided was lower than the number requested by the project owner and/or the apparent work invested was negligible.'
       ]
     },
     {
@@ -466,7 +456,7 @@ let questionnaire = [
         'Yes. Communication was perfect.',
         'Yes, but communication was not professional or very detailed.',
         'No, but the contributor tried to reach out to the project owner.',
-        'No, no communication happened OR there is evidence the user contacted the project owner on behalf of Utopian without permission.'
+        'No, no communication took place.'
       ]
     },
     {
@@ -486,7 +476,7 @@ let questionnaire = [
         'Yes, all required file formats were included.',
         'Most requested file formats requested by project owner were provided, but not all.',
         'No, submitted files were not ready for immediate use and require editing or adjustments.',
-        'No files were provided.'
+        'No downloadable files were provided.'
       ]
     },
     {
@@ -503,10 +493,10 @@ let questionnaire = [
       question: 'How would you describe the formatting, language and overall presentation of the post?',
       answers: [
         'Select your option',
-        'The post is of very high quality.',
-        'The post is of decent quality, but not spectacular in any way.',
-        'The post is poorly written and/or formatted, but readable.',
-        'The post is really hard to read and the content is barely understandable'
+        'Good.',
+        'Average.',
+        'Below Average.',
+        'Low Quality.'
       ]
     },
     {
@@ -529,16 +519,6 @@ let questionnaire = [
         'Some noticeable impact.',
         `Minor improvement.`,
         'Negligible added-value to the project / impossible or extremely difficult implementation is required.'
-      ]
-    },
-    {
-      question: 'Is the suggested feature commonly available in other projects or submitted suggestions?',
-      answers: [
-        'Select your option',
-        'No, it’s unique or very rare.',
-        'Yes, but it’s a feature of high importance for this kind of project.',
-        `It's common, but it will have some measurable positive impact on the user experience or product functionality`,
-        `It’s extremely common and may have been left out intentionally.`
       ]
     },
     {
@@ -582,13 +562,23 @@ let questionnaire = [
       ]
     },
     {
+      question: 'Is the suggested feature commonly available in other projects or submitted suggestions?',
+      answers: [
+        'Select your option',
+        'No, it’s unique or very rare.',
+        'Yes, but it’s a feature of high importance for this kind of project.',
+        `It's common, but it will have some measurable positive impact on the user experience or product functionality.`,
+        'It’s extremely common and may have been left out intentionally.'
+      ]
+    },
+    {
       question: 'How would you describe the formatting, language and overall presentation of the post?',
       answers: [
         'Select your option',
-        'The post is of very high quality.',
-        'The post is of decent quality, but not spectacular in any way.',
-        'The post is poorly written and/or formatted, but readable.',
-        'The post is really hard to read and the content is barely understandable'
+        'Good.',
+        'Average.',
+        'Below Average.',
+        'Low Quality.'
       ]
     },
     {
@@ -640,7 +630,7 @@ let questionnaire = [
         'Yes',
         'Yes, but it is the first entry in the series.',
         'No, but it works just fine as a stand-alone tutorial.',
-        'No'
+        'No, though it clearly should be'
       ]
     },
     {
@@ -659,18 +649,18 @@ let questionnaire = [
         'Select your option',
         'This was the first time I read about the concepts covered.',
         'The concepts covered were innovative and offer some usefulness.',
-        'I have read several similar ideas and thoughts elsewhere, but this one was of higher quality.',
-        'Such tutorials can be found online with great ease and the contribution add no value to the open source community.'
+        'Similar concepts and ideas are available elsewhere, but this one was of higher quality.',
+        'Similar or superior tutorials can be found online with great ease'
       ]
     },
     {
       question: 'How would you describe the formatting, language and overall presentation of the post?',
       answers: [
         'Select your option',
-        'The post is of very high quality.',
-        'The post is of decent quality, but not spectacular in any way.',
-        'The post is poorly written and/or formatted, but readable.',
-        'The post is really hard to read and the content is barely understandable'
+        'Good.',
+        'Average.',
+        'Below Average.',
+        'Low Quality.'
       ]
     },
     {
@@ -701,7 +691,7 @@ let questionnaire = [
         'Select your option',
         'Exceptionally good text and, when applicable, images for concepts covered.',
         'Thorough text and, when applicable, images for concepts covered.',
-        'Minimal text (at least 150 words) and images.',
+        'Insufficient volume of text and images.',
         'No or very little text and images.'
       ]
     },
@@ -759,10 +749,10 @@ let questionnaire = [
       question: 'How would you describe the formatting, language and overall presentation of the post?',
       answers: [
         'Select your option',
-        'The post is of very high quality.',
-        'The post is of decent quality, but not spectacular in any way.',
-        'The post is poorly written and/or formatted, but readable.',
-        'The post is really hard to read and the content is barely understandable'
+        'Good.',
+        'Average.',
+        'Below Average.',
+        'Low Quality.'
       ]
     },
     {
@@ -777,16 +767,6 @@ let questionnaire = [
     }
   ],
   [
-    {
-      question: 'Does the contribution adhere to the task request and reach the goals specified by the project owner?',
-      answers: [
-        'Select your option',
-        'The results exceed the project owner’s request.',
-        'The contribution met the project owner needs as detailed in the task request.',
-        'The results did not meet the project owner needs, but provided some visibility to the project.',
-        'The contribution did not meet the criteria set by the project owner and/or the task was badly defined by the project owner.'
-      ]
-    },
     {
       question: 'Does the post include sufficient information and detailed description of the work done?',
       answers: [
@@ -818,7 +798,7 @@ let questionnaire = [
       ]
     },
     {
-      question: 'How would you rate the overall effectiveness of the visibility efforts undertaken?',
+      question: 'What was the overall performance of the campaign described?',
       answers: [
         'Select your option',
         'The project received significant visibility (over 10,000 users reach) and conversion rate (over 2 percent on average).',
@@ -841,10 +821,10 @@ let questionnaire = [
       question: 'How would you describe the formatting, language and overall presentation of the post?',
       answers: [
         'Select your option',
-        'The post is of very high quality.',
-        'The post is of decent quality, but not spectacular in any way.',
-        'The post is poorly written and/or formatted, but readable.',
-        'The post is really hard to read and the content is barely understandable'
+        'Good.',
+        'Average.',
+        'Below Average.',
+        'Low Quality.'
       ]
     },
     {
@@ -863,10 +843,10 @@ let questionnaire = [
       question: 'How would you describe the formatting, language and overall presentation of the post?',
       answers: [
         'Select your option',
-        'The post is of very high quality.',
-        'The post is of decent quality, but not spectacular in any way.',
-        'The post is poorly written and/or formatted, but readable.',
-        'The post is really hard to read and the content is barely understandable'
+        'Good.',
+        'Average.',
+        'Below Average.',
+        'Low Quality.'
       ]
     },
     {
@@ -925,10 +905,10 @@ let questionnaire = [
       question: 'How would you describe the formatting, language and overall presentation of the post?',
       answers: [
         'Select your option',
-        'The quality of the post is fantastic as it is well written, formal and engaging.',
-        'The post is of very good quality, well structured and easy to understand.',
-        'The post is poorly written and/or formatted, but readable.',
-        'The post is really hard to read and the content is barely understandable.'
+        'Good.',
+        'Average.',
+        'Below Average.',
+        'Low Quality..'
       ]
     },
     {

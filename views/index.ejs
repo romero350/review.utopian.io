@@ -336,44 +336,21 @@
 								<h6>What was the severity level of the bug?</h6>
 								<select >
 							<option value="" disabled selected>Select your option</option>
-						  <option value="40">Critical</option>
-						  <option value="34.5">Major</option>
-						  <option value="25">Minor</option>
-						  <option value="0">Trival</option>
+						  <option value="10">Critical</option>
+						  <option value="0">Major</option>
+						  <option value="-25">Minor</option>
+						  <option value="-35">Negligible</option>
 						</select>
 							</div>
 
 							<div class="question-block">
-								<h6>Were the steps to reproduce the bug easy to understand and follow?</h6>
+								<h6>How would you rate the descriptiveness and clarity of the submission post?</h6>
 								<select id="2">
 							<option value="" disabled selected>Select your option</option>
-						  <option value="7.5">Yes, the steps were clearly understandable and easy to follow.</option>
-						  <option value="5.25">The steps were easy to follow, but were not described with sufficient clarity..</option>
-						  <option value="2.25">The description of the steps severely lacked in clarity, but it is possible to reproduce.</option>
-						  <option value="0">The steps are badly explained and nearly impossible to follow. </option>
-						</select>
-							</div>
-
-							<div class="question-block">
-								<h6>Was the bug a technical issue or a user experience (US) issue?</h6>
-								<select>
-							<option value="" disabled selected>Select your option</option>
-						  <option value="10">It was largely technical but also had significant impact on the user experience. </option>
-						  <option value="9">It was purely technical. </option>
-						  <option value="5">It described a UX issue caused by a technical error. </option>
-						<option value="0">It described a UX issue alone.</option>
-						</select>
-							</div>
-
-
-							<div class="question-block">
-								<h6>How common and easy to discover was the bug reported?</h6>
-								<select>
-							<option value="" disabled selected>Select your option</option>
-						  <option value="7.5">The bug was a very common occurrence and impacted the end user experience significantly, or it was a major security threat</option>
-						  <option value="6">The bug was relatively common, but avoidable. </option>
-						  <option value="3">The bug was very rare but impactful.</option>
-						<option value="0">The bug was nearly impossible to encounter without actively looking for it. </option>
+						  <option value="0">The title provided sufficient information, and the steps to bug reproduction were clearly described.</option>
+						  <option value="-2.5">The title was not sufficiently informative, but the steps to bug reproduction were clear</option>
+						  <option value="-3.5">The title provided sufficient information, but the description of the steps to bug reproduction severely lacked in clarity.</option>
+						  <option value="-5">Both the title and content of the submission post were lacking in information, and the steps to bug reproduction were badly explained and, at times, impossible to follow.</option>
 						</select>
 							</div>
 
@@ -382,9 +359,20 @@
 								<select>
 							<option value="" disabled selected>Select your option</option>
 						  <option value="5">Yes, it was reported by this contributor and acknowledged by the project owner.</option>
-						  <option value="4">Yes, it was reported by this contributor but has to yet be acknowledged by the project owner. </option>
-						  <option value="1.25">No, it was not reported, but an effort to contact the project owner has been made. </option>
-						<option value="0">No, it was not reported OR there is evidence the user contacted the project owner on behalf of Utopian without permission. </option>
+						  <option value="-5">Yes, it was reported by this contributor but has to yet be acknowledged by the project owner. </option>
+						  <option value="-10">No, it was not reported, but an effort to contact the project owner has been made. </option>
+						<option value="-15">No, it was not reported OR there is evidence the user contacted the project owner on behalf of Utopian without permission. </option>
+						</select>
+							</div>
+
+							<div class="question-block">
+								<h6>Has the contributor looked for the possible cause of the issue and/or submitted his own ideas for implementing a fix to this problem?</h6>
+								<select>
+							<option value="" disabled selected>Select your option</option>
+						  <option value="5">The contributor pinpointed the issue and proposed a possible solution.</option>
+						  <option value="0">The contributor pinpointed the cause but hasn’t proposed a fix, or the fix proposed was obviously not suitable.</option>
+						  <option value="-10">The contributor made efforts to pinpoint the cause, but without success.</option>
+						<option value="-15">The contributor made no efforts to pinpoint the cause, or applied incorrect methods in searching for it.</option>
 						</select>
 							</div>
 
@@ -393,10 +381,10 @@
 								<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
 								<select id="6">
 							<option value="" disabled selected>Select your option</option>
-						  <option value="10">The post is of very high quality. </option>
-						  <option value="7">The post is of decent quality, but not spectacular in any way. </option>
-						  <option value="3">The post is poorly written and/or formatted, but readable. </option>
-						<option value="0">The post is really hard to read and the content is barely understandable </option>
+						  <option value="0">Good</option>
+						  <option value="-3">Average</option>
+						  <option value="-7">Below Average</option>
+						<option value="-10">Low Quality</option>
 						</select>
 							</div>
 
@@ -404,10 +392,10 @@
 								<h6>How would you rate the overall value of this contribution on the open source community and ecosystem?</h6>
 								<select id="7">
 							<option value="" disabled selected>Select your option</option>
-						  <option value="20"	>This contribution brings great and impactful value, and can be used for applications outside the specific project. </option>
-						  <option value="16">This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.</option>
-						  <option value="8">This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.</option>
-						<option value="0">This contribution adds nearly no value to the open source community and ecosystem or the specific project. </option>
+						  <option value="5"	>This contribution brings great and impactful value, and can be used for applications outside the specific project. </option>
+						  <option value="0">This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.</option>
+						  <option value="-12">This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.</option>
+						<option value="-20">This contribution adds nearly no value to the open source community and ecosystem or the specific project. </option>
 						</select>
 							</div>
 					`;
@@ -417,10 +405,10 @@
 						<h6>Were all relevant aspects or metrics related to the objective analyzed?</h6>
 						<select >
 					<option value="" disabled selected>Select your option</option>
-					<option value="25">All relevant metrics were covered.</option>
-					<option value="20">Only selected metrics were chosen; including more may have provided additional insights.</option>
-					<option value="10">Only a single or narrow aspect was chosen.</option>
-					<option value="0">No metric was chosen.</option>
+					<option value="0">All relevant metrics were covered.</option>
+					<option value="-4">Only selected metrics were chosen; including more may have provided additional insights.</option>
+					<option value="-12">Only a single or narrow aspect was chosen.</option>
+					<option value="-20">No metric was chosen.</option>
 					</select>
 					</div>
 
@@ -428,10 +416,10 @@
 						<h6>How would you rate the complexity data extraction for this analysis?</h6>
 						<select id="2">
 					<option value="" disabled selected>Select your option</option>
-					<option value="15">Gathering the data required complex queries and post-processing.</option>
-					<option value="12">The method of extracting data was moderately challenging.</option>
-					<option value="6">The data can be directly imported for visualization - no additional data transformation was needed.</option>
-					<option value="0">No data was extracted.</option>
+					<option value="0">Gathering the data required complex queries and post-processing.</option>
+					<option value="-3">The method of extracting data was moderately challenging.</option>
+					<option value="-11">The data can be directly imported for visualization - no additional data transformation was needed.</option>
+					<option value="-15">No data was extracted.</option>
 					</select>
 					</div>
 
@@ -439,10 +427,10 @@
 						<h6>How would you rate the quality of the visualization of the findings?</h6>
 						<select>
 					<option value="" disabled selected>Select your option</option>
-					<option value="20">Visualizations presented were superb and beyond expectation.</option>
-					<option value="16">Appropriate and sufficient visualization were used to present the results.</option>
-					<option value="8">Visualizations were included, but lacked in quality and/or quantity.</option>
-					<option value="0">Visualizations included were irrelevant to the objective.</option>
+					<option value="0">Visualizations presented were superb and beyond expectation.</option>
+					<option value="-4">Appropriate and sufficient visualization were used to present the results.</option>
+					<option value="-16">Visualizations were included, but lacked in quality and/or quantity.</option>
+					<option value="-20">Visualizations included were irrelevant to the objective.</option>
 					</select>
 					</div>
 
@@ -451,10 +439,10 @@
 						<h6>Was the analysis reproducible through the use of the contribution content?</h6>
 						<select>
 					<option value="" disabled selected>Select your option</option>
-					<option value="5">All queries or data gathering methods and all data processing scripts were included.</option>
-					<option value="4">The core query or data gathering method was included and the data processing steps were described.</option>
-					<option value="2">Data gathering methods and processing steps were sketched.</option>
-					<option value="0">Data gathering methods were not included.</option>
+					<option value="0">All queries or data gathering methods and all data processing scripts were included.</option>
+					<option value="-1">The core query or data gathering method was included and the data processing steps were described.</option>
+					<option value="-3">Data gathering methods and processing steps were sketched.</option>
+					<option value="-5">Data gathering methods were not included.</option>
 					</select>
 					</div>
 
@@ -462,10 +450,10 @@
 						<h6>Was it a new and unique analysis?</h6>
 						<select>
 					<option value="" disabled selected>Select your option</option>
-					<option value="5">Yes, it was a unique analysis.</option>
-					<option value="4">It’s similar to another contribution, but covers deeper or additional aspects.</option>
-					<option value="4">It’s similar to another contribution, but covers a different time period.</option>
-					<option value="0">It’s a recurring analysis covering too short a time frame (i.e., daily).</option>
+					<option value="0">Yes, it was a unique analysis.</option>
+					<option value="-4">It’s similar to another contribution, but covers deeper or additional aspects.</option>
+					<option value="-6">It’s similar to another contribution, but covers a different time period.</option>
+					<option value="-10">It’s a recurring analysis covering too short a time frame (i.e., daily).</option>
 					</select>
 					</div>
 
@@ -474,10 +462,10 @@
 						<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
 						<select id="6">
 					<option value="" disabled selected>Select your option</option>
-					<option value="10">The post is of very high quality. </option>
-					<option value="7">The post is of decent quality, but not spectacular in any way. </option>
-					<option value="3">The post is poorly written and/or formatted, but readable. </option>
-					<option value="0">The post is really hard to read and the content is barely understandable </option>
+					<option value="0">Good.</option>
+					<option value="-3">Average.</option>
+					<option value="-7">Below Average.</option>
+					<option value="-10">Low Quality.</option>
 					</select>
 					</div>
 
@@ -485,10 +473,10 @@
 						<h6>How would you rate the overall value of this contribution on the open source community and ecosystem?</h6>
 						<select id="7">
 					<option value="" disabled selected>Select your option</option>
-					<option value="20"	>This contribution brings great and impactful value, and can be used for applications outside the specific project. </option>
-					<option value="16">This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.</option>
-					<option value="8">This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.</option>
-					<option value="0">This contribution adds nearly no value to the open source community and ecosystem or the specific project. </option>
+					<option value="5"	>This contribution brings great and impactful value, and can be used for applications outside the specific project. </option>
+					<option value="0">This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.</option>
+					<option value="-12">This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.</option>
+					<option value="-20">This contribution adds nearly no value to the open source community and ecosystem or the specific project. </option>
 					</select>
 					</div>
 					`;
@@ -498,10 +486,10 @@
 						<h6>How would you rate the overall quality of the documentation?</h6>
 						<select >
 					<option value="" disabled selected>Select your option</option>
-					<option value="32.5">Fantastic quality! It’s very hard to find documentation this good.</option>
-					<option value="29.25">Very high quality.</option>
-					<option value="16.25">Average quality - could be improved in many ways.</option>
-					<option value="0">Very low quality.</option>
+					<option value="0">Fantastic quality! It’s very hard to find documentation this good.</option>
+					<option value="-5">Very high quality.</option>
+					<option value="-20">Average quality - could be improved in many ways.</option>
+					<option value="-27.5">Very low quality.</option>
 					</select>
 					</div>
 
@@ -509,10 +497,10 @@
 						<h6>How comprehensive was the documentation (how many features were documented, contribution volume, etc.)?</h6>
 						<select id="2">
 					<option value="" disabled selected>Select your option</option>
-					<option value="15">A significant portion of the project was documented.</option>
-					<option value="13.5">Numerous features or one major feature were documented.</option>
-					<option value="6">A small feature was documented in detail.</option>
-					<option value="0">The documentation was severely lacking.</option>
+					<option value="0">A significant portion of the project was documented.</option>
+					<option value="-5">Numerous features or one major feature were documented.</option>
+					<option value="-15">A small feature was documented in detail.</option>
+					<option value="-25">The volume or detail of the documentation were insufficient.</option>
 					</select>
 					</div>
 
@@ -520,10 +508,10 @@
 						<h6>How would you rate the overall significance of this particular feature/file documentation to the project?</h6>
 						<select>
 					<option value="" disabled selected>Select your option</option>
-					<option value="10">Very important, the project is significantly easier to use with it.</option>
-					<option value="9">Important, but not critical to use or application of the project.</option>
-					<option value="4">It has some potential uses as reference.</option>
-					<option value="0">It’s nearly useless.</option>
+					<option value="0">Very important, the project is significantly easier to use with it.</option>
+					<option value="-2">Important, but not critical to use or application of the project.</option>
+					<option value="-9">It has some potential uses as reference.</option>
+					<option value="-15">It had no obvious applications or uses.</option>
 					</select>
 					</div>
 
@@ -532,10 +520,10 @@
 						<h6>Is the documentation developed for the internal staff only, or does it add value to the open source community as a whole?</h6>
 						<select>
 					<option value="" disabled selected>Select your option</option>
-					<option value="2.5">It is meant to be used also by open source community members not associated with the project.</option>
-					<option value="2.25">It is mainly aimed at open source community members that contribute to this particular project.</option>
-					<option value="1">It is intended for internal staff use, but the community can also benefit from this content.</option>
-					<option value="0">It is clearly meant only for the internal staff of the project and hold no value to the open source community.</option>
+					<option value="0">It is meant to be used also by open source community members not associated with the project.</option>
+					<option value="-0.5">It is mainly aimed at open source community members that contribute to this particular project.</option>
+					<option value="-1.5">It is intended for internal staff use, but the community can also benefit from this content.</option>
+					<option value="-2.5">It is clearly meant only for the internal staff of the project and hold no value to the open source community.</option>
 					</select>
 					</div>
 
@@ -543,10 +531,10 @@
 						<h6>Does the author of the documentation understand the project and its needs in detail?</h6>
 						<select>
 					<option value="" disabled selected>Select your option</option>
-					<option value="10">Yes. The author is clearly very involved in the project.</option>
-					<option value="8.5">The author has good understanding of the project and its needs.</option>
-					<option value="4">The author clearly understands how the project works.</option>
-					<option value="0">The author has no understanding of the project.</option>
+					<option value="0">Yes. The author is clearly very involved in the project.</option>
+					<option value="-1.5">The author has good understanding of the project and its needs.</option>
+					<option value="-6">The author clearly understands how the project works.</option>
+					<option value="-10">The author has no understanding of the project.</option>
 					</select>
 					</div>
 
@@ -555,10 +543,10 @@
 						<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
 						<select id="6">
 					<option value="" disabled selected>Select your option</option>
-					<option value="10">The post is of very high quality. </option>
-					<option value="7">The post is of decent quality, but not spectacular in any way. </option>
-					<option value="3">The post is poorly written and/or formatted, but readable. </option>
-					<option value="0">The post is really hard to read and the content is barely understandable </option>
+					<option value="0">Good.</option>
+					<option value="-3">Average.</option>
+					<option value="-7">Below Average.</option>
+					<option value="-10">Low Quality.</option>
 					</select>
 					</div>
 
@@ -566,10 +554,10 @@
 						<h6>How would you rate the overall value of this contribution on the open source community and ecosystem?</h6>
 						<select id="7">
 					<option value="" disabled selected>Select your option</option>
-					<option value="20"	>This contribution brings great and impactful value, and can be used for applications outside the specific project. </option>
-					<option value="16">This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.</option>
-					<option value="8">This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.</option>
-					<option value="0">This contribution adds nearly no value to the open source community and ecosystem or the specific project. </option>
+					<option value="5"	>This contribution brings great and impactful value, and can be used for applications outside the specific project. </option>
+					<option value="0">This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.</option>
+					<option value="-12">This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.</option>
+					<option value="-20">This contribution adds nearly no value to the open source community and ecosystem or the specific project. </option>
 					</select>
 					</div>
 					`;
@@ -579,10 +567,10 @@
 						<h6>What is the volume of the work submitted?</h6>
 						<select >
 					<option value="" disabled selected>Select your option</option>
-					<option value="25">Long (at least 1,000 words in total)</option>
-					<option value="15">Medium (at least 400 words in total)</option>
-					<option value="10">Short (at least 200 words in total)</option>
-					<option value="5">Very Short (less than 200 words in total)</option>
+					<option value="0">Long (at least 1,000 words in total)</option>
+					<option value="-10">Medium (at least 400 words in total)</option>
+					<option value="-15">Short (at least 200 words in total)</option>
+					<option value="-20">Very Short (less than 200 words in total)</option>
 					</select>
 					</div>
 
@@ -590,10 +578,10 @@
 						<h6>How would you rate the grammar and style of the content?</h6>
 						<select id="2">
 					<option value="" disabled selected>Select your option</option>
-					<option value="10">Polished and well-written</option>
-					<option value="7">Good, but has room for improvement</option>
-					<option value="3">Has a few errors that need to be corrected</option>
-					<option value="0">It’s quite bad</option>
+					<option value="0">Polished and well-written</option>
+					<option value="-6">Good, but has room for improvement</option>
+					<option value="-10">Has a few errors that need to be corrected</option>
+					<option value="-15">It’s quite bad</option>
 					</select>
 					</div>
 
@@ -601,10 +589,10 @@
 						<h6>How relevant is the content to the project's needs?</h6>
 						<select>
 					<option value="" disabled selected>Select your option</option>
-					<option value="10">Highly relevant and valuable</option>
-					<option value="7">Relevant but offers little unique value</option>
-					<option value="5">Somewhat relevant</option>
-					<option value="0">Does not adequately meet the project’s needs</option>
+					<option value="0">Highly relevant and valuable</option>
+					<option value="-3">Relevant but offers little unique value</option>
+					<option value="-5">Somewhat relevant</option>
+					<option value="-10">Does not adequately meet the project’s needs</option>
 					</select>
 					</div>
 
@@ -613,10 +601,10 @@
 						<h6>Overall, how readable or comprehensible is the content?</h6>
 						<select>
 					<option value="" disabled selected>Select your option</option>
-					<option value="10">It reads well and is easy to understand</option>
-					<option value="8">It is understandable, but it could be improved</option>
-					<option value="4">Some parts are hard to understand</option>
-					<option value="0">A lot of it is hard to understand</option>
+					<option value="0">It reads well and is easy to comprehend</option>
+					<option value="-2">It is understandable, but it could be improved</option>
+					<option value="-6">Some parts are hard to comprehend</option>
+					<option value="-10">A lot of it is hard to understand</option>
 					</select>
 					</div>
 
@@ -624,10 +612,10 @@
 						<h6>Did the content fulfill the specific needs presented by the project owner?</h6>
 						<select>
 					<option value="" disabled selected>Select your option</option>
-					<option value="10">Yes, the content exceeded all specified requirements.</option>
-					<option value="9">Yes, all the requirements were fulfilled.</option>
-					<option value="3">Some of the less important requirements were left out</option>
-					<option value="0">Not all important requirements were addressed</option>
+					<option value="5">Yes, the content exceeded all specified requirements.</option>
+					<option value="0">Yes, all the requirements were fulfilled.</option>
+					<option value="-8">Some of the less important requirements were left out</option>
+					<option value="-15">Not all important requirements were addressed</option>
 					</select>
 					</div>
 
@@ -636,10 +624,10 @@
 						<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
 						<select id="6">
 					<option value="" disabled selected>Select your option</option>
-					<option value="15">The post is of very high quality. </option>
-					<option value="13">The post is of decent quality, but not spectacular in any way. </option>
-					<option value="6">The post is poorly written and/or formatted, but readable. </option>
-					<option value="0">The post is really hard to read and the content is barely understandable </option>
+					<option value="0">Good.</option>
+					<option value="-3">Average.</option>
+					<option value="-7">Below Average.</option>
+					<option value="-10">Low Quality.</option>
 					</select>
 					</div>
 
@@ -647,34 +635,23 @@
 						<h6>How would you rate the overall value of this contribution on the open source community and ecosystem?</h6>
 						<select id="7">
 					<option value="" disabled selected>Select your option</option>
-					<option value="20"	>This contribution brings great and impactful value, and can be used for applications outside the specific project. </option>
-					<option value="16">This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.</option>
-					<option value="8">This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.</option>
-					<option value="0">This contribution adds nearly no value to the open source community and ecosystem or the specific project. </option>
+					<option value="5"	>This contribution brings great and impactful value, and can be used for applications outside the specific project. </option>
+					<option value="0">This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.</option>
+					<option value="-12">This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.</option>
+					<option value="-20">This contribution adds nearly no value to the open source community and ecosystem or the specific project. </option>
 					</select>
 					</div>
 					`;
 
 		let visibility =
 			`<div class="question-block">
-						<h6>Does the contribution adhere to the task request and reach the goals specified by the project owner?</h6>
+						<h6>Does the post include sufficient information and detailed description of the work done?</h6>
 						<select >
 					<option value="" disabled selected>Select your option</option>
-					<option value="12.5">The results exceed the project owner’s request.</option>
-					<option value="11.25">The contribution met the project owner needs as detailed in the task request.</option>
-					<option value="2.5">The results did not meet the project owner needs, but provided some visibility to the project.</option>
-					<option value="0">The contribution did not meet the criteria set by the project owner and/or the task was badly defined by the project owner.</option>
-					</select>
-					</div>
-
-					<div class="question-block">
-						<h6>Does the post include sufficient information and detailed description of the work done?</h6>
-						<select>
-					<option value="" disabled selected>Select your option</option>
-					<option value="10">The post includes detailed reports including a downloadable activity report as well as bidding strategy, and detailed reasoning behind campaign planning and execution.</option>
-					<option value="6">The post includes some details on the campaign progress and results, but could offer additional information.</option>
-					<option value="0.5">The post lacks sufficient information to fully understand the work performed.</option>
-					<option value="0">The post includes no proof of authorship and/or lacks campaign result details completely</option>
+					<option value="0">The post includes detailed reports including a downloadable activity report as well as bidding strategy, and logical reasoning behind campaign planning and execution.</option>
+					<option value="-5">The post includes some details on the campaign progress and results, but could offer additional information.</option>
+					<option value="-9.5">The post lacks sufficient information to fully understand the work performed.</option>
+					<option value="-10">The post includes no proof of authorship and/or lacks campaign result details completely.</option>
 					</select>
 					</div>
 
@@ -682,10 +659,10 @@
 						<h6>Is the audience targeting and segmentation relevant to the project promoted?</h6>
 						<select>
 					<option value="" disabled selected>Select your option</option>
-					<option value="17.5">Yes, the target audience is well defined and relevant to the project.</option>
-					<option value="7">The target audience is relevant, but too broad / narrow.</option>
-					<option value="1">The target audience is not relevant to the project promoted.</option>
-					<option value="0">No targeting information was provided.</option>
+					<option value="0">Yes, the target audience is well defined and relevant to the project.</option>
+					<option value="-10">The target audience is relevant, but too broad / narrow.</option>
+					<option value="-14">The target audience is not relevant to the project promoted.</option>
+					<option value="-15">No targeting information was provided.</option>
 					</select>
 					</div>
 
@@ -694,21 +671,21 @@
 						<h6>Is the message used in the visibility campaign relevant and concise?</h6>
 						<select id="6">
 					<option value="" disabled selected>Select your option</option>
-					<option value="20">Yes, the call to action is very clear and ad copy is accurate.</option>
-					<option value="10">The message is included, but could be better crafted.</option>
-					<option value="2">The message is inaccurate / unsuitable to the target audience.</option>
-					<option value="0">The message is completely irrelevant and / or in a foreign language with no translation provided.</option>
+					<option value="0">Yes, the call to action is very clear and ad copy is accurate.</option>
+					<option value="-10">The message is included, but could be better crafted.</option>
+					<option value="-14">The message is inaccurate / unsuitable to the target audience.</option>
+					<option value="-15">The message is completely irrelevant and / or in a foreign language with no translation provided.</option>
 					</select>
 					</div>
 
 					<div class="question-block">
-						<h6>How would you rate the overall effectiveness of the visibility efforts undertaken?</h6>
+						<h6>What was the overall performance of the campaign described?</h6>
 						<select id="6">
 					<option value="" disabled selected>Select your option</option>
-					<option value="7.5">The project received significant visibility (over 10,000 users reach) and conversion rate (over 2 percent on average).</option>
-					<option value="2.25">The project received some visibility and traction (under 10,000 reach, conversion rate of 0-2 percent).</option>
-					<option value="1">The project received little visibility and traction due to badly defined campaign goals by the project owner.</option>
-					<option value="0">The project did not benefit from this contribution.</option>
+					<option value="0">The project received significant visibility (over 10,000 users reach) and conversion rate (over 2 percent on average).</option>
+					<option value="-15">The project received some visibility and traction (under 10,000 reach, conversion rate of 0-2 percent).</option>
+					<option value="-19.5">The project received little visibility and traction due to badly defined campaign goals by the project owner.</option>
+					<option value="-20">The project did not benefit from this contribution.</option>
 					</select>
 					</div>
 
@@ -716,10 +693,10 @@
 						<h6>Does the submission offer added-value / educational content (such as tips, insights, etc.)?</h6>
 						<select id="6">
 					<option value="" disabled selected>Select your option</option>
-					<option value="2.5">Yes, people should learn from this post!</option>
-					<option value="2">Some added-value content is included.</option>
-					<option value="0.25">There’s very little one can learn from this post.</option>
-					<option value="0">This post includes misleading information.</option>
+					<option value="0">Yes, people should learn from this post!</option>
+					<option value="-5">Some added-value content is included.</option>
+					<option value="-7.5">There’s very little one can learn from this post.</option>
+					<option value="-10">This post includes misleading information.</option>
 					</select>
 					</div>
 
@@ -727,10 +704,10 @@
 						<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
 						<select id="6">
 					<option value="" disabled selected>Select your option</option>
-					<option value="10">The post is of very high quality. </option>
-					<option value="7">The post is of decent quality, but not spectacular in any way. </option>
-					<option value="3">The post is poorly written and/or formatted, but readable. </option>
-					<option value="0">The post is really hard to read and the content is barely understandable </option>
+					<option value="0">Good.</option>
+					<option value="-3">Average.</option>
+					<option value="-7">Below Average.</option>
+					<option value="-10">Low Quality.</option>
 					</select>
 					</div>
 
@@ -738,10 +715,10 @@
 						<h6>How would you rate the overall value of this contribution on the open source community and ecosystem?</h6>
 						<select id="7">
 					<option value="" disabled selected>Select your option</option>
-					<option value="20"	>This contribution brings great and impactful value, and can be used for applications outside the specific project. </option>
-					<option value="16">This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.</option>
-					<option value="8">This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.</option>
-					<option value="0">This contribution adds nearly no value to the open source community and ecosystem or the specific project. </option>
+					<option value="5"	>This contribution brings great and impactful value, and can be used for applications outside the specific project. </option>
+					<option value="0">This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.</option>
+					<option value="-12">This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.</option>
+					<option value="-20">This contribution adds nearly no value to the open source community and ecosystem or the specific project. </option>
 					</select>
 					</div>
 					`;
@@ -751,10 +728,10 @@
 						<h6>How many substantial concepts does this tutorial address?</h6>
 						<select >
 					<option value="" disabled selected>Select your option</option>
-					<option value="10">4-5 substantial concepts covered in the tutorial</option>
-					<option value="7">2-3 substantial concepts covered in the tutorial</option>
-					<option value="3">1 substantial concept covered in the tutorial</option>
-					<option value="0">More than 5 substantial concepts covered in the tutorial</option>
+					<option value="0">4-5 substantial concepts covered in the tutorial</option>
+					<option value="-5">2-3 substantial concepts covered in the tutorial</option>
+					<option value="-10">1 substantial concept covered in the tutorial</option>
+					<option value="-15">More than 5 substantial concepts covered in the tutorial</option>
 					</select>
 					</div>
 
@@ -762,10 +739,10 @@
 						<h6>Does the title and the outline of the tutorial properly reflect the content?</h6>
 						<select>
 					<option value="" disabled selected>Select your option</option>
-					<option value="15">Yes, it is very clear.</option>
-					<option value="11.5">To some extent.</option>
-					<option value="4.5">The title is somewhat misleading and/or the outline is not detailed or informative enough.</option>
-					<option value="0">Title and outline are of little or no relevance to the content of the tutorial</option>
+					<option value="0">Yes, it is very clear.</option>
+					<option value="-3">To some extent.</option>
+					<option value="-7">The title is somewhat misleading and/or the outline is not detailed or informative enough.</option>
+					<option value="-15">Title and outline are of little or no relevance to the content of the tutorial</option>
 					</select>
 					</div>
 
@@ -773,10 +750,10 @@
 						<h6>Did the contributor provide supplementary resources, such as code and sample files in the contribution post or a linked GitHub repository?</h6>
 						<select>
 					<option value="" disabled selected>Select your option</option>
-					<option value="10">Yes, exceptional supplementary resources are provided including a relevant github repo/gist.</option>
-					<option value="7">Supplementary resources provided are of high relevance.</option>
-					<option value="4">Contributor provides minimal supplementary resources.</option>
-					<option value="0">No supplementary resources were provided.</option>
+					<option value="0">Yes, exceptional supplementary resources are provided including a relevant github repo/gist.</option>
+					<option value="-3">Supplementary resources provided are of high relevance.</option>
+					<option value="-7">Contributor provides minimal supplementary resources.</option>
+					<option value="-10">No supplementary resources were provided.</option>
 					</select>
 					</div>
 
@@ -785,10 +762,10 @@
 						<h6>Is the tutorial part of a series?</h6>
 						<select id="6">
 					<option value="" disabled selected>Select your option</option>
-					<option value="10">Yes</option>
-					<option value="7">Yes, but it is the first entry in the series.</option>
-					<option value="5">No, but it works just fine as a stand-alone tutorial.</option>
-					<option value="0">No</option>
+					<option value="0">Yes</option>
+					<option value="-3">Yes, but it is the first entry in the series.</option>
+					<option value="-3">No, but it works just fine as a stand-alone tutorial.</option>
+					<option value="-10">No though it clearly should be</option>
 					</select>
 					</div>
 
@@ -796,10 +773,10 @@
 						<h6>Does the tutorial contain sufficient explanatory visuals?</h6>
 						<select id="6">
 					<option value="" disabled selected>Select your option</option>
-					<option value="10">Yes, the visual components of the post were adequate in quality and quantity.</option>
-					<option value="7">The volume of visual components included was unnecessarily large.</option>
-					<option value="3">The post lacked sufficient visualization to easily learn from the content.</option>
-					<option value="0">No visualization was presented in this contribution.</option>
+					<option value="0">Yes, the visual components of the post were adequate in quality and quantity.</option>
+					<option value="-3">The volume of visual components included was unnecessarily large.</option>
+					<option value="-7">The post lacked sufficient visualization to easily learn from the content.</option>
+					<option value="-10">No visualization was presented in this contribution.</option>
 					</select>
 					</div>
 
@@ -807,10 +784,10 @@
 						<h6>How unique and/or innovative are the concepts covered in the tutorial?</h6>
 						<select id="6">
 					<option value="" disabled selected>Select your option</option>
-					<option value="10">This was the first time I read about the concepts covered.</option>
-					<option value="7">The concepts covered were innovative and offer some usefulness.</option>
-					<option value="5">I have read several similar ideas and thoughts elsewhere, but this one was of higher quality.</option>
-					<option value="0">Such tutorials can be found online with great ease and the contribution add no value to the open source community.</option>
+					<option value="0">This was the first time I read about the concepts covered.</option>
+					<option value="-3">The concepts covered were innovative and offer some usefulness.</option>
+					<option value="-5">Similar concepts and ideas are available elsewhere, but this one was of higher quality.</option>
+					<option value="-10">Similar or superior tutorials can be found online with great ease</option>
 					</select>
 					</div>
 
@@ -818,10 +795,10 @@
 						<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
 						<select id="6">
 					<option value="" disabled selected>Select your option</option>
-					<option value="15">The post is of very high quality. </option>
-					<option value="10">The post is of decent quality, but not spectacular in any way. </option>
-					<option value="5">The post is poorly written and/or formatted, but readable. </option>
-					<option value="0">The post is really hard to read and the content is barely understandable </option>
+					<option value="0">Good.</option>
+					<option value="-3">Average.</option>
+					<option value="-7">Below Average.</option>
+					<option value="-10">Low Quality.</option>
 					</select>
 					</div>
 
@@ -829,23 +806,23 @@
 						<h6>How would you rate the overall value of this contribution on the open source community and ecosystem?</h6>
 						<select id="7">
 					<option value="" disabled selected>Select your option</option>
-					<option value="20"	>This contribution brings great and impactful value, and can be used for applications outside the specific project. </option>
-					<option value="16">This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.</option>
-					<option value="8">This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.</option>
-					<option value="0">This contribution adds nearly no value to the open source community and ecosystem or the specific project. </option>
+					<option value="5">This contribution brings great and impactful value, and can be used for applications outside the specific project. </option>
+					<option value="0">This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.</option>
+					<option value="-12">This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.</option>
+					<option value="-20">This contribution adds nearly no value to the open source community and ecosystem or the specific project. </option>
 					</select>
 					</div>
 					`;
 
 		let graphics =
 			`<div class="question-block">
-						<h6>How many distinctive designs were provided? E.g., if the project owner requires 3 designs, then it is counted as a single distinctive design.</h6>
+						<h6>Did the designer include a selection of distinctive designs or variations for the project owner to choose from?</h6>
 						<select >
 					<option value="" disabled selected>Select your option</option>
-					<option value="12">More than 3 distinctive, relatively complex designs were provided.</option>
-					<option value="8">Between 2 and 3; the designs were complex and took a fair amount of work.</option>
-					<option value="5">Only one distinctive design was provided or the provided designs are too similar.</option>
-					<option value="0">Fewer than the project owner requested and/or the work invested was absolutely minimal.</option>
+					<option value="0">More than 3 distinctive, relatively complex designs were provided.</option>
+					<option value="-5">Between 2 and 3; the designs were complex and took a fair amount of work.</option>
+					<option value="-7">Only one distinctive design was provided or the provided designs are too similar.</option>
+					<option value="-9">The number of design variations provided was lower than the number requested by the project owner and/or the apparent work invested was negligible.</option>
 					</select>
 					</div>
 
@@ -853,10 +830,10 @@
 						<h6>Is the whole contribution a result of own work?</h6>
 						<select>
 					<option value="" disabled selected>Select your option</option>
-					<option value="8">Yes.</option>
-					<option value="3">Some third party assets were used but all of them are usable for the contribution actual purpose. The assets were accordingly edited and not simply downloaded and used.</option>
-					<option value="2">Other assets were provided by the project owner.</option>
-					<option value="0">Most assets used were third party assets and contributor did not make additional effort to incorporate them in the contribution.</option>
+					<option value="0">Yes.</option>
+					<option value="-3">Some third party assets were used but all of them are usable for the contribution actual purpose. The assets were accordingly edited and not simply downloaded and used.</option>
+					<option value="-5">Other assets were provided by the project owner.</option>
+					<option value="-6">Most assets used were third party assets and contributor did not make additional effort to incorporate them in the contribution.</option>
 					</select>
 					</div>
 
@@ -864,10 +841,10 @@
 						<h6>Did the contributor provide evidence of graphics consultation or other relevant kind of communication with the project owner?</h6>
 						<select>
 					<option value="" disabled selected>Select your option</option>
-					<option value="6">Yes. Communication was perfect.</option>
-					<option value="3">Yes, but communication was not professional or very detailed.</option>
-					<option value="1">No, but the contributor tried to reach out to the project owner.</option>
-					<option value="0">No, no communication happened OR there is evidence the user contacted the project owner on behalf of Utopian without permission.</option>
+					<option value="0">Yes. Communication was perfect.</option>
+					<option value="-2">Yes, but communication was not professional or very detailed.</option>
+					<option value="-3">No, but the contributor tried to reach out to the project owner.</option>
+					<option value="">No, no communication took place.</option>
 					</select>
 					</div>
 
@@ -876,10 +853,10 @@
 						<h6>Was the contribution used in the project? (ex.: the graphic design is already utilized in play store, project website or got merged into the official repository)</h6>
 						<select id="6">
 					<option value="" disabled selected>Select your option</option>
-					<option value="12">Yes and the contributor provided clear evidence of it , and/or the project owner publicly announced that it will be used.</option>
-					<option value="6">It was not used, but the project owner liked it and considered using it.</option>
-					<option value="3">It was not used, but is of very high quality.</option>
-					<option value="0">It was not used as it provides no value to the project.</option>
+					<option value="0">Yes and the contributor provided clear evidence of it , and/or the project owner publicly announced that it will be used.</option>
+					<option value="-4">It was not used, but the project owner liked it and considered using it.</option>
+					<option value="-5">It was not used, but is of very high quality.</option>
+					<option value="-8">It was not used as it provides no value to the project.</option>
 					</select>
 					</div>
 
@@ -887,10 +864,10 @@
 						<h6>Does the contribution include files for immediate use in all requested formats?</h6>
 						<select id="6">
 					<option value="" disabled selected>Select your option</option>
-					<option value="10">Yes, all required file formats were included.</option>
-					<option value="5">Most requested file formats requested by project owner were provided, but not all.</option>
-					<option value="3">No, submitted files were not ready for immediate use and require editing or adjustments.</option>
-					<option value="0">No files were provided.</option>
+					<option value="0">Yes, all required file formats were included.</option>
+					<option value="-4">Most requested file formats requested by project owner were provided, but not all.</option>
+					<option value="-6">No, submitted files were not ready for immediate use and require editing or adjustments.</option>
+					<option value="-8">No downloadable files were provided.</option>
 					</select>
 					</div>
 
@@ -898,10 +875,10 @@
 						<h6>Technical quality of graphics was:</h6>
 						<select id="6">
 					<option value="" disabled selected>Select your option</option>
-					<option value="25">Excellent, no mistakes within the design.</option>
-					<option value="15">Very good with minor mistakes that are visible in the provided files.</option>
-					<option value="5">Good but the design has some more serious flaws that need to be corrected.</option>
-					<option value="0">Bad. The design does not follow graphics standard and is barely usable.</option>
+					<option value="0">Excellent, no mistakes within the design.</option>
+					<option value="-15">Very good with minor mistakes that are visible in the provided files.</option>
+					<option value="-25">Good but the design has some more serious flaws that need to be corrected.</option>
+					<option value="-35">Bad. The design does not follow graphics standard and is barely usable.</option>
 					</select>
 					</div>
 
@@ -909,10 +886,10 @@
 						<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
 						<select id="6">
 					<option value="" disabled selected>Select your option</option>
-					<option value="7">The post is of very high quality. </option>
-					<option value="4">The post is of decent quality, but not spectacular in any way. </option>
-					<option value="2">The post is poorly written and/or formatted, but readable. </option>
-					<option value="0">The post is really hard to read and the content is barely understandable </option>
+					<option value="0">Good.</option>
+					<option value="-3">Average.</option>
+					<option value="-7">Below Average.</option>
+					<option value="-10">Low Quality.</option>
 					</select>
 					</div>
 
@@ -920,10 +897,10 @@
 						<h6>How would you rate the overall value of this contribution on the open source community and ecosystem?</h6>
 						<select id="7">
 					<option value="" disabled selected>Select your option</option>
-					<option value="20"	>This contribution brings great and impactful value, and can be used for applications outside the specific project. </option>
-					<option value="12">This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.</option>
-					<option value="5">This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.</option>
-					<option value="0">This contribution adds nearly no value to the open source community and ecosystem or the specific project. </option>
+					<option value="5">This contribution brings great and impactful value, and can be used for applications outside the specific project. </option>
+					<option value="0">This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.</option>
+					<option value="-12">This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.</option>
+					<option value="-20">This contribution adds nearly no value to the open source community and ecosystem or the specific project. </option>
 					</select>
 					</div>
 					`;
@@ -933,10 +910,10 @@
 						<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
 						<select >
 					<option value="" disabled selected>Select your option</option>
-					<option value="10">The quality of the post is fantastic.</option>
-					<option value="8">The post is of very good quality.</option>
-					<option value="3">The post is poorly written and/or formatted, but readable.</option>
-					<option value="0">The post is really hard to read and the content is barely understandable.</option>
+					<option value="0">The quality of the post is fantastic.</option>
+					<option value="-2">The post is of very good quality.</option>
+					<option value="-7">The post is poorly written and/or formatted, but readable.</option>
+					<option value="-10">The post is really hard to read and the content is barely understandable.</option>
 					</select>
 					</div>
 
@@ -944,10 +921,10 @@
 						<h6>How would you rate the overall value the contribution solving this task will bring to the open source community?</h6>
 						<select>
 					<option value="" disabled selected>Select your option</option>
-					<option value="35">This task request, if it can be solved, can bring great, unique and impactful value to the community as a whole.</option>
-					<option value="30">This task request, if it can be solved, adds significant value to the open source community, or is of critical importance to the specific project</option>
-					<option value="17.5">This task request, if it can be solved, adds some value to the open source community or is only valuable to the specific project.</option>
-					<option value="0">This task request cannot be solved and/or adds no value to the open source community or the specific project.</option>
+					<option value="0">This task request, if it can be solved, can bring great, unique and impactful value to the community as a whole.</option>
+					<option value="-5">This task request, if it can be solved, adds significant value to the open source community, or is of critical importance to the specific project</option>
+					<option value="-17.5">This task request, if it can be solved, adds some value to the open source community or is only valuable to the specific project.</option>
+					<option value="-35">This task request cannot be solved and/or adds no value to the open source community or the specific project.</option>
 					</select>
 					</div>
 
@@ -955,10 +932,10 @@
 						<h6>How feasible and executable is the task requested?</h6>
 						<select>
 					<option value="" disabled selected>Select your option</option>
-					<option value="20">Very. It is likely to receive multiple potential solutions.</option>
-					<option value="16">Moderate. It is likely to receive some potential solutions.</option>
-					<option value="10">Low. The solution will demand a great deal of work, but someone invested in the project could take on this.</option>
-					<option value="0">Impossible. It is very unlikely anyone will undertake this task.</option>
+					<option value="0">Very. It is likely to receive multiple potential solutions.</option>
+					<option value="-4">Moderate. It is likely to receive some potential solutions.</option>
+					<option value="-10">Low. The solution will demand a great deal of work, but someone invested in the project could take on this.</option>
+					<option value="-20">Impossible. It is very unlikely anyone will undertake this task.</option>
 					</select>
 					</div>
 
@@ -967,10 +944,10 @@
 						<h6>How impactful will this task be for the specific project?</h6>
 						<select id="6">
 					<option value="" disabled selected>Select your option</option>
-					<option value="10">Obviously crucial for ongoing project development.</option>
-					<option value="9">It will have a major impact on the development and/or end user experience.</option>
-					<option value="5">It hold some significance to ongoing project development.</option>
-					<option value="0">The solution to this task will have little to no impact on the project.</option>
+					<option value="0">Obviously crucial for ongoing project development.</option>
+					<option value="-1">It will have a major impact on the development and/or end user experience.</option>
+					<option value="-5">It hold some significance to ongoing project development.</option>
+					<option value="-10">The solution to this task will have little to no impact on the project.</option>
 					</select>
 					</div>
 
@@ -978,10 +955,10 @@
 						<h6>How descriptive is the task request, and does it provide all necessary information to solve it?</h6>
 						<select id="6">
 					<option value="" disabled selected>Select your option</option>
-					<option value="15">The task request is very descriptive and includes all the required information, as well as additional important data or tips.</option>
-					<option value="13.5">The task request is sufficiently descriptive and includes the information required to solve it.</option>
-					<option value="3">The task request includes some information, but it is partially inaccurate, lacking or insufficient to solve the task.</option>
-					<option value="0">The task request is confusing, lacking information and resources.</option>
+					<option value="0">The task request is very descriptive and includes all the required information, as well as additional important data or tips.</option>
+					<option value="-1.5">The task request is sufficiently descriptive and includes the information required to solve it.</option>
+					<option value="-12">The task request includes some information, but it is partially inaccurate, lacking or insufficient to solve the task.</option>
+					<option value="-15">The task request is confusing, lacking information and resources.</option>
 					</select>
 					</div>
 
@@ -989,10 +966,10 @@
 						<h6>Is this task request similar to another submitted by the same project owner?</h6>
 						<select id="6">
 					<option value="" disabled selected>Select your option</option>
-					<option value="10">No, this task request is unique and different from other tasks every posted by this project owner.</option>
-					<option value="8">Yes, but it was submitted over 30 days ago.</option>
-					<option value="8">Yes, but it is sufficiently unique and/or necessary for the project development.</option>
-					<option value="0">Yes, this task request is too similar or a direct copy of another task request submitted by this project owner in the past 30 days.</option>
+					<option value="0">No, this task request is unique and different from other tasks every posted by this project owner.</option>
+					<option value="-2">Yes, but it was submitted over 30 days ago.</option>
+					<option value="-2">Yes, but it is sufficiently unique and/or necessary for the project development.</option>
+					<option value="-10">Yes, this task request is too similar or a direct copy of another task request submitted by this project owner in the past 30 days.</option>
 					</select>
 					</div>`;
 
@@ -1001,10 +978,10 @@
 						<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
 						<select id="6">
 					<option value="" disabled selected>Select your option</option>
-					<option value="25">The post is of very high quality. </option>
-					<option value="17">The post is of decent quality, but not spectacular in any way. </option>
-					<option value="8">The post is poorly written and/or formatted, but readable. </option>
-					<option value="0">The post is really hard to read and the content is barely understandable </option>
+					<option value="0">The quality of the post is fantastic.</option>
+					<option value="-3">The post is of decent quality, but there is room for improvement.</option>
+					<option value="-14">The quality of the post is below average.</option>
+					<option value="-30">The post is hard to read and the content is sometimes hard to understand.</option>
 					</select>
 					</div>
 
@@ -1012,10 +989,10 @@
 						<h6>How would you rate the overall value of this contribution on the open source community and ecosystem?</h6>
 						<select id="7">
 					<option value="" disabled selected>Select your option</option>
-					<option value="10"	>This contribution brings great and impactful value, and can be used for applications outside the specific project. </option>
-					<option value="8.5">This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.</option>
-					<option value="5">This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.</option>
-					<option value="0">This contribution adds nearly no value to the open source community and ecosystem or the specific project. </option>
+					<option value="5"	>This contribution brings great and impactful value, and can be used for applications outside the specific project. </option>
+					<option value="0">This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.</option>
+					<option value="-5">This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.</option>
+					<option value="-20">This contribution adds nearly no value to the open source community and ecosystem or the specific project. </option>
 					</select>
 					</div>
 
@@ -1023,10 +1000,10 @@
 						<h6>What is the overall volume of the blog post?</h6>
 						<select >
 					<option value="" disabled selected>Select your option</option>
-					<option value="20">More than 1,300 words</option>
-					<option value="16">800-1,300 words</option>
-					<option value="8">500-800 words</option>
-					<option value="0">Less than 500 words</option>
+					<option value="5">More than 1,300 words</option>
+					<option value="0">800-1,300 words</option>
+					<option value="-8">500-800 words</option>
+					<option value="-25">Less than 500 words</option>
 					</select>
 					</div>
 
@@ -1034,10 +1011,10 @@
 						<h6>What is the topic category of this blog post?</h6>
 						<select >
 					<option value="" disabled selected>Select your option</option>
-					<option value="5">Project introduction</option>
-					<option value="5">Project promotion</option>
-					<option value="3.5">Development log / release notes</option>
-					<option value="0">Project generic news</option>
+					<option value="0">Project introduction or project promotion</option>
+					<option value="-1.5">Development log / release notes</option>
+					<option value="-10">Project generic news</option>
+					<option value="-40">The topic is barely reletaed to the project.</option>
 					</select>
 					</div>
 
@@ -1045,10 +1022,10 @@
 						<h6>Is the post a part of a series?</h6>
 						<select >
 					<option value="" disabled selected>Select your option</option>
-					<option value="10">It is clear that it is a part of an ongoing series of posts.</option>
-					<option value="7.5">It is clear that it is the first post of an upcoming series.</option>
-					<option value="4">It is the first post from the author.</option>
-					<option value="0">The post is not a part of any series.</option>
+					<option value="0">It is clear that it is a part of an ongoing series of posts.</option>
+					<option value="-3">It is clear that it is the first post of an upcoming series.</option>
+					<option value="-8">It is the first post from the author.</option>
+					<option value="-10">The post is not a part of any series.</option>
 					</select>
 					</div>
 
@@ -1056,10 +1033,10 @@
 						<h6>Was relevant quality graphic and video content included in this post?</h6>
 						<select >
 					<option value="" disabled selected>Select your option</option>
-					<option value="10">Yes, at least 4 distinguishable instances of graphic or video content were included.</option>
-					<option value="7.5">Yes, between 2 and 3 distinguishable instances of graphic or video content were included.</option>
-					<option value="3">A single instance of graphic or video content was included.</option>
-					<option value="0">No graphic or video content was included or the content was irrelevant.</option>
+					<option value="2">Yes, at least 4 distinguishable instances of graphic or video content were included.</option>
+					<option value="0">Yes, between 2 and 3 distinguishable instances of graphic or video content were included.</option>
+					<option value="-6">A single instance of graphic or video content was included.</option>
+					<option value="-10">No graphic or video content was included or the content was irrelevant.</option>
 					</select>
 					</div>
 
@@ -1067,10 +1044,10 @@
 						<h6>How familiar is the author with the project discussed in the post?</h6>
 						<select >
 					<option value="" disabled selected>Select your option</option>
-					<option value="10">It is clear that they are closely familiar with the project and its details.</option>
-					<option value="7">The author offers some valuable insights about the project.</option>
-					<option value="3">Most of the blog post contains information gathered from other sources.</option>
-					<option value="0">The author knows only little or nothing about the project.</option>
+					<option value="0">It is clear that they are closely familiar with the project and its details.</option>
+					<option value="-2">The author offers some valuable insights about the project.</option>
+					<option value="-10">Most of the blog post contains information gathered from other sources.</option>
+					<option value="-40">The author knows only little or nothing about the project.</option>
 					</select>
 					</div>
 
@@ -1078,10 +1055,10 @@
 						<h6>What is the timeframe of the events and announcements discussed in the blog post, and does it include reference to similar projects?</h6>
 						<select >
 					<option value="" disabled selected>Select your option</option>
-					<option value="10">Both recent and future events, as well as comparison with similar projects is included.</option>
-					<option value="9">Events more recent than 2 weeks, or future events related the project are included.</option>
-					<option value="7">Comparison with similar projects is included.</option>
-					<option value="0">None of these topics are discussed in the post.</option>
+					<option value="5">Both recent and future events, as well as comparison with similar projects is included.</option>
+					<option value="0">Events more recent than 2 weeks, or future events related the project are included.</option>
+					<option value="-10">Comparison with similar projects is included.</option>
+					<option value="-15">None of these topics are discussed in the post.</option>
 					</select>
 					</div>
 					`
@@ -1091,41 +1068,31 @@
 						<h6>If implemented, how much impact on the functionality and/usability of the project will this suggestion have?</h6>
 						<select >
 					<option value="" disabled selected>Select your option</option>
-					<option value="30">Major impact. </option>
-					<option value="15">Some noticeable impact.</option>
-					<option value="10">Minor improvement.</option>
-					<option value="0">Negligible added-value to the project / impossible or extremely difficult implementation is required.</option>
-					</select>
-					</div>
-					<div class="question-block">
-						<h6>Is the suggested feature commonly available in other projects or submitted suggestions?</h6>
-						<select id="2">
-					<option value="" disabled selected>Select your option</option>
-					<option value="7">No, it’s unique or very rare.</option>
-					<option value="5">Yes, but it’s a feature of high importance for this kind of project.</option>
-					<option value="2">It's common, but it will have some measurable positive impact on the user experience or product functionality.</option>
-					<option value="0">It’s extremely common and may have been left out intentionally.</option>
+					<option value="0">Major impact. </option>
+					<option value="-15">Some noticeable impact.</option>
+					<option value="-20">Minor improvement.</option>
+					<option value="-30">Negligible added-value to the project / impossible or extremely difficult implementation is required.</option>
 					</select>
 					</div>
 					<div class="question-block">
 						<h6>Does this suggestion match the goals, intended applications and/or roadmap of the project?</h6>
 						<select>
 					<option value="" disabled selected>Select your option</option>
-					<option value="10">Yes, it’s closely related to the uses and applications of the project and may enhance it further toward project goals</option>
-					<option value="5">It is related and may add value, but has no direct relation to the main purpose and/or applications of the project.</option>
-					<option value="3">It is loosely related to one of purposes, applications or goals of the project and may add some value to it.
+					<option value="0">Yes, it’s closely related to the uses and applications of the project and may enhance it further toward project goals</option>
+					<option value="-5">It is related and may add value, but has no direct relation to the main purpose and/or applications of the project.</option>
+					<option value="-7">It is loosely related to one of purposes, applications or goals of the project and may add some value to it.
 					</option>
-					<option value="0">It is not related to the project goals at all and holds no potential added-value.</option>
+					<option value="-10">It is not related to the project goals at all and holds no potential added-value.</option>
 					</select>
 					</div>
 					<div class="question-block">
 						<h6>Is the proposal realistic and feasible?</h6>
 						<select>
 					<option value="" disabled selected>Select your option</option>
-					<option value="13">Yes, it can definitely be implemented and is important enough to warrant the developers’ attention and time.</option>
-					<option value="8">Yes, it can definitely be implemented, but is not likely to get noticed by the development team immediately.</option>
-					<option value="4">It can be implemented in theory, but no recommendations or guidelines were included in the suggestion post.</option>
-					<option value="0">No, it’s impossible or non-cost-effective to implement.</option>
+					<option value="0">Yes, it can definitely be implemented and is important enough to warrant the developers’ attention and time.</option>
+					<option value="-3">Yes, it can definitely be implemented, but is not likely to get noticed by the development team immediately.</option>
+					<option value="-7">It can be implemented in theory, but no recommendations or guidelines were included in the suggestion post.</option>
+					<option value="-13">No, it’s impossible or non-cost-effective to implement.</option>
 					</select>
 					</div>
 
@@ -1133,10 +1100,10 @@
 						<h6>Has the user provided any mockups (illustrations) of potential suggestion implementation appearance?</h6>
 						<select>
 					<option value="" disabled selected>Select your option</option>
-					<option value="10">Yes, and they’re of excellent quality</option>
-					<option value="9">No, but the mockups are inapplicable for this suggestion.</option>
-					<option value="3">Yes, but the quality of the mockups is poor.</option>
-					<option value="0">No, there are no mockups included even though they are needed / No potential solution was presented.</option>
+					<option value="0">Yes, and they’re of excellent quality</option>
+					<option value="0">No, but the mockups are inapplicable for this suggestion.</option>
+					<option value="-7">Yes, but the quality of the mockups is poor.</option>
+					<option value="-10">No, there are no mockups included even though they are needed / No potential solution was presented.</option>
 					</select>
 					</div>
 
@@ -1144,30 +1111,40 @@
 						<h6>Has the contributor proposed a possible solution to implement the suggestion?</h6>
 						<select>
 					<option value="" disabled selected>Select your option</option>
-					<option value="10">Yes, the possible solution is described in great detail and makes a lot of sense</option>
-					<option value="5">Yes, but the possible solution was not described in sufficient detail.</option>
-					<option value="3">No, but the implementation is self explanatory or very easily executed. </option>
-					<option value="0">No, there’s no proposed solution though one is clearly necessary.</option>
+					<option value="0">Yes, the possible solution is described in great detail and makes a lot of sense</option>
+					<option value="-5">Yes, but the possible solution was not described in sufficient detail.</option>
+					<option value="-7">No, but the implementation is self explanatory or very easily executed. </option>
+					<option value="-10">No, there’s no proposed solution though one is clearly necessary.</option>
+					</select>
+					</div>
+					<div class="question-block">
+						<h6>Is the suggested feature commonly available in other projects or submitted suggestions?</h6>
+						<select>
+					<option value="" disabled selected>Select your option</option>
+					<option value="0">No, it’s unique or very rare.</option>
+					<option value="-2">Yes, but it’s a feature of high importance for this kind of project.</option>
+					<option value="-5">It's common, but it will have some measurable positive impact on the user experience or product functionality.</option>
+					<option value="-7">It’s extremely common and may have been left out intentionally.</option>
 					</select>
 					</div>
 					<div class="question-block">
 						<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
 						<select id="8">
 					<option value="" disabled selected>Select your option</option>
-					<option value="10">The post is of very high quality. </option>
-					<option value="7">The post is of decent quality, but not spectacular in any way. </option>
-					<option value="3">The post is poorly written and/or formatted, but readable. </option>
-					<option value="0">The post is really hard to read and the content is barely understandable </option>
+					<option value="0">Good.</option>
+					<option value="-3">Average.</option>
+					<option value="-7">Below Average.</option>
+					<option value="-10">Low Quality.</option>
 					</select>
 					</div>
 						<div class="question-block">
 						<h6>How would you rate the overall value of this contribution on the open source community and ecosystem?</h6>
 						<select id="9">
 					<option value="" disabled selected>Select your option</option>
-					<option value="10">This contribution can add value and be used for applications outside the specific project.</option>
-					<option value="8">This contribution can be of value to the open source community and ecosystem, or is of critical importance to the specific project.</option>
-					<option value="5">This contribution can add little value to the open source community and ecosystem or is only valuable to the specific project.</option>
-					<option value="0">This contribution adds no noticeable value to the open source community and ecosystem or the specific project.</option>
+					<option value="5">This contribution can add value and be used for applications outside the specific project.</option>
+					<option value="0">This contribution can be of value to the open source community and ecosystem, or is of critical importance to the specific project.</option>
+					<option value="-12">This contribution can add little value to the open source community and ecosystem or is only valuable to the specific project.</option>
+					<option value="-20">This contribution adds no noticeable value to the open source community and ecosystem or the specific project.</option>
 					</select>
 					</div>
 					`;
@@ -1177,10 +1154,10 @@
 						<h6>How many substantial concepts does this tutorial address?</h6>
 						<select >
 					<option value="" disabled selected>Select your option</option>
-					<option value="10">4-5 substantial concepts covered in the tutorial</option>
-					<option value="5">2-3 substantial concepts covered in the tutorial</option>
-					<option value="2">1 substantial concept covered in the tutorial</option>
-					<option value="0">More than 5 substantial concepts covered in the tutorial</option>
+					<option value="0">4-5 substantial concepts covered in the tutorial</option>
+					<option value="-5">2-3 substantial concepts covered in the tutorial</option>
+					<option value="-10">1 substantial concept covered in the tutorial</option>
+					<option value="-15">More than 5 substantial concepts covered in the tutorial</option>
 					</select>
 					</div>
 
@@ -1188,10 +1165,10 @@
 						<h6>Does the contribution text and images support the video tutorial?</h6>
 						<select id="2">
 					<option value="" disabled selected>Select your option</option>
-					<option value="10">Exceptionally good text and, when applicable, images for concepts covered.</option>
-					<option value="5">Thorough text and, when applicable, images for concepts covered.</option>
-					<option value="3">Minimal text (at least 150 words) and images.</option>
-					<option value="0">No or very little text and images.</option>
+					<option value="0">Exceptionally good text and, when applicable, images for concepts covered.</option>
+					<option value="-5">Thorough text and, when applicable, images for concepts covered.</option>
+					<option value="-7">Insufficient volume of text and images.</option>
+					<option value="-10">No or very little text and images.</option>
 					</select>
 					</div>
 
@@ -1199,10 +1176,10 @@
 						<h6>Is the video clearly prepared and structured?</h6>
 						<select>
 					<option value="" disabled selected>Select your option</option>
-					<option value="20">Both the presenter and the video are exceptionally organized, structured and presented.</option>
-					<option value="16">Presenter is prepared and video concepts are structured.</option>
-					<option value="8">Presenter has moments when he/she seems unprepared and/or the content seems to be unstructured.</option>
-					<option value="0">Presenter seems unprepared and/or video is unstructured.</option>
+					<option value="0">Both the presenter and the video are exceptionally organized, structured and presented.</option>
+					<option value="-5">Presenter is prepared and video concepts are structured.</option>
+					<option value="-12">Presenter has moments when he/she seems unprepared and/or the content seems to be unstructured.</option>
+					<option value="-20">Presenter seems unprepared and/or video is unstructured.</option>
 					</select>
 					</div>
 
@@ -1211,10 +1188,10 @@
 						<h6>Does the contributor provide supplementary resources, such as code and sample files in the contribution post or a GitHub repository?</h6>
 						<select>
 					<option value="" disabled selected>Select your option</option>
-					<option value="5">Contributor provided exceptional supplementary resources.</option>
-					<option value="4">Contributor provided good supplementary resources.</option>
-					<option value="1.5">Contributor provided minimal supplementary resources.</option>
-					<option value="0">No supplementary resources were provided.</option>
+					<option value="0">Contributor provided exceptional supplementary resources.</option>
+					<option value="-1">Contributor provided good supplementary resources.</option>
+					<option value="-4">Contributor provided minimal supplementary resources.</option>
+					<option value="-5">No supplementary resources were provided.</option>
 					</select>
 					</div>
 
@@ -1222,10 +1199,10 @@
 						<h6>How would you describe the sound quality of the video?</h6>
 						<select>
 					<option value="" disabled selected>Select your option</option>
-					<option value="10">Sound quality is excellent and sounds professionally produced.</option>
-					<option value="7">The sound is clear and understandable.</option>
-					<option value="3">Low quality of sound and/or mildly distracting background noise.</option>
-					<option value="0">Distracting background noise and/or very low quality recording.</option>
+					<option value="0">Sound quality is excellent and sounds professionally produced.</option>
+					<option value="-3">The sound is clear and understandable.</option>
+					<option value="-7">Low quality of sound and/or mildly distracting background noise.</option>
+					<option value="-10">Distracting background noise and/or very low quality recording.</option>
 					</select>
 					</div>
 
@@ -1234,10 +1211,10 @@
 						<h6>Does the presenter speak clearly and is easy to understand?</h6>
 						<select id="6">
 					<option value="" disabled selected>Select your option</option>
-					<option value="10">Yes, presenter’s speech is highly engaging and professional.</option>
-					<option value="7">Yes, presenter’s speech is easy to understand.</option>
-					<option value="2">Portions of the presenter’s speech were comprehensible.</option>
-					<option value="0">Little or none of the presenter’s speech was understandable.</option>
+					<option value="0">Yes, presenter’s speech is highly engaging and professional.</option>
+					<option value="-3">Yes, presenter’s speech is easy to understand.</option>
+					<option value="-8">Portions of the presenter’s speech were comprehensible.</option>
+					<option value="-10">Little or none of the presenter’s speech was understandable.</option>
 					</select>
 					</div>
 
@@ -1245,20 +1222,20 @@
 						<h6>Is the title of the tutorial and the concepts being covered visible on the video in text overlay form?</h6>
 						<select id="7">
 					<option value="" disabled selected>Select your option</option>
-					<option value="5">Title and concepts covered are present in the video at all times in a non-disruptive way.</option>
-					<option value="4.5">Title and concepts covered appear temporarily when they are addressed.</option>
-					<option value="2">Only the title is presented and the concepts are not shown.</option>
-					<option value="0">Neither title nor concepts covered are presented in the video text overlay.</option>
+					<option value="0">Title and concepts covered are present in the video at all times in a non-disruptive way.</option>
+					<option value="-1">Title and concepts covered appear temporarily when they are addressed.</option>
+					<option value="-3">Only the title is presented and the concepts are not shown.</option>
+					<option value="-5">Neither title nor concepts covered are presented in the video text overlay.</option>
 					</select>
 					</div>
 					<div class="question-block">
 						<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
 						<select id="8">
 					<option value="" disabled selected>Select your option</option>
-					<option value="10">The post is of very high quality. </option>
-					<option value="7">The post is of decent quality, but not spectacular in any way. </option>
-					<option value="3">The post is poorly written and/or formatted, but readable. </option>
-					<option value="0">The post is really hard to read and the content is barely understandable </option>
+					<option value="0">Good.</option>
+					<option value="-3">Average.</option>
+					<option value="-7">Below Average.</option>
+					<option value="-10">Low Quality.</option>
 					</select>
 					</div>
 
@@ -1266,10 +1243,10 @@
 						<h6>How would you rate the overall value of this contribution on the open source community and ecosystem?</h6>
 						<select id="9">
 					<option value="" disabled selected>Select your option</option>
-					<option value="20"	>This contribution brings great and impactful value, and can be used for applications outside the specific project. </option>
-					<option value="16">This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.</option>
-					<option value="8">This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.</option>
-					<option value="0">This contribution adds nearly no value to the open source community and ecosystem or the specific project. </option>
+					<option value="5">This contribution brings great and impactful value, and can be used for applications outside the specific project. </option>
+					<option value="0">This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.</option>
+					<option value="-12">This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.</option>
+					<option value="-20">This contribution adds nearly no value to the open source community and ecosystem or the specific project. </option>
 					</select>
 					</div>
 					`;
@@ -1279,10 +1256,10 @@
 						<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
 						<select >
 					<option value="" disabled selected>Select your option</option>
-					<option value="10">The post is of very high quality.</option>
-					<option value="7">The post is of decent quality, but not spectacular in any way.</option>
-					<option value="3">The post is poorly written and/or formatted, but readable.</option>
-					<option value="0">The post is really hard to read and the content is barely understandable. </option>
+					<option value="0">The post is of very high quality.</option>
+					<option value="-3">The post is of decent quality, but not spectacular in any way.</option>
+					<option value="-7">The post is poorly written and/or formatted, but readable.</option>
+					<option value="-10">The post is really hard to read and the content is barely understandable. </option>
 					</select>
 					</div>
 
@@ -1290,10 +1267,10 @@
 						<h6>How would you rate the impact and significance of the contribution to the project and/or open source ecosystem in terms of uniqueness, usefulness and potential future applications?</h6>
 						<select id="2">
 					<option value="" disabled selected>Select your option</option>
-					<option value="35">This contribution adds high value and holds great significance for the project and/or open source ecosystem.</option>
-					<option value="23">This contribution adds significant value to the project and/or open source ecosystem.</option>
-					<option value="12.5">This contribution adds some value to the project and/or open source ecosystem.</option>
-					<option value="0">This contribution hold no value and is insignificant in impact.</option>
+					<option value="5">This contribution adds high value and holds great significance for the project and/or open source ecosystem.</option>
+					<option value="-10">This contribution adds significant value to the project and/or open source ecosystem.</option>
+					<option value="-22.5">This contribution adds some value to the project and/or open source ecosystem.</option>
+					<option value="-37.5">This contribution hold no value and is insignificant in impact.</option>
 					</select>
 					</div>
 
@@ -1301,10 +1278,10 @@
 						<h6>How would you rate the total volume of work invested into this contribution?</h6>
 						<select>
 					<option value="" disabled selected>Select your option</option>
-					<option value="20">This contribution appears to have demanded a lot of intensive work.</option>
-					<option value="14">This contribution appears to have required an average volume of work.</option>
-					<option value="6">This contribution shows some work done.</option>
-					<option value="0">This contribution shows close to no work done.</option>
+					<option value="0">This contribution appears to have demanded a lot of intensive work.</option>
+					<option value="-6">This contribution appears to have required an average volume of work.</option>
+					<option value="-20">This contribution shows some work done.</option>
+					<option value="-30">This contribution shows close to no work done.</option>
 					</select>
 					</div>
 
@@ -1313,21 +1290,21 @@
 						<h6>How would you rate the quality of the code submitted?</h6>
 						<select>
 					<option value="" disabled selected>Select your option</option>
-					<option value="20">High - it follows all best practices.</option>
-					<option value="14">Average - it follows most best practices.</option>
-					<option value="6">Low - it follows some best practices.</option>
-					<option value="0">Very low - it doesn't follow any best practices.</option>
+					<option value="0">High - it follows all best practices.</option>
+					<option value="-6">Average - it follows most best practices.</option>
+					<option value="-14">Low - it follows some best practices.</option>
+					<option value="-20">Very low - it doesn't follow any best practices.</option>
 					</select>
 					</div>
 
 					<div class="question-block">
-						<h6>How would you rate the knowledge and expertise necessary to fix the bug / implement the added feature(s)?</h6>
+						<h6>How would you rate the proficiency and expertise necessary to fix the bug / implement the added feature(s)?</h6>
 						<select>
 					<option value="" disabled selected>Select your option</option>
-					<option value="7.5">High - a lot of research and specific knowledge was required.</option>
-					<option value="5.25">Average - some research and knowledge was required.</option>
-					<option value="2.25">Low - not much knowledge or skill were required.</option>
-					<option value="0">Insignificant - only basic knowledge or skills were necessary.</option>
+					<option value="0">High - a lot of research and specific knowledge was required.</option>
+					<option value="-2.5">Average - some research and knowledge was required.</option>
+					<option value="-5">Low - not much knowledge or skill were required.</option>
+					<option value="-7.5">Insignificant - only basic knowledge or skills were necessary.</option>
 					</select>
 					</div>
 
@@ -1336,10 +1313,10 @@
 						<h6>How would you rate the accuracy and readability of the commit messages?</h6>
 						<select id="6">
 					<option value="" disabled selected>Select your option</option>
-					<option value="2.5">High - they are concise, descriptive and consistent.</option>
-					<option value="2">Average - they are mostly concise, descriptive and consistent.</option>
-					<option value="0.75">Low - they could be more concise, descriptive or consistent.</option>
-					<option value="0">Very low - they aren't concise, descriptive or consistent at all.</option>
+					<option value="0">High - they are concise, descriptive and consistent.</option>
+					<option value="-0.5">Average - they are mostly concise, descriptive and consistent.</option>
+					<option value="-2">Low - they could be more concise, descriptive or consistent.</option>
+					<option value="-2.5">Very low - they aren't concise, descriptive or consistent at all.</option>
 					</select>
 					</div>
 
@@ -1347,10 +1324,10 @@
 						<h6>How do you rate the quality of the comments in the code?</h6>
 						<select id="7">
 					<option value="" disabled selected>Select your option</option>
-					<option value="5">High - everything is well-commented and adds to the readability of the code.</option>
-					<option value="3">Average - most of the code is commented and most if it adds to the readability of the code.</option>
-					<option value="1.5">Low - little of the code is commented, but it still adds to the readability.</option>
-					<option value="0">Very low - the added comments provide no value or are not present at all.</option>
+					<option value="0">High - everything is well-commented and adds to the readability of the code.</option>
+					<option value="-2">Average - most of the code is commented and most if it adds to the readability of the code.</option>
+					<option value="-3.5">Low - little of the code is commented, but it still adds to the readability.</option>
+					<option value="-5">Very low - the added comments provide no value or are not present at all.</option>
 					</select>
 					</div>
 					`
@@ -1361,10 +1338,10 @@
 								<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
 								<select >
 							<option value="" disabled selected>Select your option</option>
-							<option value="10">The quality of the post is fantastic as it is well written, formal and engaging.</option>
-							<option value="7">The post is of very good quality, well structured and easy to understand.</option>
-							<option value="3">The post is poorly written and/or formatted, but readable.</option>
-							<option value="0">The post is really hard to read and the content is barely understandable.</option>
+							<option value="0">Good.</option>
+							<option value="-3">Average.</option>
+							<option value="-7">Below Average.</option>
+							<option value="-10">Low Quality.</option>
 							</select>
 							</div>
 
@@ -1372,10 +1349,10 @@
 								<h6>How would you rate the overall value of this contribution on the open source community?</h6>
 								<select id="2">
 							<option value="" disabled selected>Select your option</option>
-							<option value="25">This contribution brings great, unique and impactful value to the community as a whole.</option>
-							<option value="17">This contribution adds significant value to the open source community, or is of critical importance to the specific project.</option>
-							<option value="8">This contribution adds some value to the open source community or is only valuable to the specific project.</option>
-							<option value="0">This contribution adds no value to the open source community or the specific project.</option>
+							<option value="0">This contribution brings great, unique and impactful value to the community as a whole.</option>
+							<option value="-10">This contribution adds significant value to the open source community, or is of critical importance to the specific project.</option>
+							<option value="-17">This contribution adds some value to the open source community or is only valuable to the specific project.</option>
+							<option value="-25">This contribution adds no value to the open source community or the specific project.</option>
 							</select>
 							</div>
 
@@ -1383,10 +1360,10 @@
 								<h6>What is the total volume of the translated text in this contribution(excluding duplicate phrases and non-translatable content)?</h6>
 								<select>
 							<option value="" disabled selected>Select your option</option>
-							<option value="15">More than 1000 words.</option>
-							<option value="9">500 - 1000 words.</option>
-							<option value="4">250 - 500 words.</option>
-							<option value="0">Less than 250 words.</option>
+							<option value="0">More than 1000 words.</option>
+							<option value="-6">500 - 1000 words.</option>
+							<option value="-9">250 - 500 words.</option>
+							<option value="-15">Less than 250 words.</option>
 							</select>
 							</div>
 
@@ -1395,10 +1372,10 @@
 								<h6>How would you rate is the overall difficulty of the translated text in this contribution?</h6>
 								<select>
 							<option value="" disabled selected>Select your option</option>
-							<option value="20">Extremely high (for example medical/legal texts).</option>
-							<option value="13">High (for example literature/scientific/history texts).</option>
-							<option value="6">Average (for example simple tech manuals, school texts).</option>
-							<option value="0">Low (for example simple words, short sentences).</option>
+							<option value="5">Extremely high (for example medical/legal texts).</option>
+							<option value="0">High (for example literature/scientific/history texts).</option>
+							<option value="-10">Average (for example simple tech manuals, school texts).</option>
+							<option value="-20">Low (for example simple words, short sentences).</option>
 							</select>
 							</div>
 
@@ -1406,20 +1383,24 @@
 								<h6>How would you rate the semantic accuracy of the translated text?</h6>
 								<select>
 							<option value="" disabled selected>Select your option</option>
-							<option value="7.5">Very accurate, most of the sentences are well translated.</option>
-							<option value="5.25">Good - some minor imprecisions.</option>
-							<option value="2.25">Average - some imprecisions and misstatements.</option>
-							<option value="0">Poor - Inexistent, most of the sentences are badly translated.</option>
+							<option value="0">Very accurate, most of the sentences are well translated.</option>
+							<option value="-9">Good - some minor imprecisions.</option>
+							<option value="-21">Average - some imprecisions and misstatements.</option>
+							<option value="-30">Poor - Inexistent, most of the sentences are badly translated.</option>
 							</select>
 							</div>`
 	</script>
 	<script type="text/javascript">
 		function calcTotal() {
 			check();
-			var sum = 0;
+			var sum = 100;
 			for (i = 0; i < oSels.length; i++) {
 				sum += new Number(oSels[i].value);
 			}
+			if(sum < 0)
+				sum = 0
+			if(sum > 100)
+				sum = 100
 			document.getElementById('result').innerHTML = sum;
 			var elem = document.querySelectorAll('.modal');
 			var instance = M.Modal.init(elem);
