@@ -229,10 +229,10 @@ let questionnaire = [
       question: 'How would you describe the formatting, language and overall presentation of the post?',
       answers: [
         'Select your option',
-        'Good.',
-        'Average.',
-        'Below Average.',
-        'Low Quality..'
+        'The post is of very high quality.',
+        'The post is of decent quality, but not spectacular in any way.',
+        'The post is poorly written and/or formatted, but readable.',
+        'The post is really hard to read and the content is barely understandable.'
       ]
     },
     {
