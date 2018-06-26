@@ -230,9 +230,9 @@ let questionnaire = [
       answers: [
         'Select your option',
         'The post is of very high quality.',
-        'The post is of decent quality, but not spectacular in any way.',
-        'The post is poorly written and/or formatted, but readable.',
-        'The post is really hard to read and the content is barely understandable.'
+        'The post is of decent quality.',
+        'The quality of the post is below average.',
+        'The post is hard to read and the content is sometimes hard to understand.'
       ]
     },
     {
@@ -242,7 +242,7 @@ let questionnaire = [
         'This contribution adds high value and holds great significance for the project and/or open source ecosystem.',
         'This contribution adds significant value to the project and/or open source ecosystem.',
         'This contribution adds some value to the project and/or open source ecosystem.',
-        'This contribution holds close to no value and is insignificant in impact.'
+        'This contribution holds little value to the project and/or open source ecosystem.'
       ]
     },
     {
@@ -252,7 +252,7 @@ let questionnaire = [
         'This contribution appears to have demanded a lot of intensive work.',
         'This contribution appears to have required an average volume of work.',
         'This contribution shows some work done.',
-        'This contribution shows close to no work done.'
+        'This contribution shows little work done.'
       ]
     },
     {
@@ -269,9 +269,9 @@ let questionnaire = [
       question: 'How would you rate the proficiency and expertise necessary to fix the bug / implement the added feature(s)?',
       answers: [
         'Select your option',
-        'High - a lot of research and specific knowledge was required.',
-        'Average - some research and knowledge was required.',
-        'Low - not much knowledge or skill were required.',
+        'High - a lot of research and specific proficiency were required.',
+        'Average - some research and proficiency were required.',
+        'Low - little proficiency or skill were required.',
         'Insignificant - only basic knowledge or skills were necessary.'
       ]
     },
@@ -292,7 +292,7 @@ let questionnaire = [
         'High - everything is well-commented and adds to the readability of the code.',
         'Average - most of the code is commented and most if it adds to the readability of the code.',
         'Low - little of the code is commented, but it still adds to the readability.',
-        'Very low - the added comments provide no value or are not present at all.'
+        'Very low - the added comments provide no value or no comments were made at all.'
       ]
     }
   ],
