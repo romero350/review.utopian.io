@@ -171,7 +171,7 @@ let questionnaire = [
         'Polished and well-written',
         'Good, but has room for improvement',
         'Has a few errors that need to be corrected',
-        'It’s quite bad'
+        'It is of low quality'
       ]
     },
     {
@@ -394,7 +394,7 @@ let questionnaire = [
         'Yes, it was reported by this contributor and acknowledged by the project owner.',
         'Yes, it was reported by this contributor but has to yet be acknowledged by the project owner.',
         'No, it was not reported, but an effort to contact the project owner has been made.',
-        'No, it was not reported OR there is evidence the user contacted the project owner on behalf of Utopian without permission.'
+        'No, the contributor made no effort to notify the project owner of this issue.'
       ]
     },
     {
@@ -463,7 +463,7 @@ let questionnaire = [
       question: 'Was the contribution used in the project? (ex.: the graphic design is already utilized in play store, project website or got merged into the official repository)',
       answers: [
         'Select your option',
-        'Yes and the contributor provided clear evidence of it , and/or the project owner publicly announced that it will be used.',
+        'Yes, and the contributor provided clear evidence of it in their post.',
         'It was not used, but the project owner liked it and considered using it.',
         'It was not used, but is of very high quality.',
         'It was not used as it provides no value to the project.'
@@ -774,7 +774,7 @@ let questionnaire = [
         'The post includes detailed reports including a downloadable activity report as well as bidding strategy, and detailed reasoning behind campaign planning and execution.',
         'The post includes some details on the campaign progress and results, but could offer additional information.',
         'The post lacks sufficient information to fully understand the work performed.',
-        'The post includes no proof of authorship and/or lacks campaign result details completely'
+        'The post includes no proof of authorship and/or lacks campaign result details completely.'
       ]
     },
     {
@@ -850,13 +850,13 @@ let questionnaire = [
       ]
     },
     {
-      question: 'How would you rate the overall value of this contribution on the open source community and ecosystem?',
+      question: 'How would you rate the overall value the contribution solving this task will bring to the open source community?',
       answers: [
         'Select your option',
-        'This contribution brings great and impactful value, and can be used for applications outside the specific project.',
-        'This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.',
-        'This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.',
-        'This contribution adds nearly no value to the open source community and ecosystem or the specific project.'
+        'This task request, if it can be solved, can bring great, unique and impactful value to the community as a whole.',
+        'This task request, if it can be solved, adds significant value to the open source community, or is of critical importance to the specific project.',
+        'This task request, if it can be solved, adds some value to the open source community or is only valuable to the specific project.',
+        'This task request cannot be solved and/or adds no value to the open source community or the specific project.'
       ]
     },
     {
@@ -876,7 +876,7 @@ let questionnaire = [
         'Obviously crucial for ongoing project development.',
         'It will have a major impact on the development and/or end user experience.',
         'It hold some significance to ongoing project development.',
-        'The solution to this task will have little to no impact on the project'
+        'The solution to this task will have little to no impact on the project.'
       ]
     },
     {
