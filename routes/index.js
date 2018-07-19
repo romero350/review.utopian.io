@@ -926,9 +926,9 @@ let questionnaire = [
       answers: [
         'Select your option',
         'More than 1000 words.',
-        '500 - 1000 words.',
-        '250 - 500 words.',
-        'Less than 250 words.'
+        '700 - 1000 words.',
+        '400 - 700 words.',
+        'Less than 400 words.'
       ]
     },
     {
