@@ -450,16 +450,6 @@ let questionnaire = [
       ]
     },
     {
-      question: 'Did the contributor provide evidence of graphics consultation or other relevant kind of communication with the project owner?',
-      answers: [
-        'Select your option',
-        'Yes. Communication was perfect.',
-        'Yes, but communication was not professional or very detailed.',
-        'No, but the contributor tried to reach out to the project owner.',
-        'No, no communication took place.'
-      ]
-    },
-    {
       question: 'Was the contribution used in the project? (ex.: the graphic design is already utilized in play store, project website or got merged into the official repository)',
       answers: [
         'Select your option',
