@@ -222,6 +222,7 @@
 				<option value="tutorials">Tutorials</option>
 				<option value="video-tuts">Video Tutotials</option>
 				<option value="translations">Translations</option>
+				<option value="antiabuse">Anti Abuse</option>
 		</select>
 		</div>
 
@@ -331,8 +332,8 @@
 		var instances = M.FormSelect.init(elems)
 	</script>
 	<script type="text/javascript">
-		let bugs =
-			`<div class="question-block">
+        let bugs =
+        `<div class="question-block">
 							<h6>What was the severity level of the bug?</h6>
 								<select >
 							<option value="" disabled selected>Select your option</option>
@@ -400,8 +401,8 @@
 							</div>
 					`;
 
-		let analysis =
-			`<div class="question-block">
+      let analysis =
+        `<div class="question-block">
 						<h6>Were all relevant aspects or metrics related to the objective analyzed?</h6>
 						<select >
 					<option value="" disabled selected>Select your option</option>
@@ -481,8 +482,8 @@
 					</div>
 					`;
 
-		let documentation =
-			`<div class="question-block">
+      let documentation =
+        `<div class="question-block">
 						<h6>How would you rate the overall quality of the documentation?</h6>
 						<select >
 					<option value="" disabled selected>Select your option</option>
@@ -562,8 +563,8 @@
 					</div>
 					`;
 
-		let copywriting =
-			`<div class="question-block">
+      let copywriting =
+        `<div class="question-block">
 						<h6>What is the volume of the work submitted?</h6>
 						<select >
 					<option value="" disabled selected>Select your option</option>
@@ -643,8 +644,8 @@
 					</div>
 					`;
 
-		let visibility =
-			`<div class="question-block">
+      let visibility =
+        `<div class="question-block">
 						<h6>Does the post include sufficient information and detailed description of the work done?</h6>
 						<select >
 					<option value="" disabled selected>Select your option</option>
@@ -723,8 +724,8 @@
 					</div>
 					`;
 
-		let tutorials =
-			`<div class="question-block">
+      let tutorials =
+        `<div class="question-block">
 						<h6>How many substantial concepts does this tutorial address?</h6>
 						<select >
 					<option value="" disabled selected>Select your option</option>
@@ -814,8 +815,8 @@
 					</div>
 					`;
 
-		let graphics =
-			`<div class="question-block">
+      let graphics =
+        `<div class="question-block">
 						<h6>Did the designer include a selection of distinctive designs or variations for the project owner to choose from?</h6>
 						<select >
 					<option value="" disabled selected>Select your option</option>
@@ -893,8 +894,8 @@
 					</div>
 					`;
 
-		let tasks =
-			`<div class="question-block">
+      let tasks =
+        `<div class="question-block">
 						<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
 						<select >
 					<option value="" disabled selected>Select your option</option>
@@ -961,8 +962,8 @@
 					</select>
 					</div>`;
 
-		let blog =
-			`<div class="question-block">
+      let blog =
+        `<div class="question-block">
 						<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
 						<select id="6">
 					<option value="" disabled selected>Select your option</option>
@@ -1051,8 +1052,8 @@
 					</div>
 					`
 
-		let suggestions =
-			`<div class="question-block">
+      let suggestions =
+        `<div class="question-block">
 						<h6>If implemented, how much impact on the functionality and/usability of the project will this suggestion have?</h6>
 						<select >
 					<option value="" disabled selected>Select your option</option>
@@ -1137,8 +1138,8 @@
 					</div>
 					`;
 
-		let videotuts =
-			`<div class="question-block">
+      let videotuts =
+        `<div class="question-block">
 						<h6>How many substantial concepts does this tutorial address?</h6>
 						<select >
 					<option value="" disabled selected>Select your option</option>
@@ -1239,8 +1240,8 @@
 					</div>
 					`;
 
-		let development =
-			`<div class="question-block">
+      let development =
+        `<div class="question-block">
 						<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
 						<select >
 					<option value="" disabled selected>Select your option</option>
@@ -1320,8 +1321,8 @@
 					</div>
 					`
 
-		let translations =
-			`
+      let translations =
+        `
 					<div class="question-block">
 								<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
 								<select >
@@ -1377,9 +1378,99 @@
 							<option value="-35">Poor - Inexistent, most of the sentences are badly translated.</option>
 							</select>
 							</div>`
+      let antiabuse =
+        `
+					<div class="question-block">
+						<h6>How aware of the anti-abuse topic discussed in the post is the author?</h6>
+						<select >
+							<option value="" disabled selected>Select your option</option>
+							<option value="0">It is clear that they are closely familiar with the anti-abuse topic and its details.</option>
+							<option value="-5">The author offers some valuable insights about the anti-abuse topic.</option>
+							<option value="-12.5">Most of the post contains information gathered from other sources.</option>
+							<option value="-20">The author knows little or nothing about the anti-abuse topic.</option>
+						</select>
+					</div>
+
+							<div class="question-block">
+								<h6>What is the author's involvement level in the anti-abuse community?</h6>
+								<select id="2">
+							<option value="" disabled selected>Select your option</option>
+							<option value="5">The author is 100% committed to, and involved in, the anti-abuse community.</option>
+							<option value="-5">The author is committed, but is mostly involved with other projects unrelated to anti-abuse community.</option>
+							<option value="-10">The author is occasionally involved in the anti-abuse community.</option>
+							<option value="-15">The author is rarely involved in anti-abuse community.</option>
+							</select>
+							</div>
+
+							<div class="question-block">
+								<h6>Does the author add value to the anti-abuse community by managing, developing, suggesting or moderating ?</h6>
+								<select>
+							<option value="" disabled selected>Select your option</option>
+							<option value="5">The author invests a significant amount of time.</option>
+							<option value="-2.5">The author helps out often.</option>
+							<option value="-7.5">The author helps occasionally.</option>
+							<option value="-15">The author is not involved in any of these ways.</option>
+							</select>
+							</div>
+
+
+							<div class="question-block">
+								<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
+								<select>
+							<option value="" disabled selected>Select your option</option>
+							<option value="0">The quality of the post is fantastic.</option>
+							<option value="-5">The post is of decent quality, but there is room for improvement.</option>
+							<option value="-10">The post is of average quality.</option>
+							<option value="-15">The quality of the post is below average.</option>
+							</select>
+							</div>
+
+							<div class="question-block">
+								<h6>How would you rate the overall value of this contribution to the anti-abuse community?</h6>
+								<select>
+							<option value="" disabled selected>Select your option</option>
+							<option value="0">This contribution greatly helps the anti-abuse community.</option>
+							<option value="-5">This contribution helps the anti-abuse community.</option>
+							<option value="-10">This contribution moderately helps the anti-abuse community.</option>
+							<option value="-15">This contribution slightly helps the anti-abuse community.</option>
+							</select>
+							</div>
+
+							<div class="question-block">
+								<h6>What is the overall volume of the blog post?</h6>
+								<select>
+							<option value="" disabled selected>Select your option</option>
+							<option value="0">More than 1,000 words.</option>
+							<option value="-1">750 - 1,000 words.</option>
+							<option value="-3">500 - 749 words.</option>
+							<option value="-5">Less than 500 words.</option>
+							</select>
+							</div>
+
+							<div class="question-block">
+								<h6>Is the post a part of a series?</h6>
+								<select>
+							<option value="" disabled selected>Select your option</option>
+							<option value="2.5">It is clear that it is a part of an ongoing series of posts.</option>
+							<option value="0">It is clear that it is the first post of an upcoming series.</option>
+							<option value="-2.5">This is the first post from the author.</option>
+							<option value="-5">The post is not a part of any series.</option>
+							</select>
+							</div>
+
+							<div class="question-block">
+								<h6>Was relevant quality graphic or video content included in this post?</h6>
+								<select>
+							<option value="" disabled selected>Select your option</option>
+							<option value="2">Yes, at least 4 distinguishable instances of relevant graphic or video content were included.</option>
+							<option value="0">Yes, between 2 and 3 distinguishable instances of relevant graphic or video content were included.</option>
+							<option value="-5">A single instance of relevant graphic or video content was included.</option>
+							<option value="-20">No graphic or video content was included, or the content was irrelevant.</option>
+							</select>
+							</div>`
 	</script>
-	<script type="text/javascript">
-		function calcTotal() {
+	<script>
+	function calcTotal() {
 			check();
 			var sum = 100;
 			for (i = 0; i < oSels.length; i++) {
@@ -1441,6 +1532,8 @@
 				cat = 11;
 			if (category == 'translations')
 				cat = 12;
+			if (category == 'antiabuse')
+			  	cat = 13;
 
 
 			let answers =
@@ -1500,9 +1593,11 @@ Your contribution has been evaluated according to [Utopian policies and guidelin
 				form = formstart + tasks + formend;
 			if (category == 'translations')
 				form = formstart + translations + formend;
+          	if (category == 'antiabuse')
+            	form = formstart + antiabuse + formend;
 
 
-			let formhere = document.getElementById('formhere')
+          let formhere = document.getElementById('formhere')
 			formhere.innerHTML = `${form}`;
 			let dispscore = document.getElementById('dispscore')
 			var elems = document.querySelectorAll('select');

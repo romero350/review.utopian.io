@@ -941,6 +941,88 @@ let questionnaire = [
         'Poor - Inexistent, most of the sentences are badly translated.'
       ]
     }
+  ],
+  [
+    {
+      question: 'How aware of the anti-abuse topic discussed in the post is the author?',
+      answers: [
+        'Select your option',
+        'It is clear that they are closely familiar with the anti-abuse topic and its details.',
+        'The author offers some valuable insights about the anti-abuse topic.',
+        'Most of the post contains information gathered from other sources.',
+        'The author knows little or nothing about the anti-abuse topic.'
+      ]
+    },
+    {
+      question: 'What is the author\'s involvement level in the anti-abuse community?',
+      answers: [
+        'Select your option',
+        'The author is 100% committed to, and involved in, the anti-abuse community.',
+        'The author is committed, but is mostly involved with other projects unrelated to anti-abuse community.',
+        'The author is occasionally involved in the anti-abuse community.',
+        'The author is rarely involved in anti-abuse community.'
+      ]
+    },
+    {
+      question: 'Does the author add value to the anti-abuse community by managing, developing, suggesting or moderating ?',
+      answers: [
+        'Select your option',
+        'The author invests a significant amount of time.',
+        'The author helps out often.',
+        'The author helps occasionally.',
+        'The author is not involved in any of these ways.'
+      ]
+    },
+    {
+      question: 'How would you describe the formatting, language and overall presentation of the post?',
+      answers: [
+        'Select your option',
+        'The quality of the post is fantastic.',
+        'The post is of decent quality, but there is room for improvement.',
+        'The the post is of average quality.',
+        'The quality of the post is below average.'
+      ]
+    },
+    {
+      question: 'How would you rate the overall value of this contribution to the anti-abuse community?',
+      answers: [
+        'Select your option',
+        'This contribution greatly helps the anti-abuse community.',
+        'This contribution helps the anti-abuse community.',
+        'This contribution moderately helps the anti-abuse community.',
+        'This contribution slightly helps the anti-abuse community.'
+      ]
+    },
+    {
+      question: 'What is the overall volume of the blog post?',
+      answers: [
+        'Select your option',
+        'More than 1,000 words',
+        '750 - 1,000 words',
+        '500 - 749 words',
+        'Less than 500 words'
+      ]
+    },
+    {
+      question: 'Is the post a part of a series?',
+      answers: [
+        'Select your option',
+        'It is clear that it is a part of an ongoing series of posts.',
+        'It is clear that it is the first post of an upcoming series.',
+        'This is the first post from the author.',
+        'The post is not a part of any series.'
+      ]
+    },
+    {
+      question: 'Was relevant quality graphic or video content included in this post?',
+      answers: [
+        'Select your option',
+        'Yes, at least 4 distinguishable instances of relevant graphic or video content were included.',
+        'Yes, between 2 and 3 distinguishable instances of relevant graphic or video content were included.',
+        'A single instance of relevant graphic or video content was included.',
+        'No graphic or video content was included, or the content was irrelevant.'
+      ]
+    }
   ]
 ]
 
@@ -954,7 +1036,7 @@ router.get('/result/:cat/:num', function (req, res, next) {
   let category = req.params.cat;
   let ans = req.params.num;
 
-  if(category < 0 || category > 12)
+  if(category < 0 || category > 13)
     res.render('error')
 
   cat = questionnaire[category];
