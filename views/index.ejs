@@ -3,6 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">
 	<title>Questionnaire</title>
@@ -299,7 +300,8 @@
 		</div>
 	</div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
 	<script type="text/javascript">
 		window.onload = function() {
 			window.cookieconsent.initialise({
@@ -328,8 +330,9 @@
 				x.className = "topnav";
 			}
 		}
-		var elems = document.querySelectorAll('select');
-		var instances = M.FormSelect.init(elems)
+		// var elems = document.querySelectorAll('select');
+		// var instances = M.FormSelect.init(elems)
+        $("#category").material_select();
 	</script>
 	<script type="text/javascript">
         let bugs =
@@ -1481,9 +1484,9 @@
 			if(sum > 100)
 				sum = 100
 			document.getElementById('result').innerHTML = sum;
-			var elem = document.querySelectorAll('.modal');
-			var instance = M.Modal.init(elem);
-
+			// var elem = document.querySelectorAll('.modal');
+			// var instance = M.Modal.init(elem);
+	  		$('.modal').modal();
 			let textarea = document.getElementById('textarea1');
 			let copy = document.getElementById('copy');
 			let comment = `<a class="waves-effect waves-light btn modal-trigger" style="background: transparent; color: black; border: 1px solid;" href="#modal1">Footer Comment Text</a>`;
@@ -1598,11 +1601,12 @@ Your contribution has been evaluated according to [Utopian policies and guidelin
 
 
           let formhere = document.getElementById('formhere')
-			formhere.innerHTML = `${form}`;
-			let dispscore = document.getElementById('dispscore')
-			var elems = document.querySelectorAll('select');
-			var instances = M.FormSelect.init(elems);
-			dispscore.addEventListener('click', calcTotal)
+		  formhere.innerHTML = `${form}`;
+		  let dispscore = document.getElementById('dispscore')
+		  // var elems = document.querySelectorAll('select');
+		  // var instances = M.FormSelect.init(elems);
+		  $('select').material_select();
+		  dispscore.addEventListener('click', calcTotal)
 		})
 	</script>
 
