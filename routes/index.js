@@ -974,6 +974,26 @@ let questionnaire = [
       ]
     },
     {
+      question: 'Does the contribution help raise awareness and education about abuse on the platform?',
+      answers: [
+        'Select your option',
+        'The contribution greatly helps raise awareness about abuse.',
+        'The contribution helps raise awareness about abuse.',
+        'The contribution somewhat raise awareness about abuse.',
+        'The contribution does not raise awareness about abuse.'
+      ]
+    },
+    {
+      question: 'Is the contribution enough to empower the reader to participate in anti-abuse initiatives?',
+      answers: [
+        'Select your option',
+        'The contribution greatly empowers the reader to participate in antiabuse initiatives.',
+        'The contribution empowers the reader to participate in antiabuse initiatives.',
+        'The contribution somewhat empowers the reader to participate in antiabuse initiatives.',
+        'The contribution does not empower the reader to participate in antiabuse initiatives.'
+      ]
+    },
+    {
       question: 'How would you describe the formatting, language and overall presentation of the post?',
       answers: [
         'Select your option',
