@@ -168,6 +168,9 @@
 			-webkit-transform: scaleX(1);
 			transform: scaleX(1);
 		}
+		.modal {
+			min-height: 50%;
+		}
 	</style>
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
 </head>
@@ -200,7 +203,7 @@
 			<!-- Modal Structure -->
 			<div id="modal1" class="modal">
 				<div class="modal-content">
-					<textarea id="textarea1" class="materialize-textarea" style="height: 400px" rows="60" cols="100"></textarea>
+					<textarea id="textarea1" class="materialize-textarea" style="min-height: 450px;" rows="60" cols="100"></textarea>
 				</div>
 				<div class="modal-footer">
 					<a href="#!" id="copy" class="waves-effect waves-green btn-flat">Copy Text</a>
