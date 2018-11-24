@@ -1,13 +1,8 @@
 #!/usr/bin/env node
 
-/**
- * Module dependencies.
- */
-
 var app = require('../app');
 var https = require('https');
 var fs = require('fs');
-
 
 // Uncomment when using SSL Certificates
 var key = fs.readFileSync('privkey.pem')

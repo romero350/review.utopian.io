@@ -1055,7 +1055,9 @@ router.get('/', function(req, res, next) {
 router.get('/result/:cat/:num', function (req, res, next) {
   let category = req.params.cat;
   let ans = req.params.num;
-
+  ans = ans.split('-')
+  ans.splice(-1,1)
+  
   if(category < 0 || category > 13)
     res.render('error')
 
@@ -1064,7 +1066,7 @@ router.get('/result/:cat/:num', function (req, res, next) {
   for (var i = 0; i < cat.length; i++) {
     obj = {};
     obj.question = cat[i].question;
-    obj.answer = cat[i].answers[ans.charAt(i)]
+    obj.answer = cat[i].answers[ans[i]]
     object.push(obj)
   }
   console.log(object);

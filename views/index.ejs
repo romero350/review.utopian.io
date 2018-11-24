@@ -1570,7 +1570,7 @@ Your contribution has been evaluated according to [Utopian policies and guidelin
 			oSels = document.getElementById('form1').getElementsByTagName('select');
 
 			for (i = 0; i < oSels.length; i++) {
-				answers = answers + oSels[i].options.selectedIndex;
+				answers = answers + oSels[i].options.selectedIndex + '-';
 			}
 			feedend = category == 'translations' ? `).\n\n---- \nChat with us on [Discord](https://discord.gg/vMGmDSm)` :
 				`).\n\n---- \nNeed help? Write a ticket on https://support.utopian.io/. \nChat with us on [Discord](https://discord.gg/uTyJkNm). \n[[utopian-moderator]](https://join.utopian.io/)`
