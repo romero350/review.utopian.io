@@ -2,8 +2,10 @@ var express = require('express');
 var router = express.Router();
 
 let questionnaire = [
-  [{
-      question: 'Were all relevant aspects or metrics related to the objective analyzed?',
+  [
+    {
+      question:
+        'Were all relevant aspects or metrics related to the objective analyzed?',
       answers: [
         'Select your option',
         'All relevant metrics were covered.',
@@ -13,7 +15,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'How would you rate the complexity data extraction for this analysis?',
+      question:
+        'How would you rate the complexity data extraction for this analysis?',
       answers: [
         'Select your option',
         'Gathering the data required complex queries and post-processing.',
@@ -23,7 +26,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'How would you rate the quality of the visualization of the findings?',
+      question:
+        'How would you rate the quality of the visualization of the findings?',
       answers: [
         'Select your option',
         'Visualizations presented were superb and beyond expectation.',
@@ -33,7 +37,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'Was the analysis reproducible through the use of the contribution content?',
+      question:
+        'Was the analysis reproducible through the use of the contribution content?',
       answers: [
         'Select your option',
         'All queries or data gathering methods and all data processing scripts were included.',
@@ -53,7 +58,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'How would you describe the formatting, language and overall presentation of the post?',
+      question:
+        'How would you describe the formatting, language and overall presentation of the post?',
       answers: [
         'Select your option',
         'Good.',
@@ -63,7 +69,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'How would you rate the overall value of this contribution on the open source community and ecosystem?',
+      question:
+        'How would you rate the overall value of this contribution on the open source community and ecosystem?',
       answers: [
         'Select your option',
         'This contribution brings great and impactful value, and can be used for applications outside the specific project.',
@@ -73,8 +80,10 @@ let questionnaire = [
       ]
     }
   ],
-  [{
-      question: 'How would you describe the formatting, language and overall presentation of the post?',
+  [
+    {
+      question:
+        'How would you describe the formatting, language and overall presentation of the post?',
       answers: [
         'Select your option',
         'The quality of the post is fantastic.',
@@ -84,7 +93,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'How would you rate the overall value of this contribution on the open source community and ecosystem?',
+      question:
+        'How would you rate the overall value of this contribution on the open source community and ecosystem?',
       answers: [
         'Select your option',
         'This contribution brings great and impactful value, and can be used for applications outside the specific project.',
@@ -110,7 +120,7 @@ let questionnaire = [
         'Project introduction or project promotion',
         'Development log / release notes',
         'Project generic news',
-        'The topic is barely related to the project',
+        'The topic is barely related to the project'
       ]
     },
     {
@@ -124,7 +134,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'Was relevant quality graphic and video content included in this post?',
+      question:
+        'Was relevant quality graphic and video content included in this post?',
       answers: [
         'Select your option',
         'Yes, at least 4 distinguishable instances of graphic or video content were included.',
@@ -134,7 +145,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'How familiar is the author with the project discussed in the post?',
+      question:
+        'How familiar is the author with the project discussed in the post?',
       answers: [
         'Select your option',
         'It is clear that they are closely familiar with the project and its details.',
@@ -144,7 +156,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'What is the timeframe of the events and announcements discussed in the blog post, and does it include reference to similar projects?',
+      question:
+        'What is the timeframe of the events and announcements discussed in the blog post, and does it include reference to similar projects?',
       answers: [
         'Select your option',
         'Both recent and future events, as well as comparison with similar projects is included.',
@@ -154,7 +167,8 @@ let questionnaire = [
       ]
     }
   ],
-  [{
+  [
+    {
       question: 'What is the volume of the work submitted?',
       answers: [
         'Select your option',
@@ -195,7 +209,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'Did the content fulfill the specific needs presented by the project owner?',
+      question:
+        'Did the content fulfill the specific needs presented by the project owner?',
       answers: [
         'Select your option',
         'Yes, the content exceeded all specified requirements.',
@@ -205,7 +220,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'How would you describe the formatting, language and overall presentation of the post?',
+      question:
+        'How would you describe the formatting, language and overall presentation of the post?',
       answers: [
         'Select your option',
         'Good.',
@@ -215,7 +231,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'How would you rate the overall value of this contribution on the open source community and ecosystem?',
+      question:
+        'How would you rate the overall value of this contribution on the open source community and ecosystem?',
       answers: [
         'Select your option',
         'This contribution brings great and impactful value, and can be used for applications outside the specific project.',
@@ -225,8 +242,10 @@ let questionnaire = [
       ]
     }
   ],
-  [{
-      question: 'How would you describe the formatting, language and overall presentation of the post?',
+  [
+    {
+      question:
+        'How would you describe the formatting, language and overall presentation of the post?',
       answers: [
         'Select your option',
         'The post is of very high quality.',
@@ -236,7 +255,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'How would you rate the impact and significance of the contribution to the project and/or open source ecosystem in terms of uniqueness, usefulness and potential future applications?',
+      question:
+        'How would you rate the impact and significance of the contribution to the project and/or open source ecosystem in terms of uniqueness, usefulness and potential future applications?',
       answers: [
         'Select your option',
         'This contribution adds high value and holds great significance for the project and/or open source ecosystem.',
@@ -246,7 +266,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'How would you rate the total volume of work invested into this contribution?',
+      question:
+        'How would you rate the total volume of work invested into this contribution?',
       answers: [
         'Select your option',
         'This contribution appears to have demanded a lot of intensive work.',
@@ -266,7 +287,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'How would you rate the proficiency and expertise necessary to fix the bug / implement the added feature(s)?',
+      question:
+        'How would you rate the proficiency and expertise necessary to fix the bug / implement the added feature(s)?',
       answers: [
         'Select your option',
         'High - a lot of research and specific proficiency were required.',
@@ -276,7 +298,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'How would you rate the accuracy and readability of the commit messages?',
+      question:
+        'How would you rate the accuracy and readability of the commit messages?',
       answers: [
         'Select your option',
         'High - they are concise, descriptive and consistent.',
@@ -296,7 +319,8 @@ let questionnaire = [
       ]
     }
   ],
-  [{
+  [
+    {
       question: 'How would you rate the overall quality of the documentation?',
       answers: [
         'Select your option',
@@ -307,7 +331,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'How comprehensive was the documentation (how many features were documented, contribution volume, etc.)?',
+      question:
+        'How comprehensive was the documentation (how many features were documented, contribution volume, etc.)?',
       answers: [
         'Select your option',
         'A significant portion of the project was documented.',
@@ -317,7 +342,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'How would you rate the overall significance of this particular feature/file documentation to the project?',
+      question:
+        'How would you rate the overall significance of this particular feature/file documentation to the project?',
       answers: [
         'Select your option',
         'Very important, the project is significantly easier to use with it.',
@@ -327,7 +353,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'Is the documentation developed for the internal staff only, or does it add value to the open source community as a whole?',
+      question:
+        'Is the documentation developed for the internal staff only, or does it add value to the open source community as a whole?',
       answers: [
         'Select your option',
         'It is meant to be used also by open source community members not associated with the project.',
@@ -337,7 +364,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'Does the author of the documentation understand the project and its needs in detail?',
+      question:
+        'Does the author of the documentation understand the project and its needs in detail?',
       answers: [
         'Select your option',
         'Yes. The author is clearly very involved in the project.',
@@ -347,7 +375,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'How would you describe the formatting, language and overall presentation of the post?',
+      question:
+        'How would you describe the formatting, language and overall presentation of the post?',
       answers: [
         'Select your option',
         'Good.',
@@ -357,68 +386,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'How would you rate the overall value of this contribution on the open source community and ecosystem?',
-      answers: [
-        'Select your option',
-        'This contribution brings great and impactful value, and can be used for applications outside the specific project.',
-        'This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.',
-        'This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.',
-        'This contribution adds nearly no value to the open source community and ecosystem or the specific project.'
-      ]
-    }
-  ],
-  [{
-      question: 'What was the severity level of the bug?',
-      answers: [
-        'Select your option',
-        'Critical',
-        'Major',
-        'Minor',
-        'Negligible'
-      ]
-    },
-    {
-      question: 'How would you rate the descriptiveness and clarity of the submission post?',
-      answers: [
-        'Select your option',
-        'The title provided sufficient information, and the steps to bug reproduction were clearly described.',
-        'The title was not sufficiently informative, but the steps to bug reproduction were clear.',
-        'The title provided sufficient information, but the description of the steps to bug reproduction severely lacked in clarity.',
-        'Both the title and content of the submission post were lacking in information, and the steps to bug reproduction were badly explained and, at times, impossible to follow.'
-      ]
-    },
-    {
-      question: 'Has the contributor reported the issue to the project owner prior to submitting it to Utopian?',
-      answers: [
-        'Select your option',
-        'Yes, it was reported by this contributor and acknowledged by the project owner.',
-        'Yes, it was reported by this contributor but has to yet be acknowledged by the project owner.',
-        'No, it was not reported, but an effort to contact the project owner has been made.',
-        'No, the contributor made no effort to notify the project owner of this issue.'
-      ]
-    },
-    {
-      question: 'Has the contributor looked for the possible cause of the issue and/or submitted his own ideas for implementing a fix to this problem?',
-      answers: [
-        'Select your option',
-        'The contributor pinpointed the issue and proposed a possible solution.',
-        'The contributor pinpointed the cause but hasn’t proposed a fix, or the fix proposed was obviously not suitable.',
-        'The contributor made efforts to pinpoint the cause, but without success.',
-        'The contributor made no efforts to pinpoint the cause, or applied incorrect methods in searching for it.'
-      ]
-    },
-    {
-      question: 'How would you describe the formatting, language and overall presentation of the post?',
-      answers: [
-        'Select your option',
-        'Good',
-        'Average',
-        'Below Average',
-        'Low Quality'
-      ]
-    },
-    {
-      question: 'How would you rate the overall value of this contribution on the open source community and ecosystem?',
+      question:
+        'How would you rate the overall value of this contribution on the open source community and ecosystem?',
       answers: [
         'Select your option',
         'This contribution brings great and impactful value, and can be used for applications outside the specific project.',
@@ -430,7 +399,75 @@ let questionnaire = [
   ],
   [
     {
-      question: 'Did the designer include a selection of distinctive designs or variations for the project owner to choose from?',
+      question: 'What was the severity level of the bug?',
+      answers: [
+        'Select your option',
+        'Critical',
+        'Major',
+        'Minor',
+        'Negligible'
+      ]
+    },
+    {
+      question:
+        'How would you rate the descriptiveness and clarity of the submission post?',
+      answers: [
+        'Select your option',
+        'The title provided sufficient information, and the steps to bug reproduction were clearly described.',
+        'The title was not sufficiently informative, but the steps to bug reproduction were clear.',
+        'The title provided sufficient information, but the description of the steps to bug reproduction severely lacked in clarity.',
+        'Both the title and content of the submission post were lacking in information, and the steps to bug reproduction were badly explained and, at times, impossible to follow.'
+      ]
+    },
+    {
+      question:
+        'Has the contributor reported the issue to the project owner prior to submitting it to Utopian?',
+      answers: [
+        'Select your option',
+        'Yes, it was reported by this contributor and acknowledged by the project owner.',
+        'Yes, it was reported by this contributor but has to yet be acknowledged by the project owner.',
+        'No, it was not reported, but an effort to contact the project owner has been made.',
+        'No, the contributor made no effort to notify the project owner of this issue.'
+      ]
+    },
+    {
+      question:
+        'Has the contributor looked for the possible cause of the issue and/or submitted his own ideas for implementing a fix to this problem?',
+      answers: [
+        'Select your option',
+        'The contributor pinpointed the issue and proposed a possible solution.',
+        'The contributor pinpointed the cause but hasn’t proposed a fix, or the fix proposed was obviously not suitable.',
+        'The contributor made efforts to pinpoint the cause, but without success.',
+        'The contributor made no efforts to pinpoint the cause, or applied incorrect methods in searching for it.'
+      ]
+    },
+    {
+      question:
+        'How would you describe the formatting, language and overall presentation of the post?',
+      answers: [
+        'Select your option',
+        'Good',
+        'Average',
+        'Below Average',
+        'Low Quality'
+      ]
+    },
+    {
+      question:
+        'How would you rate the overall value of this contribution on the open source community and ecosystem?',
+      answers: [
+        'Select your option',
+        'This contribution brings great and impactful value, and can be used for applications outside the specific project.',
+        'This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.',
+        'This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.',
+        'This contribution adds nearly no value to the open source community and ecosystem or the specific project.'
+      ]
+    }
+  ],
+  [
+    {
+      question:
+        'Did the designer include a selection of distinctive designs or variations for the project owner to choose from?',
       answers: [
         'Select your option',
         'More than 3 distinctive, relatively complex designs were provided.',
@@ -450,7 +487,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'Was the contribution used in the project? (ex.: the graphic design is already utilized in play store, project website or got merged into the official repository)',
+      question:
+        'Was the contribution used in the project? (ex.: the graphic design is already utilized in play store, project website or got merged into the official repository)',
       answers: [
         'Select your option',
         'Yes, and the contributor provided clear evidence of it in their post.',
@@ -460,7 +498,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'Does the contribution include files for immediate use in all requested formats?',
+      question:
+        'Does the contribution include files for immediate use in all requested formats?',
       answers: [
         'Select your option',
         'Yes, all required file formats were included.',
@@ -480,7 +519,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'How would you describe the formatting, language and overall presentation of the post?',
+      question:
+        'How would you describe the formatting, language and overall presentation of the post?',
       answers: [
         'Select your option',
         'Good.',
@@ -490,7 +530,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'How would you rate the overall value of this contribution on the open source community and ecosystem?',
+      question:
+        'How would you rate the overall value of this contribution on the open source community and ecosystem?',
       answers: [
         'Select your option',
         'This contribution brings great and impactful value, and can be used for applications outside the specific project.',
@@ -502,7 +543,8 @@ let questionnaire = [
   ],
   [
     {
-      question: 'If implemented, how much impact on the functionality and/usability of the project will this suggestion have?',
+      question:
+        'If implemented, how much impact on the functionality and/usability of the project will this suggestion have?',
       answers: [
         'Select your option',
         'Major impact.',
@@ -512,7 +554,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'Does this suggestion match the goals, intended applications and/or roadmap of the project?',
+      question:
+        'Does this suggestion match the goals, intended applications and/or roadmap of the project?',
       answers: [
         'Select your option',
         'Yes, it’s closely related to the uses and applications of the project and may enhance it further toward project goals',
@@ -532,7 +575,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'Has the user provided any mockups (illustrations) of potential suggestion implementation appearance?',
+      question:
+        'Has the user provided any mockups (illustrations) of potential suggestion implementation appearance?',
       answers: [
         'Select your option',
         'Yes, and they’re of excellent quality',
@@ -542,7 +586,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'Has the contributor proposed a possible solution to implement the suggestion?',
+      question:
+        'Has the contributor proposed a possible solution to implement the suggestion?',
       answers: [
         'Select your option',
         'Yes, the possible solution is described in great detail and makes a lot of sense',
@@ -552,7 +597,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'Is the suggested feature commonly available in other projects or submitted suggestions?',
+      question:
+        'Is the suggested feature commonly available in other projects or submitted suggestions?',
       answers: [
         'Select your option',
         'No, it’s unique or very rare.',
@@ -562,7 +608,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'How would you describe the formatting, language and overall presentation of the post?',
+      question:
+        'How would you describe the formatting, language and overall presentation of the post?',
       answers: [
         'Select your option',
         'Good.',
@@ -572,7 +619,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'How would you rate the overall value of this contribution on the open source community and ecosystem?',
+      question:
+        'How would you rate the overall value of this contribution on the open source community and ecosystem?',
       answers: [
         'Select your option',
         'This contribution brings great and impactful value, and can be used for applications outside the specific project.',
@@ -594,7 +642,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'Does the title and the outline of the tutorial properly reflect the content?',
+      question:
+        'Does the title and the outline of the tutorial properly reflect the content?',
       answers: [
         'Select your option',
         'Yes, it is very clear.',
@@ -604,7 +653,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'Did the contributor provide supplementary resources, such as code and sample files in the contribution post or a linked GitHub repository?',
+      question:
+        'Did the contributor provide supplementary resources, such as code and sample files in the contribution post or a linked GitHub repository?',
       answers: [
         'Select your option',
         'Yes, exceptional supplementary resources are provided including a relevant github repo/gist.',
@@ -634,7 +684,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'How unique and/or innovative are the concepts covered in the tutorial?',
+      question:
+        'How unique and/or innovative are the concepts covered in the tutorial?',
       answers: [
         'Select your option',
         'This was the first time I read about the concepts covered.',
@@ -644,7 +695,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'How would you describe the formatting, language and overall presentation of the post?',
+      question:
+        'How would you describe the formatting, language and overall presentation of the post?',
       answers: [
         'Select your option',
         'Good.',
@@ -654,7 +706,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'How would you rate the overall value of this contribution on the open source community and ecosystem?',
+      question:
+        'How would you rate the overall value of this contribution on the open source community and ecosystem?',
       answers: [
         'Select your option',
         'This contribution brings great and impactful value, and can be used for applications outside the specific project.',
@@ -676,7 +729,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'Does the contribution text and images support the video tutorial?',
+      question:
+        'Does the contribution text and images support the video tutorial?',
       answers: [
         'Select your option',
         'Exceptionally good text and, when applicable, images for concepts covered.',
@@ -696,7 +750,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'Does the contributor provide supplementary resources, such as code and sample files in the contribution post or a GitHub repository?',
+      question:
+        'Does the contributor provide supplementary resources, such as code and sample files in the contribution post or a GitHub repository?',
       answers: [
         'Select your option',
         'Contributor provided exceptional supplementary resources.',
@@ -726,7 +781,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'Is the title of the tutorial and the concepts being covered visible on the video in text overlay form?',
+      question:
+        'Is the title of the tutorial and the concepts being covered visible on the video in text overlay form?',
       answers: [
         'Select your option',
         'Title and concepts covered are present in the video at all times in a non-disruptive way.',
@@ -736,7 +792,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'How would you describe the formatting, language and overall presentation of the post?',
+      question:
+        'How would you describe the formatting, language and overall presentation of the post?',
       answers: [
         'Select your option',
         'Good.',
@@ -746,7 +803,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'How would you rate the overall value of this contribution on the open source community and ecosystem?',
+      question:
+        'How would you rate the overall value of this contribution on the open source community and ecosystem?',
       answers: [
         'Select your option',
         'This contribution brings great and impactful value, and can be used for applications outside the specific project.',
@@ -758,7 +816,8 @@ let questionnaire = [
   ],
   [
     {
-      question: 'Does the post include sufficient information and detailed description of the work done?',
+      question:
+        'Does the post include sufficient information and detailed description of the work done?',
       answers: [
         'Select your option',
         'The post includes detailed reports including a downloadable activity report as well as bidding strategy, and detailed reasoning behind campaign planning and execution.',
@@ -768,7 +827,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'Is the audience targeting and segmentation relevant to the project promoted?',
+      question:
+        'Is the audience targeting and segmentation relevant to the project promoted?',
       answers: [
         'Select your option',
         'Yes, the target audience is well defined and relevant to the project.',
@@ -778,7 +838,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'Is the message used in the visibility campaign relevant and concise?',
+      question:
+        'Is the message used in the visibility campaign relevant and concise?',
       answers: [
         'Select your option',
         'Yes, the call to action is very clear and ad copy is accurate.',
@@ -798,7 +859,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'Does the submission offer added-value / educational content (such as tips, insights, etc.)?',
+      question:
+        'Does the submission offer added-value / educational content (such as tips, insights, etc.)?',
       answers: [
         'Select your option',
         'Yes, people should learn from this post!',
@@ -808,7 +870,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'How would you describe the formatting, language and overall presentation of the post?',
+      question:
+        'How would you describe the formatting, language and overall presentation of the post?',
       answers: [
         'Select your option',
         'Good.',
@@ -818,7 +881,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'How would you rate the overall value of this contribution on the open source community and ecosystem?',
+      question:
+        'How would you rate the overall value of this contribution on the open source community and ecosystem?',
       answers: [
         'Select your option',
         'This contribution brings great and impactful value, and can be used for applications outside the specific project.',
@@ -830,7 +894,8 @@ let questionnaire = [
   ],
   [
     {
-      question: 'How would you describe the formatting, language and overall presentation of the post?',
+      question:
+        'How would you describe the formatting, language and overall presentation of the post?',
       answers: [
         'Select your option',
         'Good.',
@@ -840,7 +905,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'How would you rate the overall value the contribution solving this task will bring to the open source community?',
+      question:
+        'How would you rate the overall value the contribution solving this task will bring to the open source community?',
       answers: [
         'Select your option',
         'This task request, if it can be solved, can bring great, unique and impactful value to the community as a whole.',
@@ -870,7 +936,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'How descriptive is the task request, and does it provide all necessary information to solve it?',
+      question:
+        'How descriptive is the task request, and does it provide all necessary information to solve it?',
       answers: [
         'Select your option',
         'The task request is very descriptive and includes all the required information, as well as additional important data or tips.',
@@ -880,7 +947,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'Is this task request similar to another submitted by the same project owner?',
+      question:
+        'Is this task request similar to another submitted by the same project owner?',
       answers: [
         'Select your option',
         'No, this task request is unique and different from other tasks every posted by this project owner.',
@@ -892,59 +960,99 @@ let questionnaire = [
   ],
   [
     {
-      question: 'How would you describe the formatting, language and overall presentation of the post?',
+      question: 'How do you rate the overall accuracy of the translated text?',
       answers: [
         'Select your option',
-        'Good.',
-        'Average.',
-        'Below Average.',
-        'Low Quality..'
+        'Excellent',
+        'Very Good',
+        'Good',
+        'Fairly Good',
+        'Sufficient',
+        'Insufficient',
+        'Bad',
+        'Unacceptable'
       ]
     },
     {
-      question: 'How would you rate the overall value of this contribution on the open source community?',
+      question: 'How many mistakes were found in the translated text?	',
       answers: [
         'Select your option',
-        'This contribution brings great, unique and impactful value to the community as a whole.',
-        'This contribution adds significant value to the open source community, or is of critical importance to the specific project.',
-        'This contribution adds some value to the open source community or is only valuable to the specific project.',
-        'This contribution adds no value to the open source community or the specific project.'
+        'There were no errors',
+        '0.1% - 1 Error every 1000 words',
+        '0.3% - 3 Error every 1000 words',
+        '0.6% - 6 Error every 1000 words',
+        '1% - 10 Error every 1000 words',
+        '2% - 20 Error every 1000 words',
+        '3% - 30 Error every 1000 words',
+        '>3% - more than 30 Error every 1000 words'
       ]
     },
     {
-      question: 'What is the overall volume of the translated text in this contribution?',
+      question:
+        'Is the translation consistent with the previously translated parts of the project?',
       answers: [
         'Select your option',
-        'More than 1000 words.',
-        '700 - 1000 words.',
-        '400 - 700 words.',
-        'Less than 400 words.'
+        'Excellent, is consistent with the previous ones',
+        'Very Good',
+        'Good',
+        'Fairly Good',
+        'Sufficient',
+        'Insufficient',
+        'Bad',
+        'Unacceptable'
       ]
     },
     {
-      question: 'How would you rate is the overall difficulty of the translated text in this contribution?',
+      question:
+        'Did the translator provide in the contribution post all the information needed to fully evaluate the translation? How was the readibility and grammar of the post?(For example, did he indicate project name, github link and crowdin link, etc?)',
       answers: [
         'Select your option',
-        'Extremely high (for example medical/legal texts).',
-        'High (for example literature/scientific/history texts).',
-        'Average (for example simple tech manuals, school texts).',
-        'Low (for example simple words, short sentences).'
+        'Excellent',
+        'Very Good',
+        'Good',
+        'Fairly Good',
+        'Sufficient',
+        'Insufficient',
+        'Bad',
+        'Unacceptable'
       ]
     },
     {
-      question: 'How would you rate the semantic accuracy of the translated text?',
+      question: 'Legibility of the translated text',
       answers: [
         'Select your option',
-        'Very accurate, most of the sentences are well translated.',
-        'Good - some minor imprecisions.',
-        'Average - some imprecisions and misstatements.',
-        'Poor - Inexistent, most of the sentences are badly translated.'
+        'Excellent',
+        'Very Good',
+        'Good',
+        'Fairly Good',
+        'Sufficient',
+        'Insufficient',
+        'Bad',
+        'Unacceptable'
+      ]
+    },
+    {
+      question:
+        'What was the total volume (words) of the translated text in this contribution (excluding duplicate phrases and non-translatable content)?',
+      answers: [
+        'Select your option',
+        'Equal or more than 2000 words',
+        'between 1800 and 2000 words',
+        'between 1600 and 1800 words',
+        'between 1400 and 1600 words',
+        'between 1200 and 1400 words',
+        'between 1000 and 1200 words',
+        'between 900 and 1000 words',
+        'between 700 and 900 words',
+        'between 500 and 700 words',
+        'less than 500 words'
       ]
     }
   ],
   [
     {
-      question: 'How aware of the anti-abuse topic discussed in the post is the author?',
+      question:
+        'How aware of the anti-abuse topic discussed in the post is the author?',
       answers: [
         'Select your option',
         'It is clear that they are closely familiar with the anti-abuse topic and its details.',
@@ -954,7 +1062,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'What is the author\'s involvement level in the anti-abuse community?',
+      question:
+        "What is the author's involvement level in the anti-abuse community?",
       answers: [
         'Select your option',
         'The author is 100% committed to, and involved in, the anti-abuse community.',
@@ -964,7 +1073,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'Does the author add value to the anti-abuse community by managing, developing, suggesting or moderating ?',
+      question:
+        'Does the author add value to the anti-abuse community by managing, developing, suggesting or moderating ?',
       answers: [
         'Select your option',
         'The author invests a significant amount of time.',
@@ -974,7 +1084,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'Does the contribution help raise awareness and education about abuse on the platform?',
+      question:
+        'Does the contribution help raise awareness and education about abuse on the platform?',
       answers: [
         'Select your option',
         'The contribution greatly helps raise awareness about abuse.',
@@ -984,7 +1095,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'Is the contribution enough to empower the reader to participate in anti-abuse initiatives?',
+      question:
+        'Is the contribution enough to empower the reader to participate in anti-abuse initiatives?',
       answers: [
         'Select your option',
         'The contribution greatly empowers the reader to participate in antiabuse initiatives.',
@@ -994,7 +1106,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'How would you describe the formatting, language and overall presentation of the post?',
+      question:
+        'How would you describe the formatting, language and overall presentation of the post?',
       answers: [
         'Select your option',
         'The quality of the post is fantastic.',
@@ -1004,7 +1117,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'How would you rate the overall value of this contribution to the anti-abuse community?',
+      question:
+        'How would you rate the overall value of this contribution to the anti-abuse community?',
       answers: [
         'Select your option',
         'This contribution greatly helps the anti-abuse community.',
@@ -1034,7 +1148,8 @@ let questionnaire = [
       ]
     },
     {
-      question: 'Was relevant quality graphic or video content included in this post?',
+      question:
+        'Was relevant quality graphic or video content included in this post?',
       answers: [
         'Select your option',
         'Yes, at least 4 distinguishable instances of relevant graphic or video content were included.',
@@ -1044,34 +1159,32 @@ let questionnaire = [
       ]
     }
   ]
-]
-
+];
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.get('/result/:cat/:num', function (req, res, next) {
+router.get('/result/:cat/:num', function(req, res, next) {
   let category = req.params.cat;
   let ans = req.params.num;
-  ans = ans.split('-')
-  ans.splice(-1,1)
-  
-  if(category < 0 || category > 13)
-    res.render('error')
+  ans = ans.split('-');
+  ans.splice(-1, 1);
+
+  if (category < 0 || category > 13) res.render('error');
 
   cat = questionnaire[category];
-  let object= [];
+  let object = [];
   for (var i = 0; i < cat.length; i++) {
     obj = {};
     obj.question = cat[i].question;
-    obj.answer = cat[i].answers[ans[i]]
-    object.push(obj)
+    obj.answer = cat[i].answers[ans[i]];
+    object.push(obj);
   }
   console.log(object);
 
-  res.render('result', {object: object})
-})
+  res.render('result', { object: object });
+});
 
 module.exports = router;

@@ -1,1640 +1,1789 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://fonts.googleapis.com/css?family=Lato:400,700,900" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">
-	<title>Questionnaire</title>
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-	<link rel="icon" type="image/png" href="/logo.png">
-	<style media="screen">
-		body {
-			margin: 0;
-		}
-
-		body {
-			display: flex;
-			min-height: 100vh;
-			flex-direction: column;
-		}
-
-		main {
-			flex: 1 0 auto;
-		}
-
-		.topnav {
-			background-color: #24292e;
-			overflow: hidden;
-			transition: all 1s ease;
-		}
-
-		/* Style the links inside the navigation bar */
-
-		.topnav a {
-			float: left;
-			display: block;
-			color: #f2f2f2;
-			text-align: center;
-			padding: 14px 16px;
-			text-decoration: none;
-			transition: all 1s ease;
-		}
-
-		.topnav ul li a {
-			margin-top: -15px;
-			display: inline-block;
-			transition: all 1s ease;
-		}
-
-		.topnav a:hover {}
-
-		.topnav .icon {
-			display: none;
-		}
-
-		@media screen and (max-width: 890px) {
-			.topnav ul li a {
-				display: none;
-				transition: all 1s ease;
-			}
-			.topnav a:nth-child(2) {
-				display: block;
-			}
-			.topnav a.icon {
-				float: right;
-				margin-top: -12px;
-				display: block;
-			}
-		}
-
-		@media screen and (max-width: 890px) {
-			.topnav.responsive ul {
-				/* position: relative; */
-				display: flex;
-				flex-direction: column-reverse;
-			}
-
-			.topnav ul li {
-				margin: 0 auto;
-				transition: all 1s ease;
-			}
-
-			.topnav .responsive ul li {
-				display: block;
-			}
-
-			.topnav .responsive ul li a {
-				text-align: center;
-			}
-
-			.topnav.responsive .icon {
-				position: absolute;
-				right: 0;
-				top: 0;
-				margin-top: 5px;
-			}
-			.topnav.responsive a {
-				float: none;
-				display: block;
-				text-align: left;
-			}
-			.topnav.responsive a b {
-				padding-left: 15px;
-			}
-
-			.topnav .responsive a {
-				float: none;
-			}
-		}
-
-		@media screen and (max-width: 600px) {
-			.footer-cols {
-				display: flex;
-				flex-direction: column;
-				width: 100%;
-				justify-content: center;
-				margin: 0 auto;
-			}
-
-			.three-cols div {
-				text-align: left;
-				margin: 0 auto;
-				justify-content: center;
-			}
-
-			.three-cols .ml-auto {
-				text-align: center;
-			}
-
-			.midfoot .nav {
-				margin: 0 auto;
-				justify-content: center;
-				text-align: center;
-			}
-		}
-
-		.footerlink {
-			color: #7583a5 !important;
-			font-size: 16px;
-			position: relative;
-			text-decoration: none;
-		}
-
-		.footerlink:hover {
-			color: #fff;
-		}
-
-		.footerlink:before {
-			content: "";
-			position: absolute;
-			width: 100%;
-			height: 1px;
-			bottom: 0;
-			left: 0;
-			background-color: #fff;
-			visibility: hidden;
-			-webkit-transform: scaleX(0);
-			transform: scaleX(0);
-			-webkit-transition: all 0.3s ease-in-out 0s;
-			transition: all 0.3s ease-in-out 0s;
-		}
-
-		.footerlink:hover:before {
-			visibility: visible;
-			-webkit-transform: scaleX(1);
-			transform: scaleX(1);
-		}
-		.modal {
-			min-height: 50%;
-		}
-	</style>
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
-</head>
-
-<body>
-	<div class="topnav" id="myTopnav">
-		<img src="logo.png" style="width: 32px;height:25px; float: left; margin-left: 15px; margin-right: -5px; margin-top: 12px;" class="" alt="Logo">
-		<a href="/"><b style="font-size: 16px;font-family: 'Lato', sans-serif !important;font-weight: 900;letter-spacing: 3px;white-space: nowrap"> UTOPIAN </b></a>
-		<ul>
-			<li><a href="https://signup.utopian.io/" style="float: right; margin-left: 8px; font-family: 'Noto Sans', sans-serif !important;margin-right: 10px; letter-spacing: 1px; font-weight: 600; font-size: 15px;">Sign Up</a>
-			</li>
-			<li><a href="https://join.utopian.io/#about" style="float: right; margin-left: 8px; font-family: 'Noto Sans', sans-serif !important;margin-right: 10px; letter-spacing: 1px; font-weight: 600; font-size: 15px;">About</a>
-			</li>
-			<li><a href="https://join.utopian.io/investors" style="float: right; margin-left: 8px; font-family: 'Noto Sans', sans-serif !important;margin-right: 10px; letter-spacing: 1px; font-weight: 600; font-size: 15px;">Investors</a>
-			</li>
-			<li><a href="https://join.utopian.io/owners" style="float: right; margin-left: 8px; font-family: 'Noto Sans', sans-serif !important;margin-right: 10px; letter-spacing: 1px; font-weight: 600; font-size: 15px;">Project Owners</a>
-			</li>
-			<li><a href="https://join.utopian.io/#contributors" style="float: right; margin-left: 8px; font-family: 'Noto Sans', sans-serif !important;margin-right: 10px; letter-spacing: 1px; font-weight: 600; font-size: 15px;">Contributors</a>
-			</li>
-		</ul>
-		<a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
-	</div>
-	<div style="height:15px">
-
-	</div>
-	<main class="container">
-		<div class="input-field col s12" style="margin:0 auto;">
-			<!-- Modal Structure -->
-			<div id="modal1" class="modal">
-				<div class="modal-content">
-					<textarea id="textarea1" class="materialize-textarea" style="min-height: 450px;" rows="60" cols="100"></textarea>
-				</div>
-				<div class="modal-footer">
-					<a href="#!" id="copy" class="waves-effect waves-green btn-flat">Copy Text</a>
-					<a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
-				</div>
-			</div>
-			<h5>Select Category</h5>
-			<select id="category">
-				<option value="" disabled selected>Select your option</option>
-				<option value="analysis">Analysis</option>
-				<option value="blog">Blog</option>
-				<option value="bugs">Bug Hunting</option>
-				<option value="copywriting">Copywriting</option>
-				<option value="development">Development</option>
-				<option value="documentation">Documentation</option>
-				<option value="graphics">Graphics</option>
-				<option value="suggestions">Suggestions</option>
-				<option value="visibility">Visibility</option>
-				<option value="tasks">Task Request</option>
-				<option value="tutorials">Tutorials</option>
-				<option value="video-tuts">Video Tutotials</option>
-				<option value="translations">Translations</option>
-				<option value="antiabuse">Anti Abuse</option>
-		</select>
-		</div>
-
-		<center>
-			<a class="waves-effect waves-purple btn-large" style="background: transparent; color: black; border: 1px solid;" id="getcat">Get Questions</a>
-		</center>
-
-		<div style="margin: 15px;" id="formhere"></div>
-		<center style="margin-bottom: 20px;" id="comment"></center>
-	</main>
-	<div id="footer" class="text-light" style="background: #24292e;">
-		<div class="container">
-			<h2 style="letter-spacing: 1px; color: white; font-weight: 500; line-height: 1.2; font-size: 32px; font-family: 'Lato', sans-serif !important; margin-bottom: 15px; margin-top: 50px;">Let's make Open Source Economy a reality. Together.</h2>
-			<hr style="width: 35px; border: 1px solid #4786ff; margin-left: 0; margin-bottom: 35px">
-			<div class="row mt-5 pb-4 footer-cols" style="display:flex; margin-bottom: 50px">
-				<div class="s6 mb-4" style="padding-right: 15px">
-					<a href="https://join.utopian.io" target="_blank"><b style="font-weight: bolder;color: #4786ff; font-size: 14.5px; letter-spacing: 0.2px" line-height: 1.2>Get started as a contributor</b></a><br> <span style="color: #f8f9fa!important;">Start contributing to Open Source projects and receive rewards for your contributions.</span>
-				</div>
-				<div class="s6 mb-4" style="padding-right: 15px;">
-					<a href="https://join.utopian.io" target="_blank"><b style="font-weight: bolder;color: #4786ff; font-size: 14.5px; letter-spacing: 0.2px" line-height: 1.2>Submit your project to Utopian</b></a><br> <span style="color: #f8f9fa!important">Get the attention of valuable contributors and use the power of collective intelligence to develop your project.</span>
-				</div>
-			</div>
-			<hr style="border: 1px solid rgba(0,0,0,0.1); background: #363d4d;">
-			<div class="row py-4 footer-cols three-cols" style="display: flex;margin: 25px 0;">
-				<div class="col-md-1 footer-logo" style="width: 7%; margin-top: 12px">
-					<img src="logo.png" class="d-inline-block" style="width: 32px;height:25px" alt="Logo">
-				</div>
-				<div class="col midfoot" style="width: 78%">
-					<ul class="nav" style="display: flex">
-						<li class="nav-item">
-							<a class="nav-link footerlink" href="https://join.utopian.io/privacy">Privacy Policy</a> <span style="color: white; font-size: 12px">&nbsp;|&nbsp;</span>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link footerlink" href="https://join.utopian.io/tos">Terms of Service</a> <span style="color: white; font-size: 12px">&nbsp;|&nbsp;</span>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link footerlink" href="https://join.utopian.io/cookies">Cookie Policy</a> <span style="color: white; font-size: 12px">&nbsp;|&nbsp;</span>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link footerlink" href="https://steemit.com/@utopian-io">Blog</a> <span style="color: white; font-size: 12px">&nbsp;|&nbsp;</span>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link footerlink" href="https://join.utopian.io/rules">Rules</a>
-						</li>
-					</ul>
-				</div>
-				<div class="col-md-3 social-icons text-right d-flex align-items-end" style="width: 35%; text-align: right; margin-top: 5px">
-					<div class="ml-auto">
-						<a href="https://www.facebook.com/utopian.io/" style="padding-left: 12px;" target="_blank">
-	                        <svg style="width:32px;height:32px" viewBox="0 0 24 24">
-	                            <path fill="#7583a5" d="M5,3H19A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3M18,5H15.5A3.5,3.5 0 0,0 12,8.5V11H10V14H12V21H15V14H18V11H15V9A1,1 0 0,1 16,8H18V5Z" />
-	                        </svg>
-	                    </a>
-						<a href="https://twitter.com/utopian_io" style="padding-left: 12px;" target="_blank">
-	                        <svg style="width:32px;height:32px" viewBox="0 0 24 24">
-	                            <path fill="#7583a5" d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z" />
-	                        </svg>
-	                    </a>
-						<a href="https://github.com/utopian-io" style="padding-left: 12px;" target="_blank">
-	                        <svg style="width:32px;height:32px" viewBox="0 0 24 24">
-	                            <path fill="#7583a5" d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
-	                        </svg>
-	                    </a>
-					</div>
-				</div>
-			</div>
-			<hr style="border: 1px solid rgba(0,0,0,0.1); background: #363d4d;">
-			<div class="row pt-4">
-				<div class="col text-center disclaimer" style="color: #7583a5 !important;opacity: 0.5; font-size: 12px; text-align: center; margin: 25px 0;">
-					ALL INFORMATION ON UTOPIAN AND PROVIDED FROM OR THROUGH USE OF ITS SERVICES DOES NOT CONSTITUTE INVESTMENT ADVICE OR RECOMMENDATION. USERS SHOULD NOT MAKE ANY DECISION, FINANCIAL OR OTHERWISE, WITHOUT UNDERTAKING INDEPENDENT DUE DILIGENCE AND SEEKING
-					PROFESSIONAL FINANCIAL ADVICE.
-				</div>
-			</div>
-		</div>
-	</div>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
-	<script type="text/javascript">
-		window.onload = function() {
-			window.cookieconsent.initialise({
-				"palette": {
-					"popup": {
-						"background": "#4786ff",
-						"text": "#ffffff"
-					},
-					"button": {
-						"background": "transparent",
-						"text": "#fff",
-						"border": "#fff"
-					}
-				},
-				"content": {
-					"href": "https://join.utopian.io/cookies"
-				}
-			})
-		}
-
-		function myFunction() {
-			var x = document.getElementById("myTopnav");
-			if (x.className === "topnav") {
-				x.className += " responsive";
-			} else {
-				x.className = "topnav";
-			}
-		}
-		// var elems = document.querySelectorAll('select');
-		// var instances = M.FormSelect.init(elems)
-        $("#category").material_select();
-	</script>
-	<script type="text/javascript">
-        let bugs =
-        `<div class="question-block">
-							<h6>What was the severity level of the bug?</h6>
-								<select >
-							<option value="" disabled selected>Select your option</option>
-						  <option value="10">Critical</option>
-						  <option value="0">Major</option>
-						  <option value="-25">Minor</option>
-						  <option value="-35">Negligible</option>
-						</select>
-							</div>
-
-							<div class="question-block">
-								<h6>How would you rate the descriptiveness and clarity of the submission post?</h6>
-								<select id="2">
-							<option value="" disabled selected>Select your option</option>
-						  <option value="0">The title provided sufficient information, and the steps to bug reproduction were clearly described.</option>
-						  <option value="-2.5">The title was not sufficiently informative, but the steps to bug reproduction were clear.</option>
-						  <option value="-3.5">The title provided sufficient information, but the description of the steps to bug reproduction severely lacked in clarity.</option>
-						  <option value="-5">Both the title and content of the submission post were lacking in information, and the steps to bug reproduction were badly explained and, at times, impossible to follow.</option>
-						</select>
-							</div>
-
-							<div class="question-block">
-								<h6>Has the contributor reported the issue to the project owner prior to submitting it to Utopian?</h6>
-								<select>
-							<option value="" disabled selected>Select your option</option>
-						  <option value="0">Yes, it was reported by this contributor and acknowledged by the project owner.</option>
-						  <option value="-5">Yes, it was reported by this contributor but has to yet be acknowledged by the project owner. </option>
-						  <option value="-10">No, it was not reported, but an effort to contact the project owner has been made.</option>
-						<option value="-20">No, the contributor made no effort to notify the project owner of this issue.</option>
-						</select>
-							</div>
-
-							<div class="question-block">
-								<h6>Has the contributor looked for the possible cause of the issue and/or submitted his own ideas for implementing a fix to this problem?</h6>
-								<select>
-							<option value="" disabled selected>Select your option</option>
-						  <option value="5">The contributor pinpointed the issue and proposed a possible solution.</option>
-						  <option value="0">The contributor pinpointed the cause but hasn’t proposed a fix, or the fix proposed was obviously not suitable.</option>
-						  <option value="-10">The contributor made efforts to pinpoint the cause, but without success.</option>
-						<option value="-15">The contributor made no efforts to pinpoint the cause, or applied incorrect methods in searching for it.</option>
-						</select>
-							</div>
-
-
-							<div class="question-block">
-								<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
-								<select id="6">
-							<option value="" disabled selected>Select your option</option>
-						  <option value="0">Good</option>
-						  <option value="-3">Average</option>
-						  <option value="-7">Below Average</option>
-						<option value="-15">Low Quality</option>
-						</select>
-							</div>
-
-								<div class="question-block">
-								<h6>How would you rate the overall value of this contribution on the open source community and ecosystem?</h6>
-								<select id="7">
-							<option value="" disabled selected>Select your option</option>
-						  <option value="5"	>This contribution brings great and impactful value, and can be used for applications outside the specific project.</option>
-						  <option value="0">This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.</option>
-						  <option value="-12">This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.</option>
-						<option value="-20">This contribution adds nearly no value to the open source community and ecosystem or the specific project.</option>
-						</select>
-							</div>
-					`;
-
-      let analysis =
-        `<div class="question-block">
-						<h6>Were all relevant aspects or metrics related to the objective analyzed?</h6>
-						<select >
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">All relevant metrics were covered.</option>
-					<option value="-4">Only selected metrics were chosen; including more may have provided additional insights.</option>
-					<option value="-12">Only a single or narrow aspect was chosen.</option>
-					<option value="-20">No metric was chosen.</option>
-					</select>
-					</div>
-
-					<div class="question-block">
-						<h6>How would you rate the complexity data extraction for this analysis?</h6>
-						<select id="2">
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">Gathering the data required complex queries and post-processing.</option>
-					<option value="-3">The method of extracting data was moderately challenging.</option>
-					<option value="-11">The data can be directly imported for visualization - no additional data transformation was needed.</option>
-					<option value="-15">No data was extracted.</option>
-					</select>
-					</div>
-
-					<div class="question-block">
-						<h6>How would you rate the quality of the visualization of the findings?</h6>
-						<select>
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">Visualizations presented were superb and beyond expectation.</option>
-					<option value="-4">Appropriate and sufficient visualization were used to present the results.</option>
-					<option value="-16">Visualizations were included, but lacked in quality and/or quantity.</option>
-					<option value="-20">Visualizations included were irrelevant to the objective.</option>
-					</select>
-					</div>
-
-
-					<div class="question-block">
-						<h6>Was the analysis reproducible through the use of the contribution content?</h6>
-						<select>
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">All queries or data gathering methods and all data processing scripts were included.</option>
-					<option value="-1">The core query or data gathering method was included and the data processing steps were described.</option>
-					<option value="-3">Data gathering methods and processing steps were sketched.</option>
-					<option value="-5">Data gathering methods were not included.</option>
-					</select>
-					</div>
-
-					<div class="question-block">
-						<h6>Was it a new and unique analysis?</h6>
-						<select>
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">Yes, it was a unique analysis.</option>
-					<option value="-4">It’s similar to another contribution, but covers deeper or additional aspects.</option>
-					<option value="-6">It’s similar to another contribution, but covers a different time period.</option>
-					<option value="-10">It’s a recurring analysis covering too short a time frame (i.e., daily).</option>
-					</select>
-					</div>
-
-
-					<div class="question-block">
-						<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
-						<select id="6">
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">Good.</option>
-					<option value="-3">Average.</option>
-					<option value="-7">Below Average.</option>
-					<option value="-15">Low Quality.</option>
-					</select>
-					</div>
-
-						<div class="question-block">
-						<h6>How would you rate the overall value of this contribution on the open source community and ecosystem?</h6>
-						<select id="7">
-					<option value="" disabled selected>Select your option</option>
-					<option value="5"	>This contribution brings great and impactful value, and can be used for applications outside the specific project. </option>
-					<option value="0">This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.</option>
-					<option value="-12">This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.</option>
-					<option value="-20">This contribution adds nearly no value to the open source community and ecosystem or the specific project. </option>
-					</select>
-					</div>
-					`;
-
-      let documentation =
-        `<div class="question-block">
-						<h6>How would you rate the overall quality of the documentation?</h6>
-						<select >
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">Fantastic quality! It’s very hard to find documentation this good.</option>
-					<option value="-5">Very high quality.</option>
-					<option value="-20">Average quality - could be improved in many ways.</option>
-					<option value="-27.5">Very low quality.</option>
-					</select>
-					</div>
-
-					<div class="question-block">
-						<h6>How comprehensive was the documentation (how many features were documented, contribution volume, etc.)?</h6>
-						<select id="2">
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">A significant portion of the project was documented.</option>
-					<option value="-5">Numerous features or one major feature were documented.</option>
-					<option value="-15">A small feature was documented in detail.</option>
-					<option value="-25">The volume or detail of the documentation were insufficient.</option>
-					</select>
-					</div>
-
-					<div class="question-block">
-						<h6>How would you rate the overall significance of this particular feature/file documentation to the project?</h6>
-						<select>
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">Very important, the project is significantly easier to use with it.</option>
-					<option value="-2">Important, but not critical to use or application of the project.</option>
-					<option value="-9">It has some potential uses as reference.</option>
-					<option value="-15">It had no obvious applications or uses.</option>
-					</select>
-					</div>
-
-
-					<div class="question-block">
-						<h6>Is the documentation developed for the internal staff only, or does it add value to the open source community as a whole?</h6>
-						<select>
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">It is meant to be used also by open source community members not associated with the project.</option>
-					<option value="-0.5">It is mainly aimed at open source community members that contribute to this particular project.</option>
-					<option value="-1.5">It is intended for internal staff use, but the community can also benefit from this content.</option>
-					<option value="-2.5">It is clearly meant only for the internal staff of the project and hold no value to the open source community.</option>
-					</select>
-					</div>
-
-					<div class="question-block">
-						<h6>Does the author of the documentation understand the project and its needs in detail?</h6>
-						<select>
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">Yes. The author is clearly very involved in the project.</option>
-					<option value="-1.5">The author has good understanding of the project and its needs.</option>
-					<option value="-6">The author clearly understands how the project works.</option>
-					<option value="-10">The author has no understanding of the project.</option>
-					</select>
-					</div>
-
-
-					<div class="question-block">
-						<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
-						<select id="6">
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">Good.</option>
-					<option value="-3">Average.</option>
-					<option value="-7">Below Average.</option>
-					<option value="-15">Low Quality.</option>
-					</select>
-					</div>
-
-						<div class="question-block">
-						<h6>How would you rate the overall value of this contribution on the open source community and ecosystem?</h6>
-						<select id="7">
-					<option value="" disabled selected>Select your option</option>
-					<option value="5"	>This contribution brings great and impactful value, and can be used for applications outside the specific project.</option>
-					<option value="0">This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.</option>
-					<option value="-12">This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.</option>
-					<option value="-20">This contribution adds nearly no value to the open source community and ecosystem or the specific project.</option>
-					</select>
-					</div>
-					`;
-
-      let copywriting =
-        `<div class="question-block">
-						<h6>What is the volume of the work submitted?</h6>
-						<select >
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">Long (at least 1,000 words in total)</option>
-					<option value="-10">Medium (at least 400 words in total)</option>
-					<option value="-15">Short (at least 200 words in total)</option>
-					<option value="-20">Very Short (less than 200 words in total)</option>
-					</select>
-					</div>
-
-					<div class="question-block">
-						<h6>How would you rate the grammar and style of the content?</h6>
-						<select id="2">
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">Polished and well-written</option>
-					<option value="-6">Good, but has room for improvement</option>
-					<option value="-10">Has a few errors that need to be corrected</option>
-					<option value="-15">It is of low quality</option>
-					</select>
-					</div>
-
-					<div class="question-block">
-						<h6>How relevant is the content to the project's needs?</h6>
-						<select>
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">Highly relevant and valuable</option>
-					<option value="-3">Relevant but offers little unique value</option>
-					<option value="-5">Somewhat relevant</option>
-					<option value="-10">Does not adequately meet the project’s needs</option>
-					</select>
-					</div>
-
-
-					<div class="question-block">
-						<h6>Overall, how readable or comprehensible is the content?</h6>
-						<select>
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">It reads well and is easy to comprehend</option>
-					<option value="-2">It is understandable, but it could be improved</option>
-					<option value="-6">Some parts are hard to comprehend</option>
-					<option value="-10">A lot of it is hard to understand</option>
-					</select>
-					</div>
-
-					<div class="question-block">
-						<h6>Did the content fulfill the specific needs presented by the project owner?</h6>
-						<select>
-					<option value="" disabled selected>Select your option</option>
-					<option value="5">Yes, the content exceeded all specified requirements</option>
-					<option value="0">Yes, all the requirements were fulfilled</option>
-					<option value="-8">Some of the less important requirements were left out</option>
-					<option value="-15">Not all important requirements were addressed</option>
-					</select>
-					</div>
-
-
-					<div class="question-block">
-						<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
-						<select id="6">
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">Good.</option>
-					<option value="-3">Average.</option>
-					<option value="-7">Below Average.</option>
-					<option value="-15">Low Quality.</option>
-					</select>
-					</div>
-
-						<div class="question-block">
-						<h6>How would you rate the overall value of this contribution on the open source community and ecosystem?</h6>
-						<select id="7">
-					<option value="" disabled selected>Select your option</option>
-					<option value="5"	>This contribution brings great and impactful value, and can be used for applications outside the specific project. </option>
-					<option value="0">This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.</option>
-					<option value="-12">This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.</option>
-					<option value="-20">This contribution adds nearly no value to the open source community and ecosystem or the specific project. </option>
-					</select>
-					</div>
-					`;
-
-      let visibility =
-        `<div class="question-block">
-						<h6>Does the post include sufficient information and detailed description of the work done?</h6>
-						<select >
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">The post includes detailed reports including a downloadable activity report as well as bidding strategy, and logical reasoning behind campaign planning and execution.</option>
-					<option value="-5">The post includes some details on the campaign progress and results, but could offer additional information.</option>
-					<option value="-9.5">The post lacks sufficient information to fully understand the work performed.</option>
-					<option value="-10">The post includes no proof of authorship and/or lacks campaign result details completely.</option>
-					</select>
-					</div>
-
-					<div class="question-block">
-						<h6>Is the audience targeting and segmentation relevant to the project promoted?</h6>
-						<select>
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">Yes, the target audience is well defined and relevant to the project.</option>
-					<option value="-10">The target audience is relevant, but too broad / narrow.</option>
-					<option value="-14">The target audience is not relevant to the project promoted.</option>
-					<option value="-15">No targeting information was provided.</option>
-					</select>
-					</div>
-
-
-					<div class="question-block">
-						<h6>Is the message used in the visibility campaign relevant and concise?</h6>
-						<select id="6">
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">Yes, the call to action is very clear and ad copy is accurate.</option>
-					<option value="-10">The message is included, but could be better crafted.</option>
-					<option value="-14">The message is inaccurate / unsuitable to the target audience.</option>
-					<option value="-15">The message is completely irrelevant and / or in a foreign language with no translation provided.</option>
-					</select>
-					</div>
-
-					<div class="question-block">
-						<h6>What was the overall performance of the campaign described?</h6>
-						<select id="6">
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">The project received significant visibility (over 10,000 users reach) and conversion rate (over 2 percent on average).</option>
-					<option value="-15">The project received some visibility and traction (under 10,000 reach, conversion rate of 0-2 percent).</option>
-					<option value="-19.5">The project received little visibility and traction due to badly defined campaign goals by the project owner.</option>
-					<option value="-20">The project did not benefit from this contribution.</option>
-					</select>
-					</div>
-
-					<div class="question-block">
-						<h6>Does the submission offer added-value / educational content (such as tips, insights, etc.)?</h6>
-						<select id="6">
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">Yes, people should learn from this post!</option>
-					<option value="-5">Some added-value content is included.</option>
-					<option value="-7.5">There’s very little one can learn from this post.</option>
-					<option value="-10">This post includes misleading information.</option>
-					</select>
-					</div>
-
-					<div class="question-block">
-						<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
-						<select id="6">
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">Good.</option>
-					<option value="-3">Average.</option>
-					<option value="-7">Below Average.</option>
-					<option value="-15">Low Quality.</option>
-					</select>
-					</div>
-
-						<div class="question-block">
-						<h6>How would you rate the overall value of this contribution on the open source community and ecosystem?</h6>
-						<select id="7">
-					<option value="" disabled selected>Select your option</option>
-					<option value="5"	>This contribution brings great and impactful value, and can be used for applications outside the specific project. </option>
-					<option value="0">This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.</option>
-					<option value="-12">This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.</option>
-					<option value="-20">This contribution adds nearly no value to the open source community and ecosystem or the specific project. </option>
-					</select>
-					</div>
-					`;
-
-      let tutorials =
-        `<div class="question-block">
-						<h6>How many substantial concepts does this tutorial address?</h6>
-						<select >
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">4-5 substantial concepts covered in the tutorial</option>
-					<option value="-5">2-3 substantial concepts covered in the tutorial</option>
-					<option value="-10">1 substantial concept covered in the tutorial</option>
-					<option value="-15">More than 5 substantial concepts covered in the tutorial</option>
-					</select>
-					</div>
-
-					<div class="question-block">
-						<h6>Does the title and the outline of the tutorial properly reflect the content?</h6>
-						<select>
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">Yes, it is very clear.</option>
-					<option value="-3">To some extent.</option>
-					<option value="-7">The title is somewhat misleading and/or the outline is not detailed or informative enough.</option>
-					<option value="-15">Title and outline are of little or no relevance to the content of the tutorial.</option>
-					</select>
-					</div>
-
-					<div class="question-block">
-						<h6>Did the contributor provide supplementary resources, such as code and sample files in the contribution post or a linked GitHub repository?</h6>
-						<select>
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">Yes, exceptional supplementary resources are provided including a relevant github repo/gist.</option>
-					<option value="-3">Supplementary resources provided are of high relevance.</option>
-					<option value="-7">Contributor provides minimal supplementary resources.</option>
-					<option value="-10">No supplementary resources were provided.</option>
-					</select>
-					</div>
-
-
-					<div class="question-block">
-						<h6>Is the tutorial part of a series?</h6>
-						<select id="6">
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">Yes.</option>
-					<option value="-3">Yes, but it is the first entry in the series.</option>
-					<option value="-3">No, but it works just fine as a stand-alone tutorial.</option>
-					<option value="-10">No, though it clearly should be.</option>
-					</select>
-					</div>
-
-					<div class="question-block">
-						<h6>Does the tutorial contain sufficient explanatory visuals?</h6>
-						<select id="6">
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">Yes, the visual components of the post were adequate in quality and quantity.</option>
-					<option value="-3">The volume of visual components included was unnecessarily large.</option>
-					<option value="-7">The post lacked sufficient visualization to easily learn from the content.</option>
-					<option value="-10">No visualization was presented in this contribution.</option>
-					</select>
-					</div>
-
-					<div class="question-block">
-						<h6>How unique and/or innovative are the concepts covered in the tutorial?</h6>
-						<select id="6">
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">This was the first time I read about the concepts covered.</option>
-					<option value="-3">The concepts covered were innovative and offer some usefulness.</option>
-					<option value="-5">Similar concepts and ideas are available elsewhere, but this one was of higher quality.</option>
-					<option value="-10">Similar or superior tutorials can be found online with great ease</option>
-					</select>
-					</div>
-
-					<div class="question-block">
-						<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
-						<select id="6">
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">Good.</option>
-					<option value="-3">Average.</option>
-					<option value="-7">Below Average.</option>
-					<option value="-15">Low Quality.</option>
-					</select>
-					</div>
-
-						<div class="question-block">
-						<h6>How would you rate the overall value of this contribution on the open source community and ecosystem?</h6>
-						<select id="7">
-					<option value="" disabled selected>Select your option</option>
-					<option value="5">This contribution brings great and impactful value, and can be used for applications outside the specific project. </option>
-					<option value="0">This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.</option>
-					<option value="-12">This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.</option>
-					<option value="-20">This contribution adds nearly no value to the open source community and ecosystem or the specific project. </option>
-					</select>
-					</div>
-					`;
-
-      let graphics =
-        `<div class="question-block">
-						<h6>Did the designer include a selection of distinctive designs or variations for the project owner to choose from?</h6>
-						<select >
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">More than 3 distinctive, relatively complex designs were provided.</option>
-					<option value="-5">Between 2 and 3; the designs were complex and took a fair amount of work.</option>
-					<option value="-7">Only one distinctive design was provided or the provided designs are too similar.</option>
-					<option value="-9">The number of design variations provided was lower than the number requested by the project owner and/or the apparent work invested was negligible.</option>
-					</select>
-					</div>
-
-					<div class="question-block">
-						<h6>Is the whole contribution a result of own work?</h6>
-						<select>
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">Yes.</option>
-					<option value="-3">Some third party assets were used but all of them are usable for the contribution actual purpose. The assets were accordingly edited and not simply downloaded and used.</option>
-					<option value="-5">Other assets were provided by the project owner.</option>
-					<option value="-6">Most assets used were third party assets and contributor did not make additional effort to incorporate them in the contribution.</option>
-					</select>
-					</div>
-
-					<div class="question-block">
-						<h6>Was the contribution used in the project? (ex.: the graphic design is already utilized in play store, project website or got merged into the official repository)</h6>
-						<select id="6">
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">Yes, and the contributor provided clear evidence of it in their post.</option>
-					<option value="-4">It was not used, but the project owner liked it and considered using it.</option>
-					<option value="-5">It was not used, but is of very high quality.</option>
-					<option value="-8">It was not used as it provides no value to the project.</option>
-					</select>
-					</div>
-
-					<div class="question-block">
-						<h6>Does the contribution include files for immediate use in all requested formats?</h6>
-						<select id="6">
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">Yes, all required file formats were included.</option>
-					<option value="-5">Most requested file formats requested by project owner were provided, but not all.</option>
-					<option value="-7">No, submitted files were not ready for immediate use and require editing or adjustments.</option>
-					<option value="-10">No downloadable files were provided.</option>
-					</select>
-					</div>
-
-					<div class="question-block">
-						<h6>Technical quality of graphics was:</h6>
-						<select id="6">
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">Excellent, no mistakes within the design.</option>
-					<option value="-16">Very good with minor mistakes that are visible in the provided files.</option>
-					<option value="-26">Good but the design has some more serious flaws that need to be corrected.</option>
-					<option value="-37">Bad. The design does not follow graphics standard and is barely usable.</option>
-					</select>
-					</div>
-
-					<div class="question-block">
-						<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
-						<select id="6">
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">Good.</option>
-					<option value="-3">Average.</option>
-					<option value="-7">Below Average.</option>
-					<option value="-15">Low Quality.</option>
-					</select>
-					</div>
-
-						<div class="question-block">
-						<h6>How would you rate the overall value of this contribution on the open source community and ecosystem?</h6>
-						<select id="7">
-					<option value="" disabled selected>Select your option</option>
-					<option value="5">This contribution brings great and impactful value, and can be used for applications outside the specific project. </option>
-					<option value="0">This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.</option>
-					<option value="-12">This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.</option>
-					<option value="-20">This contribution adds nearly no value to the open source community and ecosystem or the specific project. </option>
-					</select>
-					</div>
-					`;
-
-      let tasks =
-        `<div class="question-block">
-						<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
-						<select >
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">Good.</option>
-					<option value="-2">Average.</option>
-					<option value="-7">Below average.</option>
-					<option value="-15">Low quality.</option>
-					</select>
-					</div>
-
-					<div class="question-block">
-						<h6>How would you rate the overall value the contribution solving this task will bring to the open source community?</h6>
-						<select>
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">This task request, if it can be solved, can bring great, unique and impactful value to the community as a whole.</option>
-					<option value="-5">This task request, if it can be solved, adds significant value to the open source community, or is of critical importance to the specific project</option>
-					<option value="-17.5">This task request, if it can be solved, adds some value to the open source community or is only valuable to the specific project.</option>
-					<option value="-35">This task request cannot be solved and/or adds no value to the open source community or the specific project.</option>
-					</select>
-					</div>
-
-					<div class="question-block">
-						<h6>How feasible and executable is the task requested?</h6>
-						<select>
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">Very. It is likely to receive multiple potential solutions.</option>
-					<option value="-4">Moderate. It is likely to receive some potential solutions.</option>
-					<option value="-10">Low. The solution will demand a great deal of work, but someone invested in the project could take on this.</option>
-					<option value="-20">Impossible. It is very unlikely anyone will undertake this task.</option>
-					</select>
-					</div>
-
-
-					<div class="question-block">
-						<h6>How impactful will this task be for the specific project?</h6>
-						<select id="6">
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">Obviously crucial for ongoing project development.</option>
-					<option value="-1">It will have a major impact on the development and/or end user experience.</option>
-					<option value="-5">It hold some significance to ongoing project development.</option>
-					<option value="-10">The solution to this task will have little to no impact on the project.</option>
-					</select>
-					</div>
-
-					<div class="question-block">
-						<h6>How descriptive is the task request, and does it provide all necessary information to solve it?</h6>
-						<select id="6">
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">The task request is very descriptive and includes all the required information, as well as additional important data or tips.</option>
-					<option value="-1.5">The task request is sufficiently descriptive and includes the information required to solve it.</option>
-					<option value="-12">The task request includes some information, but it is partially inaccurate, lacking or insufficient to solve the task.</option>
-					<option value="-15">The task request is confusing, lacking information and resources.</option>
-					</select>
-					</div>
-
-					<div class="question-block">
-						<h6>Is this task request similar to another submitted by the same project owner?</h6>
-						<select id="6">
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">No, this task request is unique and different from other tasks every posted by this project owner.</option>
-					<option value="-2">Yes, but it was submitted over 30 days ago.</option>
-					<option value="-2">Yes, but it is sufficiently unique and/or necessary for the project development.</option>
-					<option value="-10">Yes, this task request is too similar or a direct copy of another task request submitted by this project owner in the past 30 days.</option>
-					</select>
-					</div>`;
-
-      let blog =
-        `<div class="question-block">
-						<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
-						<select id="6">
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">The quality of the post is fantastic.</option>
-					<option value="-3">The post is of decent quality, but there is room for improvement.</option>
-					<option value="-14">The quality of the post is below average.</option>
-					<option value="-30">The post is hard to read and the content is sometimes hard to understand.</option>
-					</select>
-					</div>
-
-						<div class="question-block">
-						<h6>How would you rate the overall value of this contribution on the open source community and ecosystem?</h6>
-						<select id="7">
-					<option value="" disabled selected>Select your option</option>
-					<option value="5"	>This contribution brings great and impactful value, and can be used for applications outside the specific project. </option>
-					<option value="0">This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.</option>
-					<option value="-5">This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.</option>
-					<option value="-20">This contribution adds nearly no value to the open source community and ecosystem or the specific project. </option>
-					</select>
-					</div>
-
-					<div class="question-block">
-						<h6>What is the overall volume of the blog post?</h6>
-						<select >
-					<option value="" disabled selected>Select your option</option>
-					<option value="5">More than 1,300 words</option>
-					<option value="0">800-1,300 words</option>
-					<option value="-8">500-800 words</option>
-					<option value="-25">Less than 500 words</option>
-					</select>
-					</div>
-
-					<div class="question-block">
-						<h6>What is the topic category of this blog post?</h6>
-						<select >
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">Project introduction or project promotion</option>
-					<option value="-1.5">Development log / release notes</option>
-					<option value="-10">Project generic news</option>
-					<option value="-40">The topic is barely reletaed to the project.</option>
-					</select>
-					</div>
-
-					<div class="question-block">
-						<h6>Is the post a part of a series?</h6>
-						<select >
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">It is clear that it is a part of an ongoing series of posts.</option>
-					<option value="-3">It is clear that it is the first post of an upcoming series.</option>
-					<option value="-8">It is the first post from the author.</option>
-					<option value="-10">The post is not a part of any series.</option>
-					</select>
-					</div>
-
-					<div class="question-block">
-						<h6>Was relevant quality graphic and video content included in this post?</h6>
-						<select >
-					<option value="" disabled selected>Select your option</option>
-					<option value="2">Yes, at least 4 distinguishable instances of graphic or video content were included.</option>
-					<option value="0">Yes, between 2 and 3 distinguishable instances of graphic or video content were included.</option>
-					<option value="-6">A single instance of graphic or video content was included.</option>
-					<option value="-10">No graphic or video content was included or the content was irrelevant.</option>
-					</select>
-					</div>
-
-					<div class="question-block">
-						<h6>How familiar is the author with the project discussed in the post?</h6>
-						<select >
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">It is clear that they are closely familiar with the project and its details.</option>
-					<option value="-2">The author offers some valuable insights about the project.</option>
-					<option value="-10">Most of the blog post contains information gathered from other sources.</option>
-					<option value="-40">The author knows only little or nothing about the project.</option>
-					</select>
-					</div>
-
-					<div class="question-block">
-						<h6>What is the timeframe of the events and announcements discussed in the blog post, and does it include reference to similar projects?</h6>
-						<select >
-					<option value="" disabled selected>Select your option</option>
-					<option value="5">Both recent and future events, as well as comparison with similar projects is included.</option>
-					<option value="0">Events more recent than 2 weeks, or future events related the project are included.</option>
-					<option value="-10">Comparison with similar projects is included.</option>
-					<option value="-15">None of these topics are discussed in the post.</option>
-					</select>
-					</div>
-					`
-
-      let suggestions =
-        `<div class="question-block">
-						<h6>If implemented, how much impact on the functionality and/usability of the project will this suggestion have?</h6>
-						<select >
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">Major impact. </option>
-					<option value="-15">Some noticeable impact.</option>
-					<option value="-20">Minor improvement.</option>
-					<option value="-30">Negligible added-value to the project / impossible or extremely difficult implementation is required.</option>
-					</select>
-					</div>
-					<div class="question-block">
-						<h6>Does this suggestion match the goals, intended applications and/or roadmap of the project?</h6>
-						<select>
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">Yes, it’s closely related to the uses and applications of the project and may enhance it further toward project goals</option>
-					<option value="-5">It is related and may add value, but has no direct relation to the main purpose and/or applications of the project.</option>
-					<option value="-7">It is loosely related to one of purposes, applications or goals of the project and may add some value to it.
-					</option>
-					<option value="-10">It is not related to the project goals at all and holds no potential added-value.</option>
-					</select>
-					</div>
-					<div class="question-block">
-						<h6>Is the proposal realistic and feasible?</h6>
-						<select>
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">Yes, it can definitely be implemented and is important enough to warrant the developers’ attention and time.</option>
-					<option value="-3">Yes, it can definitely be implemented, but is not likely to get noticed by the development team immediately.</option>
-					<option value="-7">It can be implemented in theory, but no recommendations or guidelines were included in the suggestion post.</option>
-					<option value="-13">No, it’s impossible or non-cost-effective to implement.</option>
-					</select>
-					</div>
-
-					<div class="question-block">
-						<h6>Has the user provided any mockups (illustrations) of potential suggestion implementation appearance?</h6>
-						<select>
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">Yes, and they’re of excellent quality</option>
-					<option value="0">No, but the mockups are inapplicable for this suggestion.</option>
-					<option value="-7">Yes, but the quality of the mockups is poor.</option>
-					<option value="-10">No, there are no mockups included even though they are needed / No potential solution was presented.</option>
-					</select>
-					</div>
-
-					<div class="question-block">
-						<h6>Has the contributor proposed a possible solution to implement the suggestion?</h6>
-						<select>
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">Yes, the possible solution is described in great detail and makes a lot of sense</option>
-					<option value="-5">Yes, but the possible solution was not described in sufficient detail.</option>
-					<option value="-7">No, but the implementation is self explanatory or very easily executed. </option>
-					<option value="-10">No, there’s no proposed solution though one is clearly necessary.</option>
-					</select>
-					</div>
-					<div class="question-block">
-						<h6>Is the suggested feature commonly available in other projects or submitted suggestions?</h6>
-						<select>
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">No, it’s unique or very rare.</option>
-					<option value="-2">Yes, but it’s a feature of high importance for this kind of project.</option>
-					<option value="-5">It's common, but it will have some measurable positive impact on the user experience or product functionality.</option>
-					<option value="-7">It’s extremely common and may have been left out intentionally.</option>
-					</select>
-					</div>
-					<div class="question-block">
-						<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
-						<select id="8">
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">Good.</option>
-					<option value="-3">Average.</option>
-					<option value="-7">Below Average.</option>
-					<option value="-10">Low Quality.</option>
-					</select>
-					</div>
-						<div class="question-block">
-						<h6>How would you rate the overall value of this contribution on the open source community and ecosystem?</h6>
-						<select id="9">
-					<option value="" disabled selected>Select your option</option>
-					<option value="5">This contribution can add value and be used for applications outside the specific project.</option>
-					<option value="0">This contribution can be of value to the open source community and ecosystem, or is of critical importance to the specific project.</option>
-					<option value="-12">This contribution can add little value to the open source community and ecosystem or is only valuable to the specific project.</option>
-					<option value="-20">This contribution adds no noticeable value to the open source community and ecosystem or the specific project.</option>
-					</select>
-					</div>
-					`;
-
-      let videotuts =
-        `<div class="question-block">
-						<h6>How many substantial concepts does this tutorial address?</h6>
-						<select >
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">4-5 substantial concepts covered in the tutorial</option>
-					<option value="-5">2-3 substantial concepts covered in the tutorial</option>
-					<option value="-10">1 substantial concept covered in the tutorial</option>
-					<option value="-15">More than 5 substantial concepts covered in the tutorial</option>
-					</select>
-					</div>
-
-					<div class="question-block">
-						<h6>Does the contribution text and images support the video tutorial?</h6>
-						<select id="2">
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">Exceptionally good text and, when applicable, images for concepts covered.</option>
-					<option value="-5">Thorough text and, when applicable, images for concepts covered.</option>
-					<option value="-7">Insufficient volume of text and images.</option>
-					<option value="-10">No or very little text and images.</option>
-					</select>
-					</div>
-
-					<div class="question-block">
-						<h6>Is the video clearly prepared and structured?</h6>
-						<select>
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">Both the presenter and the video are exceptionally organized, structured and presented.</option>
-					<option value="-5">Presenter is prepared and video concepts are structured.</option>
-					<option value="-12">Presenter has moments when he/she seems unprepared and/or the content seems to be unstructured.</option>
-					<option value="-20">Presenter seems unprepared and/or video is unstructured.</option>
-					</select>
-					</div>
-
-
-					<div class="question-block">
-						<h6>Does the contributor provide supplementary resources, such as code and sample files in the contribution post or a GitHub repository?</h6>
-						<select>
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">Contributor provided exceptional supplementary resources.</option>
-					<option value="-1">Contributor provided good supplementary resources.</option>
-					<option value="-4">Contributor provided minimal supplementary resources.</option>
-					<option value="-5">No supplementary resources were provided.</option>
-					</select>
-					</div>
-
-					<div class="question-block">
-						<h6>How would you describe the sound quality of the video?</h6>
-						<select>
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">Sound quality is excellent and sounds professionally produced.</option>
-					<option value="-3">The sound is clear and understandable.</option>
-					<option value="-7">Low quality of sound and/or mildly distracting background noise.</option>
-					<option value="-10">Distracting background noise and/or very low quality recording.</option>
-					</select>
-					</div>
-
-
-					<div class="question-block">
-						<h6>Does the presenter speak clearly and is easy to understand?</h6>
-						<select id="6">
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">Yes, presenter’s speech is highly engaging and professional.</option>
-					<option value="-3">Yes, presenter’s speech is easy to understand.</option>
-					<option value="-8">Portions of the presenter’s speech were comprehensible.</option>
-					<option value="-10">Little or none of the presenter’s speech was understandable.</option>
-					</select>
-					</div>
-
-						<div class="question-block">
-						<h6>Is the title of the tutorial and the concepts being covered visible on the video in text overlay form?</h6>
-						<select id="7">
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">Title and concepts covered are present in the video at all times in a non-disruptive way.</option>
-					<option value="-1">Title and concepts covered appear temporarily when they are addressed.</option>
-					<option value="-3">Only the title is presented and the concepts are not shown.</option>
-					<option value="-5">Neither title nor concepts covered are presented in the video text overlay.</option>
-					</select>
-					</div>
-					<div class="question-block">
-						<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
-						<select id="8">
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">Good.</option>
-					<option value="-3">Average.</option>
-					<option value="-7">Below Average.</option>
-					<option value="-10">Low Quality.</option>
-					</select>
-					</div>
-
-						<div class="question-block">
-						<h6>How would you rate the overall value of this contribution on the open source community and ecosystem?</h6>
-						<select id="9">
-					<option value="" disabled selected>Select your option</option>
-					<option value="5">This contribution brings great and impactful value, and can be used for applications outside the specific project. </option>
-					<option value="0">This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.</option>
-					<option value="-12">This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.</option>
-					<option value="-20">This contribution adds nearly no value to the open source community and ecosystem or the specific project. </option>
-					</select>
-					</div>
-					`;
-
-      let development =
-        `<div class="question-block">
-						<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
-						<select >
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">The post is of very high quality.</option>
-					<option value="-3">The post is of decent quality.</option>
-					<option value="-7">The quality of the post is below average.</option>
-					<option value="-10">The post is hard to read and the content is sometimes hard to understand.</option>
-					</select>
-					</div>
-
-					<div class="question-block">
-						<h6>How would you rate the impact and significance of the contribution to the project and/or open source ecosystem in terms of uniqueness, usefulness and potential future applications?</h6>
-						<select id="2">
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">This contribution adds high value and holds great significance for the project and/or open source ecosystem.</option>
-					<option value="-10">This contribution adds significant value to the project and/or open source ecosystem.</option>
-					<option value="-22.5">This contribution adds some value to the project and/or open source ecosystem.</option>
-					<option value="-37.5">This contribution holds little value to the project and/or open source ecosystem.</option>
-					</select>
-					</div>
-
-					<div class="question-block">
-						<h6>How would you rate the total volume of work invested into this contribution?</h6>
-						<select>
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">This contribution appears to have demanded a lot of intensive work.</option>
-					<option value="-6">This contribution appears to have required an average volume of work.</option>
-					<option value="-20">This contribution shows some work done.</option>
-					<option value="-30">This contribution shows little work done.</option>
-					</select>
-					</div>
-
-
-					<div class="question-block">
-						<h6>How would you rate the quality of the code submitted?</h6>
-						<select>
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">High - it follows all best practices.</option>
-					<option value="-6">Average - it follows most best practices.</option>
-					<option value="-14">Low - it follows some best practices.</option>
-					<option value="-20">Very low - it doesn't follow any best practices.</option>
-					</select>
-					</div>
-
-					<div class="question-block">
-						<h6>How would you rate the proficiency and expertise necessary to fix the bug / implement the added feature(s)?</h6>
-						<select>
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">High - a lot of research and specific proficiency were required.</option>
-					<option value="-2.5">Average - some research and proficiency were required.</option>
-					<option value="-5">Low - little proficiency or skill were required.</option>
-					<option value="-7.5">Insignificant - only basic knowledge or skills were necessary.</option>
-					</select>
-					</div>
-
-
-					<div class="question-block">
-						<h6>How would you rate the accuracy and readability of the commit messages?</h6>
-						<select id="6">
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">High - they are concise, descriptive and consistent.</option>
-					<option value="-0.5">Average - they are mostly concise, descriptive and consistent.</option>
-					<option value="-2">Low - they could be more concise, descriptive or consistent.</option>
-					<option value="-2.5">Very low - they aren't concise, descriptive or consistent at all.</option>
-					</select>
-					</div>
-
-						<div class="question-block">
-						<h6>How do you rate the quality of the comments in the code?</h6>
-						<select id="7">
-					<option value="" disabled selected>Select your option</option>
-					<option value="0">High - everything is well-commented and adds to the readability of the code.</option>
-					<option value="-2">Average - most of the code is commented and most if it adds to the readability of the code.</option>
-					<option value="-3.5">Low - little of the code is commented, but it still adds to the readability.</option>
-					<option value="-5">Very low - the added comments provide no value or no comments were made at all.</option>
-					</select>
-					</div>
-					`
-
-      let translations =
-        `
-					<div class="question-block">
-								<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
-								<select >
-							<option value="" disabled selected>Select your option</option>
-							<option value="0">Good.</option>
-							<option value="-5">Average.</option>
-							<option value="-10">Below Average.</option>
-							<option value="-15">Low Quality.</option>
-							</select>
-							</div>
-
-							<div class="question-block">
-								<h6>How would you rate the overall value of this contribution on the open source community?</h6>
-								<select id="2">
-							<option value="" disabled selected>Select your option</option>
-							<option value="0">This contribution brings great, unique and impactful value to the community as a whole.</option>
-							<option value="-6">This contribution adds significant value to the open source community, or is of critical importance to the specific project.</option>
-							<option value="-12">This contribution adds some value to the open source community or is only valuable to the specific project.</option>
-							<option value="-18">This contribution adds no value to the open source community or the specific project.</option>
-							</select>
-							</div>
-
-							<div class="question-block">
-								<h6>What is the total volume of the translated text in this contribution(excluding duplicate phrases and non-translatable content)?</h6>
-								<select>
-							<option value="" disabled selected>Select your option</option>
-							<option value="0">More than 1000 words.</option>
-							<option value="-7">700 - 1000 words.</option>
-							<option value="-14">400 - 700 words.</option>
-							<option value="-22">Less than 400 words.</option>
-							</select>
-							</div>
-
-
-							<div class="question-block">
-								<h6>How would you rate is the overall difficulty of the translated text in this contribution?</h6>
-								<select>
-							<option value="" disabled selected>Select your option</option>
-							<option value="5">Extremely high (for example medical/legal texts).</option>
-							<option value="0">High (for example literature/scientific/history texts).</option>
-							<option value="-10">Average (for example simple tech manuals, school texts).</option>
-							<option value="-20">Low (for example simple words, short sentences).</option>
-							</select>
-							</div>
-
-							<div class="question-block">
-								<h6>How would you rate the semantic accuracy of the translated text?</h6>
-								<select>
-							<option value="" disabled selected>Select your option</option>
-							<option value="0">Very accurate, most of the sentences are well translated.</option>
-							<option value="-9">Good - some minor imprecisions.</option>
-							<option value="-22">Average - some imprecisions and misstatements.</option>
-							<option value="-35">Poor - Inexistent, most of the sentences are badly translated.</option>
-							</select>
-							</div>`
-      let antiabuse =
-        `
-					<div class="question-block">
-						<h6>How aware of the anti-abuse topic discussed in the post is the author?</h6>
-						<select >
-							<option value="" disabled selected>Select your option</option>
-							<option value="0">It is clear that they are closely familiar with the anti-abuse topic and its details.</option>
-							<option value="-5">The author offers some valuable insights about the anti-abuse topic.</option>
-							<option value="-7.5">Most of the post contains information gathered from other sources.</option>
-							<option value="-10">The author knows little or nothing about the anti-abuse topic.</option>
-						</select>
-					</div>
-
-							<div class="question-block">
-								<h6>What is the author's involvement level in the anti-abuse community?</h6>
-								<select id="2">
-							<option value="" disabled selected>Select your option</option>
-							<option value="0">The author is 100% committed to, and involved in, the anti-abuse community.</option>
-							<option value="-5">The author is committed, but is mostly involved with other projects unrelated to anti-abuse community.</option>
-							<option value="-7.5">The author is occasionally involved in the anti-abuse community.</option>
-							<option value="-10">The author is rarely involved in anti-abuse community.</option>
-							</select>
-							</div>
-
-							<div class="question-block">
-								<h6>Does the author add value to the anti-abuse community by managing, developing, suggesting or moderating ?</h6>
-								<select>
-							<option value="" disabled selected>Select your option</option>
-							<option value="0">The author invests a significant amount of time.</option>
-							<option value="-5">The author helps out often.</option>
-							<option value="-7.5">The author helps occasionally.</option>
-							<option value="-10">The author is not involved in any of these ways.</option>
-							</select>
-							</div>
-
-							<div class="question-block">
-								<h6>Does the contribution help raise awareness and education about abuse on the platform?</h6>
-								<select>
-							<option value="" disabled selected>Select your option</option>
-							<option value="0">The contribution greatly helps raise awareness about abuse.</option>
-							<option value="-5">The contribution helps raise awareness about abuse.</option>
-							<option value="-10">The contribution somewhat raise awareness about abuse.</option>
-							<option value="-15">The contribution does not raise awareness about abuse.</option>
-							</select>
-							</div>
-
-							<div class="question-block">
-								<h6>Is the contribution enough to empower the reader to participate in anti-abuse initiatives?</h6>
-								<select>
-							<option value="" disabled selected>Select your option</option>
-							<option value="0">The contribution greatly empowers the reader to participate in antiabuse initiatives.</option>
-							<option value="-5">The contribution empowers the reader to participate in antiabuse initiatives.</option>
-							<option value="-10">The contribution somewhat empowers the reader to participate in antiabuse initiatives.</option>
-							<option value="-15">The contribution does not empower the reader to participate in antiabuse initiatives.</option>
-							</select>
-							</div>
-
-
-							<div class="question-block">
-								<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
-								<select>
-							<option value="" disabled selected>Select your option</option>
-							<option value="0">The quality of the post is fantastic.</option>
-							<option value="-5">The post is of decent quality, but there is room for improvement.</option>
-							<option value="-10">The post is of average quality.</option>
-							<option value="-15">The quality of the post is below average.</option>
-							</select>
-							</div>
-
-							<div class="question-block">
-								<h6>How would you rate the overall value of this contribution to the anti-abuse community?</h6>
-								<select>
-							<option value="" disabled selected>Select your option</option>
-							<option value="0">This contribution greatly helps the anti-abuse community.</option>
-							<option value="-5">This contribution helps the anti-abuse community.</option>
-							<option value="-10">This contribution moderately helps the anti-abuse community.</option>
-							<option value="-15">This contribution slightly helps the anti-abuse community.</option>
-							</select>
-							</div>
-
-							<div class="question-block">
-								<h6>What is the overall volume of the blog post?</h6>
-								<select>
-							<option value="" disabled selected>Select your option</option>
-							<option value="0">More than 1,000 words.</option>
-							<option value="-1">750 - 1,000 words.</option>
-							<option value="-3">500 - 749 words.</option>
-							<option value="-5">Less than 500 words.</option>
-							</select>
-							</div>
-
-							<div class="question-block">
-								<h6>Is the post a part of a series?</h6>
-								<select>
-							<option value="" disabled selected>Select your option</option>
-							<option value="2.5">It is clear that it is a part of an ongoing series of posts.</option>
-							<option value="0">It is clear that it is the first post of an upcoming series.</option>
-							<option value="-2.5">This is the first post from the author.</option>
-							<option value="-5">The post is not a part of any series.</option>
-							</select>
-							</div>
-
-							<div class="question-block">
-								<h6>Was relevant quality graphic or video content included in this post?</h6>
-								<select>
-							<option value="" disabled selected>Select your option</option>
-							<option value="5">Yes, at least 4 distinguishable instances of relevant graphic or video content were included.</option>
-							<option value="0">Yes, between 2 and 3 distinguishable instances of relevant graphic or video content were included.</option>
-							<option value="-15">A single instance of relevant graphic or video content was included.</option>
-							<option value="-20">No graphic or video content was included, or the content was irrelevant.</option>
-							</select>
-							</div>`
-	</script>
-	<script>
-	function calcTotal() {
-			check();
-			var sum = 100;
-			for (i = 0; i < oSels.length; i++) {
-				sum += new Number(oSels[i].value);
-			}
-			if(sum < 0)
-				sum = 0
-			if(sum > 100)
-				sum = 100
-			document.getElementById('result').innerHTML = sum;
-			// var elem = document.querySelectorAll('.modal');
-			// var instance = M.Modal.init(elem);
-	  		$('.modal').modal();
-			let textarea = document.getElementById('textarea1');
-			let copy = document.getElementById('copy');
-			let comment = `<a class="waves-effect waves-light btn modal-trigger" style="background: transparent; color: black; border: 1px solid;" href="#modal1">Footer Comment Text</a>`;
-
-			let comid = document.getElementById('comment')
-
-			comid.innerHTML = comment;
-			copy.addEventListener('click', function() {
-				textarea.select();
-				document.execCommand("Copy");
-			})
-			return false;
-		}
-
-
-
-		function check() {
-
-			let category = document.getElementById('category').value;
-
-			let cat;
-
-			if (category == 'analysis')
-				cat = 0;
-			if (category == 'blog')
-				cat = 1;
-			if (category == 'copywriting')
-				cat = 2;
-			if (category == 'development')
-				cat = 3;
-			if (category == 'documentation')
-				cat = 4;
-			if (category == 'bugs')
-				cat = 5;
-			if (category == 'graphics')
-				cat = 6;
-			if (category == 'suggestions')
-				cat = 7;
-			if (category == 'tutorials')
-				cat = 8;
-			if (category == 'video-tuts')
-				cat = 9;
-			if (category == 'visibility')
-				cat = 10;
-			if (category == 'tasks')
-				cat = 11;
-			if (category == 'translations')
-				cat = 12;
-			if (category == 'antiabuse')
-			  	cat = 13;
-
-
-			let answers =
-				`REPLACE WITH FEEDBACK\n\n
-Your contribution has been evaluated according to [Utopian policies and guidelines](https://join.utopian.io/guidelines), as well as a predefined set of questions pertaining to the category.\n\nTo view those questions and the relevant answers related to your post, [click here](https://review.utopian.io/result/${cat}/`;
-			oSels = document.getElementById('form1').getElementsByTagName('select');
-
-			for (i = 0; i < oSels.length; i++) {
-				answers = answers + oSels[i].options.selectedIndex + '-';
-			}
-			feedend = category == 'translations' ? `).\n\n---- \nChat with us on [Discord](https://discord.gg/vMGmDSm)` :
-				`).\n\n---- \nNeed help? Write a ticket on https://support.utopian.io/. \nChat with us on [Discord](https://discord.gg/uTyJkNm). \n[[utopian-moderator]](https://join.utopian.io/)`
-			answers = answers + feedend
-			console.log(answers);
-			let textarea = document.getElementById('textarea1')
-			textarea.value = answers
-			textarea.style.height = '440px'
-		}
-	</script>
-
-	<script type="text/javascript">
-		let form;
-		let formstart = `<form class="z-depth-5" style="padding: 10px;" id="form1">`;
-		let formend =
-			`<center><a class="waves-effect waves-purple btn-large" name="" style="background: transparent; color: black; border: 1px solid;" id="dispscore">Get Score</a></center>
-			<center><h5 style="color: black">Score: <span id="result"></span></h5></center>
-		</form>`
-
-		let getcat = document.getElementById('getcat')
-
-		getcat.addEventListener('click', function() {
-			let category = document.getElementById('category').value;
-
-			if (category == 'analysis')
-				form = formstart + analysis + formend;
-			if (category == 'blog')
-				form = formstart + blog + formend;
-			if (category == 'copywriting')
-				form = formstart + copywriting + formend;
-			if (category == 'development')
-				form = formstart + development + formend;
-			if (category == 'documentation')
-				form = formstart + documentation + formend;
-			if (category == 'bugs')
-				form = formstart + bugs + formend;
-			if (category == 'graphics')
-				form = formstart + graphics + formend;
-			if (category == 'suggestions')
-				form = formstart + suggestions + formend;
-			if (category == 'tutorials')
-				form = formstart + tutorials + formend;
-			if (category == 'video-tuts')
-				form = formstart + videotuts + formend;
-			if (category == 'visibility')
-				form = formstart + visibility + formend;
-			if (category == 'tasks')
-				form = formstart + tasks + formend;
-			if (category == 'translations')
-				form = formstart + translations + formend;
-          	if (category == 'antiabuse')
-            	form = formstart + antiabuse + formend;
-
-
-          let formhere = document.getElementById('formhere')
-		  formhere.innerHTML = `${form}`;
-		  let dispscore = document.getElementById('dispscore')
-		  // var elems = document.querySelectorAll('select');
-		  // var instances = M.FormSelect.init(elems);
-		  $('select').material_select();
-		  dispscore.addEventListener('click', calcTotal)
-		})
-	</script>
-
-</body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,700,900"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700"
+      rel="stylesheet"
+    />
+    <title>Questionnaire</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css"
+    />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <style media="screen">
+      body {
+        margin: 0;
+      }
+
+      body {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+      }
+
+      main {
+        flex: 1 0 auto;
+      }
+
+      .topnav {
+        background-color: #24292e;
+        overflow: hidden;
+        transition: all 1s ease;
+      }
+
+      /* Style the links inside the navigation bar */
+
+      .topnav a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        transition: all 1s ease;
+      }
+
+      .topnav ul li a {
+        margin-top: -15px;
+        display: inline-block;
+        transition: all 1s ease;
+      }
+
+      .topnav a:hover {
+      }
+
+      .topnav .icon {
+        display: none;
+      }
+
+      @media screen and (max-width: 890px) {
+        .topnav ul li a {
+          display: none;
+          transition: all 1s ease;
+        }
+        .topnav a:nth-child(2) {
+          display: block;
+        }
+        .topnav a.icon {
+          float: right;
+          margin-top: -12px;
+          display: block;
+        }
+      }
+
+      @media screen and (max-width: 890px) {
+        .topnav.responsive ul {
+          /* position: relative; */
+          display: flex;
+          flex-direction: column-reverse;
+        }
+
+        .topnav ul li {
+          margin: 0 auto;
+          transition: all 1s ease;
+        }
+
+        .topnav .responsive ul li {
+          display: block;
+        }
+
+        .topnav .responsive ul li a {
+          text-align: center;
+        }
+
+        .topnav.responsive .icon {
+          position: absolute;
+          right: 0;
+          top: 0;
+          margin-top: 5px;
+        }
+        .topnav.responsive a {
+          float: none;
+          display: block;
+          text-align: left;
+        }
+        .topnav.responsive a b {
+          padding-left: 15px;
+        }
+
+        .topnav .responsive a {
+          float: none;
+        }
+      }
+
+      @media screen and (max-width: 600px) {
+        .footer-cols {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          justify-content: center;
+          margin: 0 auto;
+        }
+
+        .three-cols div {
+          text-align: left;
+          margin: 0 auto;
+          justify-content: center;
+        }
+
+        .three-cols .ml-auto {
+          text-align: center;
+        }
+
+        .midfoot .nav {
+          margin: 0 auto;
+          justify-content: center;
+          text-align: center;
+        }
+      }
+
+      .footerlink {
+        color: #7583a5 !important;
+        font-size: 16px;
+        position: relative;
+        text-decoration: none;
+      }
+
+      .footerlink:hover {
+        color: #fff;
+      }
+
+      .footerlink:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        bottom: 0;
+        left: 0;
+        background-color: #fff;
+        visibility: hidden;
+        -webkit-transform: scaleX(0);
+        transform: scaleX(0);
+        -webkit-transition: all 0.3s ease-in-out 0s;
+        transition: all 0.3s ease-in-out 0s;
+      }
+
+      .footerlink:hover:before {
+        visibility: visible;
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+      }
+      .modal {
+        min-height: 50%;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="topnav" id="myTopnav">
+      <img
+        src="logo.png"
+        style="width: 32px;height:25px; float: left; margin-left: 15px; margin-right: -5px; margin-top: 12px;"
+        class=""
+        alt="Logo"
+      />
+      <a href="/"
+        ><b
+          style="font-size: 16px;font-family: 'Lato', sans-serif !important;font-weight: 900;letter-spacing: 3px;white-space: nowrap"
+        >
+          UTOPIAN
+        </b></a
+      >
+      <ul>
+        <li>
+          <a
+            href="https://signup.utopian.io/"
+            style="float: right; margin-left: 8px; font-family: 'Noto Sans', sans-serif !important;margin-right: 10px; letter-spacing: 1px; font-weight: 600; font-size: 15px;"
+            >Sign Up</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://join.utopian.io/#about"
+            style="float: right; margin-left: 8px; font-family: 'Noto Sans', sans-serif !important;margin-right: 10px; letter-spacing: 1px; font-weight: 600; font-size: 15px;"
+            >About</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://join.utopian.io/investors"
+            style="float: right; margin-left: 8px; font-family: 'Noto Sans', sans-serif !important;margin-right: 10px; letter-spacing: 1px; font-weight: 600; font-size: 15px;"
+            >Investors</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://join.utopian.io/owners"
+            style="float: right; margin-left: 8px; font-family: 'Noto Sans', sans-serif !important;margin-right: 10px; letter-spacing: 1px; font-weight: 600; font-size: 15px;"
+            >Project Owners</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://join.utopian.io/#contributors"
+            style="float: right; margin-left: 8px; font-family: 'Noto Sans', sans-serif !important;margin-right: 10px; letter-spacing: 1px; font-weight: 600; font-size: 15px;"
+            >Contributors</a
+          >
+        </li>
+      </ul>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <div style="height:15px"></div>
+    <main class="container">
+      <div class="input-field col s12" style="margin:0 auto;">
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+          <div class="modal-content">
+            <textarea
+              id="textarea1"
+              class="materialize-textarea"
+              style="min-height: 450px;"
+              rows="60"
+              cols="100"
+            ></textarea>
+          </div>
+          <div class="modal-footer">
+            <a href="#!" id="copy" class="waves-effect waves-green btn-flat"
+              >Copy Text</a
+            >
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat"
+              >Close</a
+            >
+          </div>
+        </div>
+        <h5>Select Category</h5>
+        <select id="category">
+          <option value="" disabled selected>Select your option</option>
+          <option value="analysis">Analysis</option>
+          <option value="blog">Blog</option>
+          <option value="bugs">Bug Hunting</option>
+          <option value="copywriting">Copywriting</option>
+          <option value="development">Development</option>
+          <option value="documentation">Documentation</option>
+          <option value="graphics">Graphics</option>
+          <option value="suggestions">Suggestions</option>
+          <option value="visibility">Visibility</option>
+          <option value="tasks">Task Request</option>
+          <option value="tutorials">Tutorials</option>
+          <option value="video-tuts">Video Tutotials</option>
+          <option value="translations">Translations</option>
+          <option value="antiabuse">Anti Abuse</option>
+        </select>
+      </div>
+
+      <center>
+        <a
+          class="waves-effect waves-purple btn-large"
+          style="background: transparent; color: black; border: 1px solid;"
+          id="getcat"
+          >Get Questions</a
+        >
+      </center>
+
+      <div style="margin: 15px;" id="formhere"></div>
+      <center style="margin-bottom: 20px;" id="comment"></center>
+    </main>
+    <div id="footer" class="text-light" style="background: #24292e;">
+      <div class="container">
+        <h2
+          style="letter-spacing: 1px; color: white; font-weight: 500; line-height: 1.2; font-size: 32px; font-family: 'Lato', sans-serif !important; margin-bottom: 15px; margin-top: 50px;"
+        >
+          Let's make Open Source Economy a reality. Together.
+        </h2>
+        <hr
+          style="width: 35px; border: 1px solid #4786ff; margin-left: 0; margin-bottom: 35px"
+        />
+        <div
+          class="row mt-5 pb-4 footer-cols"
+          style="display:flex; margin-bottom: 50px"
+        >
+          <div class="s6 mb-4" style="padding-right: 15px">
+            <a href="https://join.utopian.io" target="_blank"
+              ><b
+                style="font-weight: bolder;color: #4786ff; font-size: 14.5px; letter-spacing: 0.2px"
+                line-height:
+                1.2
+                >Get started as a contributor</b
+              ></a
+            ><br />
+            <span style="color: #f8f9fa!important;"
+              >Start contributing to Open Source projects and receive rewards
+              for your contributions.</span
+            >
+          </div>
+          <div class="s6 mb-4" style="padding-right: 15px;">
+            <a href="https://join.utopian.io" target="_blank"
+              ><b
+                style="font-weight: bolder;color: #4786ff; font-size: 14.5px; letter-spacing: 0.2px"
+                line-height:
+                1.2
+                >Submit your project to Utopian</b
+              ></a
+            ><br />
+            <span style="color: #f8f9fa!important"
+              >Get the attention of valuable contributors and use the power of
+              collective intelligence to develop your project.</span
+            >
+          </div>
+        </div>
+        <hr style="border: 1px solid rgba(0,0,0,0.1); background: #363d4d;" />
+        <div
+          class="row py-4 footer-cols three-cols"
+          style="display: flex;margin: 25px 0;"
+        >
+          <div class="col-md-1 footer-logo" style="width: 7%; margin-top: 12px">
+            <img
+              src="logo.png"
+              class="d-inline-block"
+              style="width: 32px;height:25px"
+              alt="Logo"
+            />
+          </div>
+          <div class="col midfoot" style="width: 78%">
+            <ul class="nav" style="display: flex">
+              <li class="nav-item">
+                <a
+                  class="nav-link footerlink"
+                  href="https://join.utopian.io/privacy"
+                  >Privacy Policy</a
+                >
+                <span style="color: white; font-size: 12px">&nbsp;|&nbsp;</span>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link footerlink"
+                  href="https://join.utopian.io/tos"
+                  >Terms of Service</a
+                >
+                <span style="color: white; font-size: 12px">&nbsp;|&nbsp;</span>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link footerlink"
+                  href="https://join.utopian.io/cookies"
+                  >Cookie Policy</a
+                >
+                <span style="color: white; font-size: 12px">&nbsp;|&nbsp;</span>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link footerlink"
+                  href="https://steemit.com/@utopian-io"
+                  >Blog</a
+                >
+                <span style="color: white; font-size: 12px">&nbsp;|&nbsp;</span>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link footerlink"
+                  href="https://join.utopian.io/rules"
+                  >Rules</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div
+            class="col-md-3 social-icons text-right d-flex align-items-end"
+            style="width: 35%; text-align: right; margin-top: 5px"
+          >
+            <div class="ml-auto">
+              <a
+                href="https://www.facebook.com/utopian.io/"
+                style="padding-left: 12px;"
+                target="_blank"
+              >
+                <svg style="width:32px;height:32px" viewBox="0 0 24 24">
+                  <path
+                    fill="#7583a5"
+                    d="M5,3H19A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3M18,5H15.5A3.5,3.5 0 0,0 12,8.5V11H10V14H12V21H15V14H18V11H15V9A1,1 0 0,1 16,8H18V5Z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://twitter.com/utopian_io"
+                style="padding-left: 12px;"
+                target="_blank"
+              >
+                <svg style="width:32px;height:32px" viewBox="0 0 24 24">
+                  <path
+                    fill="#7583a5"
+                    d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://github.com/utopian-io"
+                style="padding-left: 12px;"
+                target="_blank"
+              >
+                <svg style="width:32px;height:32px" viewBox="0 0 24 24">
+                  <path
+                    fill="#7583a5"
+                    d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <hr style="border: 1px solid rgba(0,0,0,0.1); background: #363d4d;" />
+        <div class="row pt-4">
+          <div
+            class="col text-center disclaimer"
+            style="color: #7583a5 !important;opacity: 0.5; font-size: 12px; text-align: center; margin: 25px 0;"
+          >
+            ALL INFORMATION ON UTOPIAN AND PROVIDED FROM OR THROUGH USE OF ITS
+            SERVICES DOES NOT CONSTITUTE INVESTMENT ADVICE OR RECOMMENDATION.
+            USERS SHOULD NOT MAKE ANY DECISION, FINANCIAL OR OTHERWISE, WITHOUT
+            UNDERTAKING INDEPENDENT DUE DILIGENCE AND SEEKING PROFESSIONAL
+            FINANCIAL ADVICE.
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+    <script type="text/javascript">
+      window.onload = function() {
+        window.cookieconsent.initialise({
+          palette: {
+            popup: {
+              background: '#4786ff',
+              text: '#ffffff'
+            },
+            button: {
+              background: 'transparent',
+              text: '#fff',
+              border: '#fff'
+            }
+          },
+          content: {
+            href: 'https://join.utopian.io/cookies'
+          }
+        });
+      };
+
+      function myFunction() {
+        var x = document.getElementById('myTopnav');
+        if (x.className === 'topnav') {
+          x.className += ' responsive';
+        } else {
+          x.className = 'topnav';
+        }
+      }
+      // var elems = document.querySelectorAll('select');
+      // var instances = M.FormSelect.init(elems)
+      $('#category').material_select();
+    </script>
+    <script type="text/javascript">
+      let bugs = `<div class="question-block">
+                  							<h6>What was the severity level of the bug?</h6>
+                  								<select >
+                  							<option value="" disabled selected>Select your option</option>
+                  						  <option value="10">Critical</option>
+                  						  <option value="0">Major</option>
+                  						  <option value="-25">Minor</option>
+                  						  <option value="-35">Negligible</option>
+                  						</select>
+                  							</div>
+                  
+                  							<div class="question-block">
+                  								<h6>How would you rate the descriptiveness and clarity of the submission post?</h6>
+                  								<select id="2">
+                  							<option value="" disabled selected>Select your option</option>
+                  						  <option value="0">The title provided sufficient information, and the steps to bug reproduction were clearly described.</option>
+                  						  <option value="-2.5">The title was not sufficiently informative, but the steps to bug reproduction were clear.</option>
+                  						  <option value="-3.5">The title provided sufficient information, but the description of the steps to bug reproduction severely lacked in clarity.</option>
+                  						  <option value="-5">Both the title and content of the submission post were lacking in information, and the steps to bug reproduction were badly explained and, at times, impossible to follow.</option>
+                  						</select>
+                  							</div>
+                  
+                  							<div class="question-block">
+                  								<h6>Has the contributor reported the issue to the project owner prior to submitting it to Utopian?</h6>
+                  								<select>
+                  							<option value="" disabled selected>Select your option</option>
+                  						  <option value="0">Yes, it was reported by this contributor and acknowledged by the project owner.</option>
+                  						  <option value="-5">Yes, it was reported by this contributor but has to yet be acknowledged by the project owner. </option>
+                  						  <option value="-10">No, it was not reported, but an effort to contact the project owner has been made.</option>
+                  						<option value="-20">No, the contributor made no effort to notify the project owner of this issue.</option>
+                  						</select>
+                  							</div>
+                  
+                  							<div class="question-block">
+                  								<h6>Has the contributor looked for the possible cause of the issue and/or submitted his own ideas for implementing a fix to this problem?</h6>
+                  								<select>
+                  							<option value="" disabled selected>Select your option</option>
+                  						  <option value="5">The contributor pinpointed the issue and proposed a possible solution.</option>
+                  						  <option value="0">The contributor pinpointed the cause but hasn’t proposed a fix, or the fix proposed was obviously not suitable.</option>
+                  						  <option value="-10">The contributor made efforts to pinpoint the cause, but without success.</option>
+                  						<option value="-15">The contributor made no efforts to pinpoint the cause, or applied incorrect methods in searching for it.</option>
+                  						</select>
+                  							</div>
+                  
+                  
+                  							<div class="question-block">
+                  								<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
+                  								<select id="6">
+                  							<option value="" disabled selected>Select your option</option>
+                  						  <option value="0">Good</option>
+                  						  <option value="-3">Average</option>
+                  						  <option value="-7">Below Average</option>
+                  						<option value="-15">Low Quality</option>
+                  						</select>
+                  							</div>
+                  
+                  								<div class="question-block">
+                  								<h6>How would you rate the overall value of this contribution on the open source community and ecosystem?</h6>
+                  								<select id="7">
+                  							<option value="" disabled selected>Select your option</option>
+                  						  <option value="5"	>This contribution brings great and impactful value, and can be used for applications outside the specific project.</option>
+                  						  <option value="0">This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.</option>
+                  						  <option value="-12">This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.</option>
+                  						<option value="-20">This contribution adds nearly no value to the open source community and ecosystem or the specific project.</option>
+                  						</select>
+                  							</div>
+                  					`;
+
+      let analysis = `<div class="question-block">
+                  						<h6>Were all relevant aspects or metrics related to the objective analyzed?</h6>
+                  						<select >
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">All relevant metrics were covered.</option>
+                  					<option value="-4">Only selected metrics were chosen; including more may have provided additional insights.</option>
+                  					<option value="-12">Only a single or narrow aspect was chosen.</option>
+                  					<option value="-20">No metric was chosen.</option>
+                  					</select>
+                  					</div>
+                  
+                  					<div class="question-block">
+                  						<h6>How would you rate the complexity data extraction for this analysis?</h6>
+                  						<select id="2">
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">Gathering the data required complex queries and post-processing.</option>
+                  					<option value="-3">The method of extracting data was moderately challenging.</option>
+                  					<option value="-11">The data can be directly imported for visualization - no additional data transformation was needed.</option>
+                  					<option value="-15">No data was extracted.</option>
+                  					</select>
+                  					</div>
+                  
+                  					<div class="question-block">
+                  						<h6>How would you rate the quality of the visualization of the findings?</h6>
+                  						<select>
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">Visualizations presented were superb and beyond expectation.</option>
+                  					<option value="-4">Appropriate and sufficient visualization were used to present the results.</option>
+                  					<option value="-16">Visualizations were included, but lacked in quality and/or quantity.</option>
+                  					<option value="-20">Visualizations included were irrelevant to the objective.</option>
+                  					</select>
+                  					</div>
+                  
+                  
+                  					<div class="question-block">
+                  						<h6>Was the analysis reproducible through the use of the contribution content?</h6>
+                  						<select>
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">All queries or data gathering methods and all data processing scripts were included.</option>
+                  					<option value="-1">The core query or data gathering method was included and the data processing steps were described.</option>
+                  					<option value="-3">Data gathering methods and processing steps were sketched.</option>
+                  					<option value="-5">Data gathering methods were not included.</option>
+                  					</select>
+                  					</div>
+                  
+                  					<div class="question-block">
+                  						<h6>Was it a new and unique analysis?</h6>
+                  						<select>
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">Yes, it was a unique analysis.</option>
+                  					<option value="-4">It’s similar to another contribution, but covers deeper or additional aspects.</option>
+                  					<option value="-6">It’s similar to another contribution, but covers a different time period.</option>
+                  					<option value="-10">It’s a recurring analysis covering too short a time frame (i.e., daily).</option>
+                  					</select>
+                  					</div>
+                  
+                  
+                  					<div class="question-block">
+                  						<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
+                  						<select id="6">
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">Good.</option>
+                  					<option value="-3">Average.</option>
+                  					<option value="-7">Below Average.</option>
+                  					<option value="-15">Low Quality.</option>
+                  					</select>
+                  					</div>
+                  
+                  						<div class="question-block">
+                  						<h6>How would you rate the overall value of this contribution on the open source community and ecosystem?</h6>
+                  						<select id="7">
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="5"	>This contribution brings great and impactful value, and can be used for applications outside the specific project. </option>
+                  					<option value="0">This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.</option>
+                  					<option value="-12">This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.</option>
+                  					<option value="-20">This contribution adds nearly no value to the open source community and ecosystem or the specific project. </option>
+                  					</select>
+                  					</div>
+                  					`;
+
+      let documentation = `<div class="question-block">
+                  						<h6>How would you rate the overall quality of the documentation?</h6>
+                  						<select >
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">Fantastic quality! It’s very hard to find documentation this good.</option>
+                  					<option value="-5">Very high quality.</option>
+                  					<option value="-20">Average quality - could be improved in many ways.</option>
+                  					<option value="-27.5">Very low quality.</option>
+                  					</select>
+                  					</div>
+                  
+                  					<div class="question-block">
+                  						<h6>How comprehensive was the documentation (how many features were documented, contribution volume, etc.)?</h6>
+                  						<select id="2">
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">A significant portion of the project was documented.</option>
+                  					<option value="-5">Numerous features or one major feature were documented.</option>
+                  					<option value="-15">A small feature was documented in detail.</option>
+                  					<option value="-25">The volume or detail of the documentation were insufficient.</option>
+                  					</select>
+                  					</div>
+                  
+                  					<div class="question-block">
+                  						<h6>How would you rate the overall significance of this particular feature/file documentation to the project?</h6>
+                  						<select>
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">Very important, the project is significantly easier to use with it.</option>
+                  					<option value="-2">Important, but not critical to use or application of the project.</option>
+                  					<option value="-9">It has some potential uses as reference.</option>
+                  					<option value="-15">It had no obvious applications or uses.</option>
+                  					</select>
+                  					</div>
+                  
+                  
+                  					<div class="question-block">
+                  						<h6>Is the documentation developed for the internal staff only, or does it add value to the open source community as a whole?</h6>
+                  						<select>
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">It is meant to be used also by open source community members not associated with the project.</option>
+                  					<option value="-0.5">It is mainly aimed at open source community members that contribute to this particular project.</option>
+                  					<option value="-1.5">It is intended for internal staff use, but the community can also benefit from this content.</option>
+                  					<option value="-2.5">It is clearly meant only for the internal staff of the project and hold no value to the open source community.</option>
+                  					</select>
+                  					</div>
+                  
+                  					<div class="question-block">
+                  						<h6>Does the author of the documentation understand the project and its needs in detail?</h6>
+                  						<select>
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">Yes. The author is clearly very involved in the project.</option>
+                  					<option value="-1.5">The author has good understanding of the project and its needs.</option>
+                  					<option value="-6">The author clearly understands how the project works.</option>
+                  					<option value="-10">The author has no understanding of the project.</option>
+                  					</select>
+                  					</div>
+                  
+                  
+                  					<div class="question-block">
+                  						<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
+                  						<select id="6">
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">Good.</option>
+                  					<option value="-3">Average.</option>
+                  					<option value="-7">Below Average.</option>
+                  					<option value="-15">Low Quality.</option>
+                  					</select>
+                  					</div>
+                  
+                  						<div class="question-block">
+                  						<h6>How would you rate the overall value of this contribution on the open source community and ecosystem?</h6>
+                  						<select id="7">
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="5"	>This contribution brings great and impactful value, and can be used for applications outside the specific project.</option>
+                  					<option value="0">This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.</option>
+                  					<option value="-12">This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.</option>
+                  					<option value="-20">This contribution adds nearly no value to the open source community and ecosystem or the specific project.</option>
+                  					</select>
+                  					</div>
+                  					`;
+
+      let copywriting = `<div class="question-block">
+                  						<h6>What is the volume of the work submitted?</h6>
+                  						<select >
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">Long (at least 1,000 words in total)</option>
+                  					<option value="-10">Medium (at least 400 words in total)</option>
+                  					<option value="-15">Short (at least 200 words in total)</option>
+                  					<option value="-20">Very Short (less than 200 words in total)</option>
+                  					</select>
+                  					</div>
+                  
+                  					<div class="question-block">
+                  						<h6>How would you rate the grammar and style of the content?</h6>
+                  						<select id="2">
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">Polished and well-written</option>
+                  					<option value="-6">Good, but has room for improvement</option>
+                  					<option value="-10">Has a few errors that need to be corrected</option>
+                  					<option value="-15">It is of low quality</option>
+                  					</select>
+                  					</div>
+                  
+                  					<div class="question-block">
+                  						<h6>How relevant is the content to the project's needs?</h6>
+                  						<select>
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">Highly relevant and valuable</option>
+                  					<option value="-3">Relevant but offers little unique value</option>
+                  					<option value="-5">Somewhat relevant</option>
+                  					<option value="-10">Does not adequately meet the project’s needs</option>
+                  					</select>
+                  					</div>
+                  
+                  
+                  					<div class="question-block">
+                  						<h6>Overall, how readable or comprehensible is the content?</h6>
+                  						<select>
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">It reads well and is easy to comprehend</option>
+                  					<option value="-2">It is understandable, but it could be improved</option>
+                  					<option value="-6">Some parts are hard to comprehend</option>
+                  					<option value="-10">A lot of it is hard to understand</option>
+                  					</select>
+                  					</div>
+                  
+                  					<div class="question-block">
+                  						<h6>Did the content fulfill the specific needs presented by the project owner?</h6>
+                  						<select>
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="5">Yes, the content exceeded all specified requirements</option>
+                  					<option value="0">Yes, all the requirements were fulfilled</option>
+                  					<option value="-8">Some of the less important requirements were left out</option>
+                  					<option value="-15">Not all important requirements were addressed</option>
+                  					</select>
+                  					</div>
+                  
+                  
+                  					<div class="question-block">
+                  						<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
+                  						<select id="6">
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">Good.</option>
+                  					<option value="-3">Average.</option>
+                  					<option value="-7">Below Average.</option>
+                  					<option value="-15">Low Quality.</option>
+                  					</select>
+                  					</div>
+                  
+                  						<div class="question-block">
+                  						<h6>How would you rate the overall value of this contribution on the open source community and ecosystem?</h6>
+                  						<select id="7">
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="5"	>This contribution brings great and impactful value, and can be used for applications outside the specific project. </option>
+                  					<option value="0">This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.</option>
+                  					<option value="-12">This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.</option>
+                  					<option value="-20">This contribution adds nearly no value to the open source community and ecosystem or the specific project. </option>
+                  					</select>
+                  					</div>
+                  					`;
+
+      let visibility = `<div class="question-block">
+                  						<h6>Does the post include sufficient information and detailed description of the work done?</h6>
+                  						<select >
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">The post includes detailed reports including a downloadable activity report as well as bidding strategy, and logical reasoning behind campaign planning and execution.</option>
+                  					<option value="-5">The post includes some details on the campaign progress and results, but could offer additional information.</option>
+                  					<option value="-9.5">The post lacks sufficient information to fully understand the work performed.</option>
+                  					<option value="-10">The post includes no proof of authorship and/or lacks campaign result details completely.</option>
+                  					</select>
+                  					</div>
+                  
+                  					<div class="question-block">
+                  						<h6>Is the audience targeting and segmentation relevant to the project promoted?</h6>
+                  						<select>
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">Yes, the target audience is well defined and relevant to the project.</option>
+                  					<option value="-10">The target audience is relevant, but too broad / narrow.</option>
+                  					<option value="-14">The target audience is not relevant to the project promoted.</option>
+                  					<option value="-15">No targeting information was provided.</option>
+                  					</select>
+                  					</div>
+                  
+                  
+                  					<div class="question-block">
+                  						<h6>Is the message used in the visibility campaign relevant and concise?</h6>
+                  						<select id="6">
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">Yes, the call to action is very clear and ad copy is accurate.</option>
+                  					<option value="-10">The message is included, but could be better crafted.</option>
+                  					<option value="-14">The message is inaccurate / unsuitable to the target audience.</option>
+                  					<option value="-15">The message is completely irrelevant and / or in a foreign language with no translation provided.</option>
+                  					</select>
+                  					</div>
+                  
+                  					<div class="question-block">
+                  						<h6>What was the overall performance of the campaign described?</h6>
+                  						<select id="6">
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">The project received significant visibility (over 10,000 users reach) and conversion rate (over 2 percent on average).</option>
+                  					<option value="-15">The project received some visibility and traction (under 10,000 reach, conversion rate of 0-2 percent).</option>
+                  					<option value="-19.5">The project received little visibility and traction due to badly defined campaign goals by the project owner.</option>
+                  					<option value="-20">The project did not benefit from this contribution.</option>
+                  					</select>
+                  					</div>
+                  
+                  					<div class="question-block">
+                  						<h6>Does the submission offer added-value / educational content (such as tips, insights, etc.)?</h6>
+                  						<select id="6">
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">Yes, people should learn from this post!</option>
+                  					<option value="-5">Some added-value content is included.</option>
+                  					<option value="-7.5">There’s very little one can learn from this post.</option>
+                  					<option value="-10">This post includes misleading information.</option>
+                  					</select>
+                  					</div>
+                  
+                  					<div class="question-block">
+                  						<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
+                  						<select id="6">
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">Good.</option>
+                  					<option value="-3">Average.</option>
+                  					<option value="-7">Below Average.</option>
+                  					<option value="-15">Low Quality.</option>
+                  					</select>
+                  					</div>
+                  
+                  						<div class="question-block">
+                  						<h6>How would you rate the overall value of this contribution on the open source community and ecosystem?</h6>
+                  						<select id="7">
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="5"	>This contribution brings great and impactful value, and can be used for applications outside the specific project. </option>
+                  					<option value="0">This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.</option>
+                  					<option value="-12">This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.</option>
+                  					<option value="-20">This contribution adds nearly no value to the open source community and ecosystem or the specific project. </option>
+                  					</select>
+                  					</div>
+                  					`;
+
+      let tutorials = `<div class="question-block">
+                  						<h6>How many substantial concepts does this tutorial address?</h6>
+                  						<select >
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">4-5 substantial concepts covered in the tutorial</option>
+                  					<option value="-5">2-3 substantial concepts covered in the tutorial</option>
+                  					<option value="-10">1 substantial concept covered in the tutorial</option>
+                  					<option value="-15">More than 5 substantial concepts covered in the tutorial</option>
+                  					</select>
+                  					</div>
+                  
+                  					<div class="question-block">
+                  						<h6>Does the title and the outline of the tutorial properly reflect the content?</h6>
+                  						<select>
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">Yes, it is very clear.</option>
+                  					<option value="-3">To some extent.</option>
+                  					<option value="-7">The title is somewhat misleading and/or the outline is not detailed or informative enough.</option>
+                  					<option value="-15">Title and outline are of little or no relevance to the content of the tutorial.</option>
+                  					</select>
+                  					</div>
+                  
+                  					<div class="question-block">
+                  						<h6>Did the contributor provide supplementary resources, such as code and sample files in the contribution post or a linked GitHub repository?</h6>
+                  						<select>
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">Yes, exceptional supplementary resources are provided including a relevant github repo/gist.</option>
+                  					<option value="-3">Supplementary resources provided are of high relevance.</option>
+                  					<option value="-7">Contributor provides minimal supplementary resources.</option>
+                  					<option value="-10">No supplementary resources were provided.</option>
+                  					</select>
+                  					</div>
+                  
+                  
+                  					<div class="question-block">
+                  						<h6>Is the tutorial part of a series?</h6>
+                  						<select id="6">
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">Yes.</option>
+                  					<option value="-3">Yes, but it is the first entry in the series.</option>
+                  					<option value="-3">No, but it works just fine as a stand-alone tutorial.</option>
+                  					<option value="-10">No, though it clearly should be.</option>
+                  					</select>
+                  					</div>
+                  
+                  					<div class="question-block">
+                  						<h6>Does the tutorial contain sufficient explanatory visuals?</h6>
+                  						<select id="6">
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">Yes, the visual components of the post were adequate in quality and quantity.</option>
+                  					<option value="-3">The volume of visual components included was unnecessarily large.</option>
+                  					<option value="-7">The post lacked sufficient visualization to easily learn from the content.</option>
+                  					<option value="-10">No visualization was presented in this contribution.</option>
+                  					</select>
+                  					</div>
+                  
+                  					<div class="question-block">
+                  						<h6>How unique and/or innovative are the concepts covered in the tutorial?</h6>
+                  						<select id="6">
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">This was the first time I read about the concepts covered.</option>
+                  					<option value="-3">The concepts covered were innovative and offer some usefulness.</option>
+                  					<option value="-5">Similar concepts and ideas are available elsewhere, but this one was of higher quality.</option>
+                  					<option value="-10">Similar or superior tutorials can be found online with great ease</option>
+                  					</select>
+                  					</div>
+                  
+                  					<div class="question-block">
+                  						<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
+                  						<select id="6">
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">Good.</option>
+                  					<option value="-3">Average.</option>
+                  					<option value="-7">Below Average.</option>
+                  					<option value="-15">Low Quality.</option>
+                  					</select>
+                  					</div>
+                  
+                  						<div class="question-block">
+                  						<h6>How would you rate the overall value of this contribution on the open source community and ecosystem?</h6>
+                  						<select id="7">
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="5">This contribution brings great and impactful value, and can be used for applications outside the specific project. </option>
+                  					<option value="0">This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.</option>
+                  					<option value="-12">This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.</option>
+                  					<option value="-20">This contribution adds nearly no value to the open source community and ecosystem or the specific project. </option>
+                  					</select>
+                  					</div>
+                  					`;
+
+      let graphics = `<div class="question-block">
+                  						<h6>Did the designer include a selection of distinctive designs or variations for the project owner to choose from?</h6>
+                  						<select >
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">More than 3 distinctive, relatively complex designs were provided.</option>
+                  					<option value="-5">Between 2 and 3; the designs were complex and took a fair amount of work.</option>
+                  					<option value="-7">Only one distinctive design was provided or the provided designs are too similar.</option>
+                  					<option value="-9">The number of design variations provided was lower than the number requested by the project owner and/or the apparent work invested was negligible.</option>
+                  					</select>
+                  					</div>
+                  
+                  					<div class="question-block">
+                  						<h6>Is the whole contribution a result of own work?</h6>
+                  						<select>
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">Yes.</option>
+                  					<option value="-3">Some third party assets were used but all of them are usable for the contribution actual purpose. The assets were accordingly edited and not simply downloaded and used.</option>
+                  					<option value="-5">Other assets were provided by the project owner.</option>
+                  					<option value="-6">Most assets used were third party assets and contributor did not make additional effort to incorporate them in the contribution.</option>
+                  					</select>
+                  					</div>
+                  
+                  					<div class="question-block">
+                  						<h6>Was the contribution used in the project? (ex.: the graphic design is already utilized in play store, project website or got merged into the official repository)</h6>
+                  						<select id="6">
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">Yes, and the contributor provided clear evidence of it in their post.</option>
+                  					<option value="-4">It was not used, but the project owner liked it and considered using it.</option>
+                  					<option value="-5">It was not used, but is of very high quality.</option>
+                  					<option value="-8">It was not used as it provides no value to the project.</option>
+                  					</select>
+                  					</div>
+                  
+                  					<div class="question-block">
+                  						<h6>Does the contribution include files for immediate use in all requested formats?</h6>
+                  						<select id="6">
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">Yes, all required file formats were included.</option>
+                  					<option value="-5">Most requested file formats requested by project owner were provided, but not all.</option>
+                  					<option value="-7">No, submitted files were not ready for immediate use and require editing or adjustments.</option>
+                  					<option value="-10">No downloadable files were provided.</option>
+                  					</select>
+                  					</div>
+                  
+                  					<div class="question-block">
+                  						<h6>Technical quality of graphics was:</h6>
+                  						<select id="6">
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">Excellent, no mistakes within the design.</option>
+                  					<option value="-16">Very good with minor mistakes that are visible in the provided files.</option>
+                  					<option value="-26">Good but the design has some more serious flaws that need to be corrected.</option>
+                  					<option value="-37">Bad. The design does not follow graphics standard and is barely usable.</option>
+                  					</select>
+                  					</div>
+                  
+                  					<div class="question-block">
+                  						<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
+                  						<select id="6">
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">Good.</option>
+                  					<option value="-3">Average.</option>
+                  					<option value="-7">Below Average.</option>
+                  					<option value="-15">Low Quality.</option>
+                  					</select>
+                  					</div>
+                  
+                  						<div class="question-block">
+                  						<h6>How would you rate the overall value of this contribution on the open source community and ecosystem?</h6>
+                  						<select id="7">
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="5">This contribution brings great and impactful value, and can be used for applications outside the specific project. </option>
+                  					<option value="0">This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.</option>
+                  					<option value="-12">This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.</option>
+                  					<option value="-20">This contribution adds nearly no value to the open source community and ecosystem or the specific project. </option>
+                  					</select>
+                  					</div>
+                  					`;
+
+      let tasks = `<div class="question-block">
+                  						<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
+                  						<select >
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">Good.</option>
+                  					<option value="-2">Average.</option>
+                  					<option value="-7">Below average.</option>
+                  					<option value="-15">Low quality.</option>
+                  					</select>
+                  					</div>
+                  
+                  					<div class="question-block">
+                  						<h6>How would you rate the overall value the contribution solving this task will bring to the open source community?</h6>
+                  						<select>
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">This task request, if it can be solved, can bring great, unique and impactful value to the community as a whole.</option>
+                  					<option value="-5">This task request, if it can be solved, adds significant value to the open source community, or is of critical importance to the specific project</option>
+                  					<option value="-17.5">This task request, if it can be solved, adds some value to the open source community or is only valuable to the specific project.</option>
+                  					<option value="-35">This task request cannot be solved and/or adds no value to the open source community or the specific project.</option>
+                  					</select>
+                  					</div>
+                  
+                  					<div class="question-block">
+                  						<h6>How feasible and executable is the task requested?</h6>
+                  						<select>
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">Very. It is likely to receive multiple potential solutions.</option>
+                  					<option value="-4">Moderate. It is likely to receive some potential solutions.</option>
+                  					<option value="-10">Low. The solution will demand a great deal of work, but someone invested in the project could take on this.</option>
+                  					<option value="-20">Impossible. It is very unlikely anyone will undertake this task.</option>
+                  					</select>
+                  					</div>
+                  
+                  
+                  					<div class="question-block">
+                  						<h6>How impactful will this task be for the specific project?</h6>
+                  						<select id="6">
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">Obviously crucial for ongoing project development.</option>
+                  					<option value="-1">It will have a major impact on the development and/or end user experience.</option>
+                  					<option value="-5">It hold some significance to ongoing project development.</option>
+                  					<option value="-10">The solution to this task will have little to no impact on the project.</option>
+                  					</select>
+                  					</div>
+                  
+                  					<div class="question-block">
+                  						<h6>How descriptive is the task request, and does it provide all necessary information to solve it?</h6>
+                  						<select id="6">
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">The task request is very descriptive and includes all the required information, as well as additional important data or tips.</option>
+                  					<option value="-1.5">The task request is sufficiently descriptive and includes the information required to solve it.</option>
+                  					<option value="-12">The task request includes some information, but it is partially inaccurate, lacking or insufficient to solve the task.</option>
+                  					<option value="-15">The task request is confusing, lacking information and resources.</option>
+                  					</select>
+                  					</div>
+                  
+                  					<div class="question-block">
+                  						<h6>Is this task request similar to another submitted by the same project owner?</h6>
+                  						<select id="6">
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">No, this task request is unique and different from other tasks every posted by this project owner.</option>
+                  					<option value="-2">Yes, but it was submitted over 30 days ago.</option>
+                  					<option value="-2">Yes, but it is sufficiently unique and/or necessary for the project development.</option>
+                  					<option value="-10">Yes, this task request is too similar or a direct copy of another task request submitted by this project owner in the past 30 days.</option>
+                  					</select>
+                  					</div>`;
+
+      let blog = `<div class="question-block">
+                  						<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
+                  						<select id="6">
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">The quality of the post is fantastic.</option>
+                  					<option value="-3">The post is of decent quality, but there is room for improvement.</option>
+                  					<option value="-14">The quality of the post is below average.</option>
+                  					<option value="-30">The post is hard to read and the content is sometimes hard to understand.</option>
+                  					</select>
+                  					</div>
+                  
+                  						<div class="question-block">
+                  						<h6>How would you rate the overall value of this contribution on the open source community and ecosystem?</h6>
+                  						<select id="7">
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="5"	>This contribution brings great and impactful value, and can be used for applications outside the specific project. </option>
+                  					<option value="0">This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.</option>
+                  					<option value="-5">This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.</option>
+                  					<option value="-20">This contribution adds nearly no value to the open source community and ecosystem or the specific project. </option>
+                  					</select>
+                  					</div>
+                  
+                  					<div class="question-block">
+                  						<h6>What is the overall volume of the blog post?</h6>
+                  						<select >
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="5">More than 1,300 words</option>
+                  					<option value="0">800-1,300 words</option>
+                  					<option value="-8">500-800 words</option>
+                  					<option value="-25">Less than 500 words</option>
+                  					</select>
+                  					</div>
+                  
+                  					<div class="question-block">
+                  						<h6>What is the topic category of this blog post?</h6>
+                  						<select >
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">Project introduction or project promotion</option>
+                  					<option value="-1.5">Development log / release notes</option>
+                  					<option value="-10">Project generic news</option>
+                  					<option value="-40">The topic is barely reletaed to the project.</option>
+                  					</select>
+                  					</div>
+                  
+                  					<div class="question-block">
+                  						<h6>Is the post a part of a series?</h6>
+                  						<select >
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">It is clear that it is a part of an ongoing series of posts.</option>
+                  					<option value="-3">It is clear that it is the first post of an upcoming series.</option>
+                  					<option value="-8">It is the first post from the author.</option>
+                  					<option value="-10">The post is not a part of any series.</option>
+                  					</select>
+                  					</div>
+                  
+                  					<div class="question-block">
+                  						<h6>Was relevant quality graphic and video content included in this post?</h6>
+                  						<select >
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="2">Yes, at least 4 distinguishable instances of graphic or video content were included.</option>
+                  					<option value="0">Yes, between 2 and 3 distinguishable instances of graphic or video content were included.</option>
+                  					<option value="-6">A single instance of graphic or video content was included.</option>
+                  					<option value="-10">No graphic or video content was included or the content was irrelevant.</option>
+                  					</select>
+                  					</div>
+                  
+                  					<div class="question-block">
+                  						<h6>How familiar is the author with the project discussed in the post?</h6>
+                  						<select >
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">It is clear that they are closely familiar with the project and its details.</option>
+                  					<option value="-2">The author offers some valuable insights about the project.</option>
+                  					<option value="-10">Most of the blog post contains information gathered from other sources.</option>
+                  					<option value="-40">The author knows only little or nothing about the project.</option>
+                  					</select>
+                  					</div>
+                  
+                  					<div class="question-block">
+                  						<h6>What is the timeframe of the events and announcements discussed in the blog post, and does it include reference to similar projects?</h6>
+                  						<select >
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="5">Both recent and future events, as well as comparison with similar projects is included.</option>
+                  					<option value="0">Events more recent than 2 weeks, or future events related the project are included.</option>
+                  					<option value="-10">Comparison with similar projects is included.</option>
+                  					<option value="-15">None of these topics are discussed in the post.</option>
+                  					</select>
+                  					</div>
+                  					`;
+
+      let suggestions = `<div class="question-block">
+                  						<h6>If implemented, how much impact on the functionality and/usability of the project will this suggestion have?</h6>
+                  						<select >
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">Major impact. </option>
+                  					<option value="-15">Some noticeable impact.</option>
+                  					<option value="-20">Minor improvement.</option>
+                  					<option value="-30">Negligible added-value to the project / impossible or extremely difficult implementation is required.</option>
+                  					</select>
+                  					</div>
+                  					<div class="question-block">
+                  						<h6>Does this suggestion match the goals, intended applications and/or roadmap of the project?</h6>
+                  						<select>
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">Yes, it’s closely related to the uses and applications of the project and may enhance it further toward project goals</option>
+                  					<option value="-5">It is related and may add value, but has no direct relation to the main purpose and/or applications of the project.</option>
+                  					<option value="-7">It is loosely related to one of purposes, applications or goals of the project and may add some value to it.
+                  					</option>
+                  					<option value="-10">It is not related to the project goals at all and holds no potential added-value.</option>
+                  					</select>
+                  					</div>
+                  					<div class="question-block">
+                  						<h6>Is the proposal realistic and feasible?</h6>
+                  						<select>
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">Yes, it can definitely be implemented and is important enough to warrant the developers’ attention and time.</option>
+                  					<option value="-3">Yes, it can definitely be implemented, but is not likely to get noticed by the development team immediately.</option>
+                  					<option value="-7">It can be implemented in theory, but no recommendations or guidelines were included in the suggestion post.</option>
+                  					<option value="-13">No, it’s impossible or non-cost-effective to implement.</option>
+                  					</select>
+                  					</div>
+                  
+                  					<div class="question-block">
+                  						<h6>Has the user provided any mockups (illustrations) of potential suggestion implementation appearance?</h6>
+                  						<select>
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">Yes, and they’re of excellent quality</option>
+                  					<option value="0">No, but the mockups are inapplicable for this suggestion.</option>
+                  					<option value="-7">Yes, but the quality of the mockups is poor.</option>
+                  					<option value="-10">No, there are no mockups included even though they are needed / No potential solution was presented.</option>
+                  					</select>
+                  					</div>
+                  
+                  					<div class="question-block">
+                  						<h6>Has the contributor proposed a possible solution to implement the suggestion?</h6>
+                  						<select>
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">Yes, the possible solution is described in great detail and makes a lot of sense</option>
+                  					<option value="-5">Yes, but the possible solution was not described in sufficient detail.</option>
+                  					<option value="-7">No, but the implementation is self explanatory or very easily executed. </option>
+                  					<option value="-10">No, there’s no proposed solution though one is clearly necessary.</option>
+                  					</select>
+                  					</div>
+                  					<div class="question-block">
+                  						<h6>Is the suggested feature commonly available in other projects or submitted suggestions?</h6>
+                  						<select>
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">No, it’s unique or very rare.</option>
+                  					<option value="-2">Yes, but it’s a feature of high importance for this kind of project.</option>
+                  					<option value="-5">It's common, but it will have some measurable positive impact on the user experience or product functionality.</option>
+                  					<option value="-7">It’s extremely common and may have been left out intentionally.</option>
+                  					</select>
+                  					</div>
+                  					<div class="question-block">
+                  						<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
+                  						<select id="8">
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">Good.</option>
+                  					<option value="-3">Average.</option>
+                  					<option value="-7">Below Average.</option>
+                  					<option value="-10">Low Quality.</option>
+                  					</select>
+                  					</div>
+                  						<div class="question-block">
+                  						<h6>How would you rate the overall value of this contribution on the open source community and ecosystem?</h6>
+                  						<select id="9">
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="5">This contribution can add value and be used for applications outside the specific project.</option>
+                  					<option value="0">This contribution can be of value to the open source community and ecosystem, or is of critical importance to the specific project.</option>
+                  					<option value="-12">This contribution can add little value to the open source community and ecosystem or is only valuable to the specific project.</option>
+                  					<option value="-20">This contribution adds no noticeable value to the open source community and ecosystem or the specific project.</option>
+                  					</select>
+                  					</div>
+                  					`;
+
+      let videotuts = `<div class="question-block">
+                  						<h6>How many substantial concepts does this tutorial address?</h6>
+                  						<select >
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">4-5 substantial concepts covered in the tutorial</option>
+                  					<option value="-5">2-3 substantial concepts covered in the tutorial</option>
+                  					<option value="-10">1 substantial concept covered in the tutorial</option>
+                  					<option value="-15">More than 5 substantial concepts covered in the tutorial</option>
+                  					</select>
+                  					</div>
+                  
+                  					<div class="question-block">
+                  						<h6>Does the contribution text and images support the video tutorial?</h6>
+                  						<select id="2">
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">Exceptionally good text and, when applicable, images for concepts covered.</option>
+                  					<option value="-5">Thorough text and, when applicable, images for concepts covered.</option>
+                  					<option value="-7">Insufficient volume of text and images.</option>
+                  					<option value="-10">No or very little text and images.</option>
+                  					</select>
+                  					</div>
+                  
+                  					<div class="question-block">
+                  						<h6>Is the video clearly prepared and structured?</h6>
+                  						<select>
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">Both the presenter and the video are exceptionally organized, structured and presented.</option>
+                  					<option value="-5">Presenter is prepared and video concepts are structured.</option>
+                  					<option value="-12">Presenter has moments when he/she seems unprepared and/or the content seems to be unstructured.</option>
+                  					<option value="-20">Presenter seems unprepared and/or video is unstructured.</option>
+                  					</select>
+                  					</div>
+                  
+                  
+                  					<div class="question-block">
+                  						<h6>Does the contributor provide supplementary resources, such as code and sample files in the contribution post or a GitHub repository?</h6>
+                  						<select>
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">Contributor provided exceptional supplementary resources.</option>
+                  					<option value="-1">Contributor provided good supplementary resources.</option>
+                  					<option value="-4">Contributor provided minimal supplementary resources.</option>
+                  					<option value="-5">No supplementary resources were provided.</option>
+                  					</select>
+                  					</div>
+                  
+                  					<div class="question-block">
+                  						<h6>How would you describe the sound quality of the video?</h6>
+                  						<select>
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">Sound quality is excellent and sounds professionally produced.</option>
+                  					<option value="-3">The sound is clear and understandable.</option>
+                  					<option value="-7">Low quality of sound and/or mildly distracting background noise.</option>
+                  					<option value="-10">Distracting background noise and/or very low quality recording.</option>
+                  					</select>
+                  					</div>
+                  
+                  
+                  					<div class="question-block">
+                  						<h6>Does the presenter speak clearly and is easy to understand?</h6>
+                  						<select id="6">
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">Yes, presenter’s speech is highly engaging and professional.</option>
+                  					<option value="-3">Yes, presenter’s speech is easy to understand.</option>
+                  					<option value="-8">Portions of the presenter’s speech were comprehensible.</option>
+                  					<option value="-10">Little or none of the presenter’s speech was understandable.</option>
+                  					</select>
+                  					</div>
+                  
+                  						<div class="question-block">
+                  						<h6>Is the title of the tutorial and the concepts being covered visible on the video in text overlay form?</h6>
+                  						<select id="7">
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">Title and concepts covered are present in the video at all times in a non-disruptive way.</option>
+                  					<option value="-1">Title and concepts covered appear temporarily when they are addressed.</option>
+                  					<option value="-3">Only the title is presented and the concepts are not shown.</option>
+                  					<option value="-5">Neither title nor concepts covered are presented in the video text overlay.</option>
+                  					</select>
+                  					</div>
+                  					<div class="question-block">
+                  						<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
+                  						<select id="8">
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">Good.</option>
+                  					<option value="-3">Average.</option>
+                  					<option value="-7">Below Average.</option>
+                  					<option value="-10">Low Quality.</option>
+                  					</select>
+                  					</div>
+                  
+                  						<div class="question-block">
+                  						<h6>How would you rate the overall value of this contribution on the open source community and ecosystem?</h6>
+                  						<select id="9">
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="5">This contribution brings great and impactful value, and can be used for applications outside the specific project. </option>
+                  					<option value="0">This contribution adds significant value to the open source community and ecosystem, or is of critical importance to the specific project.</option>
+                  					<option value="-12">This contribution adds some value to the open source community and ecosystem or is only valuable to the specific project.</option>
+                  					<option value="-20">This contribution adds nearly no value to the open source community and ecosystem or the specific project. </option>
+                  					</select>
+                  					</div>
+                  					`;
+
+      let development = `<div class="question-block">
+                  						<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
+                  						<select >
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">The post is of very high quality.</option>
+                  					<option value="-3">The post is of decent quality.</option>
+                  					<option value="-7">The quality of the post is below average.</option>
+                  					<option value="-10">The post is hard to read and the content is sometimes hard to understand.</option>
+                  					</select>
+                  					</div>
+                  
+                  					<div class="question-block">
+                  						<h6>How would you rate the impact and significance of the contribution to the project and/or open source ecosystem in terms of uniqueness, usefulness and potential future applications?</h6>
+                  						<select id="2">
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">This contribution adds high value and holds great significance for the project and/or open source ecosystem.</option>
+                  					<option value="-10">This contribution adds significant value to the project and/or open source ecosystem.</option>
+                  					<option value="-22.5">This contribution adds some value to the project and/or open source ecosystem.</option>
+                  					<option value="-37.5">This contribution holds little value to the project and/or open source ecosystem.</option>
+                  					</select>
+                  					</div>
+                  
+                  					<div class="question-block">
+                  						<h6>How would you rate the total volume of work invested into this contribution?</h6>
+                  						<select>
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">This contribution appears to have demanded a lot of intensive work.</option>
+                  					<option value="-6">This contribution appears to have required an average volume of work.</option>
+                  					<option value="-20">This contribution shows some work done.</option>
+                  					<option value="-30">This contribution shows little work done.</option>
+                  					</select>
+                  					</div>
+                  
+                  
+                  					<div class="question-block">
+                  						<h6>How would you rate the quality of the code submitted?</h6>
+                  						<select>
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">High - it follows all best practices.</option>
+                  					<option value="-6">Average - it follows most best practices.</option>
+                  					<option value="-14">Low - it follows some best practices.</option>
+                  					<option value="-20">Very low - it doesn't follow any best practices.</option>
+                  					</select>
+                  					</div>
+                  
+                  					<div class="question-block">
+                  						<h6>How would you rate the proficiency and expertise necessary to fix the bug / implement the added feature(s)?</h6>
+                  						<select>
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">High - a lot of research and specific proficiency were required.</option>
+                  					<option value="-2.5">Average - some research and proficiency were required.</option>
+                  					<option value="-5">Low - little proficiency or skill were required.</option>
+                  					<option value="-7.5">Insignificant - only basic knowledge or skills were necessary.</option>
+                  					</select>
+                  					</div>
+                  
+                  
+                  					<div class="question-block">
+                  						<h6>How would you rate the accuracy and readability of the commit messages?</h6>
+                  						<select id="6">
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">High - they are concise, descriptive and consistent.</option>
+                  					<option value="-0.5">Average - they are mostly concise, descriptive and consistent.</option>
+                  					<option value="-2">Low - they could be more concise, descriptive or consistent.</option>
+                  					<option value="-2.5">Very low - they aren't concise, descriptive or consistent at all.</option>
+                  					</select>
+                  					</div>
+                  
+                  						<div class="question-block">
+                  						<h6>How do you rate the quality of the comments in the code?</h6>
+                  						<select id="7">
+                  					<option value="" disabled selected>Select your option</option>
+                  					<option value="0">High - everything is well-commented and adds to the readability of the code.</option>
+                  					<option value="-2">Average - most of the code is commented and most if it adds to the readability of the code.</option>
+                  					<option value="-3.5">Low - little of the code is commented, but it still adds to the readability.</option>
+                  					<option value="-5">Very low - the added comments provide no value or no comments were made at all.</option>
+                  					</select>
+                  					</div>
+                  					`;
+
+      let translations = `
+                  					<div class="question-block">
+                  								<h6>How do you rate the overall accuracy of the translated text?</h6>
+                  								<select >
+                  							<option value="" disabled selected>Select your option</option>
+                  							<option value="0">Excellent</option>
+                  							<option value="-6">Very Good</option>
+                  							<option value="-10">Good</option>
+                  							<option value="-13">Fairly Good</option>
+                  							<option value="-16">Sufficient</option>
+                  							<option value="-58">Insufficient</option>
+                  							<option value="-91">Bad</option>
+                  							<option value="-125">Unacceptable</option>
+                  							</select>
+                  							</div>
+                  
+                  							<div class="question-block">
+                  								<h6>How many mistakes were found in the translated text?</h6>
+                  								<select id="2">
+                  									<option value="" disabled selected>Select your option</option>
+                  							<option value="0">There are no errors</option>
+                  							<option value="-8">0.1% - 1 Error every 1000 words</option>
+                  							<option value="-14">0.3% - 3 Error every 1000 words</option>
+                  							<option value="-19">0.6% - 6 Error every 1000 words</option>
+                  							<option value="-23">1% - 10 Error every 1000 words/option>
+                  							<option value="-78">2% - 20 Error every 1000 words</option>
+                  							<option value="-121">3% - 30 Error every 1000 words</option>
+                  							<option value="-135">>3% - more than 30 Error every 1000 words</option>
+                  							</select>
+                  							</div>
+                  
+                  							<div class="question-block">
+                  								<h6>Is the translation consistent with the previously translated parts of the project?</h6>
+                  								<select>
+                  									<option value="" disabled selected>Select your option</option>
+                  							<option value="0">Excellent, is consistent with the previous ones</option>
+                  							<option value="-4">Very Good</option>
+                  							<option value="-7">Good</option>
+                  							<option value="-9">Fairly Good</option>
+                  							<option value="-11">Sufficient</option>
+                  							<option value="-26">Insufficient</option>
+                  							<option value="-37">Bad</option>
+                  							<option value="-115">Unacceptable</option>
+                  							</select>
+                  							</div>
+                  
+                  
+                  							<div class="question-block">
+                  								<h6>Did the translator provide in the contribution post all the information needed to fully evaluate the translation? How was the readibility and grammar of the post?(For example, did he indicate project name, github link and crowdin link, etc?)</h6>
+                  								<select>
+                  							<option value="" disabled selected>Select your option</option>
+                  							<option value="0">Excellent</option>
+                  							<option value="-1">Very Good</option>
+                  							<option value="-2">Good</option>
+                  							<option value="-3">Fairly Good</option>
+                  							<option value="-4">Sufficient</option>
+                  							<option value="-22">Insufficient</option>
+                  							<option value="-39">Bad</option>
+                  							<option value="-105">Unacceptable</option>
+                  							</select>
+                  							</div>
+                  
+                  							<div class="question-block">
+                  								<h6>Legibility of the translated text</h6>
+                  								<select>
+													<option value="" disabled selected>Select your option</option>
+                  							<option value="0">Excellent</option>
+                  							<option value="-2">Very Good</option>
+                  							<option value="-3">Good</option>
+                  							<option value="-4">Fairly Good</option>
+                  							<option value="-5">Sufficient</option>
+                  							<option value="-28">Insufficient</option>
+                  							<option value="-51">Bad</option>
+                  							<option value="-105">Unacceptable</option>
+                  							</select>
+											  </div>
+											  
+											  <div class="question-block">
+                  								<h6>What was the total volume (words) of the translated text in this contribution (excluding duplicate phrases and non-translatable content)?</h6>
+                  								<select>
+													<option value="" disabled selected>Select your option</option>
+                  							<option value="0">Equal or more than 2000 words</option>
+                  							<option value="-2">between 1800 and 2000 words</option>
+                  							<option value="-4">between 1600 and 1800 words</option>
+                  							<option value="-6">between 1400 and 1600 words</option>
+                  							<option value="-8">between 1200 and 1400 words</option>
+                  							<option value="-10">between 1000 and 1200 words</option>
+                  							<option value="-12">between 900 and 1000 words</option>
+                  							<option value="-15">between 700 and 900 words</option>
+                  							<option value="-18">between 500 and 700 words</option>
+                  							<option value="-21">less than 500 words</option>
+                  							</select>
+                  							</div> `;
+      let antiabuse = `
+                  					<div class="question-block">
+                  						<h6>How aware of the anti-abuse topic discussed in the post is the author?</h6>
+                  						<select >
+                  							<option value="" disabled selected>Select your option</option>
+                  							<option value="0">It is clear that they are closely familiar with the anti-abuse topic and its details.</option>
+                  							<option value="-5">The author offers some valuable insights about the anti-abuse topic.</option>
+                  							<option value="-7.5">Most of the post contains information gathered from other sources.</option>
+                  							<option value="-10">The author knows little or nothing about the anti-abuse topic.</option>
+                  						</select>
+                  					</div>
+                  
+                  							<div class="question-block">
+                  								<h6>What is the author's involvement level in the anti-abuse community?</h6>
+                  								<select id="2">
+                  							<option value="" disabled selected>Select your option</option>
+                  							<option value="0">The author is 100% committed to, and involved in, the anti-abuse community.</option>
+                  							<option value="-5">The author is committed, but is mostly involved with other projects unrelated to anti-abuse community.</option>
+                  							<option value="-7.5">The author is occasionally involved in the anti-abuse community.</option>
+                  							<option value="-10">The author is rarely involved in anti-abuse community.</option>
+                  							</select>
+                  							</div>
+                  
+                  							<div class="question-block">
+                  								<h6>Does the author add value to the anti-abuse community by managing, developing, suggesting or moderating ?</h6>
+                  								<select>
+                  							<option value="" disabled selected>Select your option</option>
+                  							<option value="0">The author invests a significant amount of time.</option>
+                  							<option value="-5">The author helps out often.</option>
+                  							<option value="-7.5">The author helps occasionally.</option>
+                  							<option value="-10">The author is not involved in any of these ways.</option>
+                  							</select>
+                  							</div>
+                  
+                  							<div class="question-block">
+                  								<h6>Does the contribution help raise awareness and education about abuse on the platform?</h6>
+                  								<select>
+                  							<option value="" disabled selected>Select your option</option>
+                  							<option value="0">The contribution greatly helps raise awareness about abuse.</option>
+                  							<option value="-5">The contribution helps raise awareness about abuse.</option>
+                  							<option value="-10">The contribution somewhat raise awareness about abuse.</option>
+                  							<option value="-15">The contribution does not raise awareness about abuse.</option>
+                  							</select>
+                  							</div>
+                  
+                  							<div class="question-block">
+                  								<h6>Is the contribution enough to empower the reader to participate in anti-abuse initiatives?</h6>
+                  								<select>
+                  							<option value="" disabled selected>Select your option</option>
+                  							<option value="0">The contribution greatly empowers the reader to participate in antiabuse initiatives.</option>
+                  							<option value="-5">The contribution empowers the reader to participate in antiabuse initiatives.</option>
+                  							<option value="-10">The contribution somewhat empowers the reader to participate in antiabuse initiatives.</option>
+                  							<option value="-15">The contribution does not empower the reader to participate in antiabuse initiatives.</option>
+                  							</select>
+                  							</div>
+                  
+                  
+                  							<div class="question-block">
+                  								<h6>How would you describe the formatting, language and overall presentation of the post?</h6>
+                  								<select>
+                  							<option value="" disabled selected>Select your option</option>
+                  							<option value="0">The quality of the post is fantastic.</option>
+                  							<option value="-5">The post is of decent quality, but there is room for improvement.</option>
+                  							<option value="-10">The post is of average quality.</option>
+                  							<option value="-15">The quality of the post is below average.</option>
+                  							</select>
+                  							</div>
+                  
+                  							<div class="question-block">
+                  								<h6>How would you rate the overall value of this contribution to the anti-abuse community?</h6>
+                  								<select>
+                  							<option value="" disabled selected>Select your option</option>
+                  							<option value="0">This contribution greatly helps the anti-abuse community.</option>
+                  							<option value="-5">This contribution helps the anti-abuse community.</option>
+                  							<option value="-10">This contribution moderately helps the anti-abuse community.</option>
+                  							<option value="-15">This contribution slightly helps the anti-abuse community.</option>
+                  							</select>
+                  							</div>
+                  
+                  							<div class="question-block">
+                  								<h6>What is the overall volume of the blog post?</h6>
+                  								<select>
+                  							<option value="" disabled selected>Select your option</option>
+                  							<option value="0">More than 1,000 words.</option>
+                  							<option value="-1">750 - 1,000 words.</option>
+                  							<option value="-3">500 - 749 words.</option>
+                  							<option value="-5">Less than 500 words.</option>
+                  							</select>
+                  							</div>
+                  
+                  							<div class="question-block">
+                  								<h6>Is the post a part of a series?</h6>
+                  								<select>
+                  							<option value="" disabled selected>Select your option</option>
+                  							<option value="2.5">It is clear that it is a part of an ongoing series of posts.</option>
+                  							<option value="0">It is clear that it is the first post of an upcoming series.</option>
+                  							<option value="-2.5">This is the first post from the author.</option>
+                  							<option value="-5">The post is not a part of any series.</option>
+                  							</select>
+                  							</div>
+                  
+                  							<div class="question-block">
+                  								<h6>Was relevant quality graphic or video content included in this post?</h6>
+                  								<select>
+                  							<option value="" disabled selected>Select your option</option>
+                  							<option value="5">Yes, at least 4 distinguishable instances of relevant graphic or video content were included.</option>
+                  							<option value="0">Yes, between 2 and 3 distinguishable instances of relevant graphic or video content were included.</option>
+                  							<option value="-15">A single instance of relevant graphic or video content was included.</option>
+                  							<option value="-20">No graphic or video content was included, or the content was irrelevant.</option>
+                  							</select>
+                  							</div>`;
+    </script>
+    <script>
+      function calcTotal() {
+        check();
+        var sum = 100;
+        for (i = 0; i < oSels.length; i++) {
+          sum += new Number(oSels[i].value);
+        }
+        if (sum < 0) sum = 0;
+        if (sum > 100) sum = 100;
+        document.getElementById('result').innerHTML = sum;
+        // var elem = document.querySelectorAll('.modal');
+        // var instance = M.Modal.init(elem);
+        $('.modal').modal();
+        let textarea = document.getElementById('textarea1');
+        let copy = document.getElementById('copy');
+        let comment = `<a class="waves-effect waves-light btn modal-trigger" style="background: transparent; color: black; border: 1px solid;" href="#modal1">Footer Comment Text</a>`;
+
+        let comid = document.getElementById('comment');
+
+        comid.innerHTML = comment;
+        copy.addEventListener('click', function() {
+          textarea.select();
+          document.execCommand('Copy');
+        });
+        return false;
+      }
+
+      function check() {
+        let category = document.getElementById('category').value;
+
+        let cat;
+
+        if (category == 'analysis') cat = 0;
+        if (category == 'blog') cat = 1;
+        if (category == 'copywriting') cat = 2;
+        if (category == 'development') cat = 3;
+        if (category == 'documentation') cat = 4;
+        if (category == 'bugs') cat = 5;
+        if (category == 'graphics') cat = 6;
+        if (category == 'suggestions') cat = 7;
+        if (category == 'tutorials') cat = 8;
+        if (category == 'video-tuts') cat = 9;
+        if (category == 'visibility') cat = 10;
+        if (category == 'tasks') cat = 11;
+        if (category == 'translations') cat = 12;
+        if (category == 'antiabuse') cat = 13;
+
+        let answers = `REPLACE WITH FEEDBACK\n\n
+                  Your contribution has been evaluated according to [Utopian policies and guidelines](https://join.utopian.io/guidelines), as well as a predefined set of questions pertaining to the category.\n\nTo view those questions and the relevant answers related to your post, [click here](https://review.utopian.io/result/${cat}/`;
+        oSels = document.getElementById('form1').getElementsByTagName('select');
+
+        for (i = 0; i < oSels.length; i++) {
+          answers = answers + oSels[i].options.selectedIndex + '-';
+        }
+        feedend =
+          category == 'translations'
+            ? `).\n\n---- \nChat with us on [Discord](https://discord.gg/vMGmDSm)`
+            : `).\n\n---- \nNeed help? Write a ticket on https://support.utopian.io/. \nChat with us on [Discord](https://discord.gg/uTyJkNm). \n[[utopian-moderator]](https://join.utopian.io/)`;
+        answers = answers + feedend;
+        console.log(answers);
+        let textarea = document.getElementById('textarea1');
+        textarea.value = answers;
+        textarea.style.height = '440px';
+      }
+    </script>
+
+    <script type="text/javascript">
+      let form;
+      let formstart = `<form class="z-depth-5" style="padding: 10px;" id="form1">`;
+      let formend = `<center><a class="waves-effect waves-purple btn-large" name="" style="background: transparent; color: black; border: 1px solid;" id="dispscore">Get Score</a></center>
+                  			<center><h5 style="color: black">Score: <span id="result"></span></h5></center>
+                  		</form>`;
+
+      let getcat = document.getElementById('getcat');
+
+      getcat.addEventListener('click', function() {
+        let category = document.getElementById('category').value;
+
+        if (category == 'analysis') form = formstart + analysis + formend;
+        if (category == 'blog') form = formstart + blog + formend;
+        if (category == 'copywriting') form = formstart + copywriting + formend;
+        if (category == 'development') form = formstart + development + formend;
+        if (category == 'documentation')
+          form = formstart + documentation + formend;
+        if (category == 'bugs') form = formstart + bugs + formend;
+        if (category == 'graphics') form = formstart + graphics + formend;
+        if (category == 'suggestions') form = formstart + suggestions + formend;
+        if (category == 'tutorials') form = formstart + tutorials + formend;
+        if (category == 'video-tuts') form = formstart + videotuts + formend;
+        if (category == 'visibility') form = formstart + visibility + formend;
+        if (category == 'tasks') form = formstart + tasks + formend;
+        if (category == 'translations')
+          form = formstart + translations + formend;
+        if (category == 'antiabuse') form = formstart + antiabuse + formend;
+
+        let formhere = document.getElementById('formhere');
+        formhere.innerHTML = `${form}`;
+        let dispscore = document.getElementById('dispscore');
+        // var elems = document.querySelectorAll('select');
+        // var instances = M.FormSelect.init(elems);
+        $('select').material_select();
+        dispscore.addEventListener('click', calcTotal);
+      });
+    </script>
+  </body>
 </html>
